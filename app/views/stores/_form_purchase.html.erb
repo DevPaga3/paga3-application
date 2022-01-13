@@ -1,0 +1,39 @@
+<%= simple_form_for :search, url: consult_request_path, method: "GET", html: { } do |f| %>
+    <div class="modal fade main-modal-p3" id="modal-do-purchases" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-popin" role="document">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent mb-0">
+                    <div class="block-header bg-primary-dark">
+                        <h3 class="block-title">Processo de compra - Consultar</h3>
+
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="block-content font-size-md">
+                        <div class="row">
+                            <div class="col-12">
+                                <%= f.input :cell_phone, label: "Nº telefone do cliente", placeholder: 'ex: 912090909' %>
+                            </div>
+                        </div>
+
+                        <p class="parch-text"><em>Porfavor preencher os campos correctamente</em></p>
+                    </div>
+
+                    <br>
+
+                    <div class="block-content block-content-full text-right border-top">
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="ml-2 btn btn-p3 button"> <i class="fa fa-check mr-1"></i>Consultar </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<% end %>
+

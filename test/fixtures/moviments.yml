@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile: one
+  user: one
+  is_credit: false
+  amount: 9.99
+
+two:
+  profile: two
+  user: two
+  is_credit: false
+  amount: 9.99

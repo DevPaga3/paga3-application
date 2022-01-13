@@ -1,0 +1,101 @@
+
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Minhas compras</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Lista das minhas compras</h2>
+                </div>
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<br>
+<br>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="h4 font-w400 ml-5 invisible" data-toggle="appear" data-timeout="250">Compras realizadas</h2>
+
+        <div class="block">
+            <div class="block-content">
+                <table class="table table-vcenter">
+                    <thead>
+                        <tr>
+                            <th>Referência</th>
+                            <th>Total</th>
+                            <th class="d-none d-sm-table-cell" style="width: 15%;">Data</th>
+                            <th class="text-center" style="width: 100px;">Acão</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% @my_invoices.each do |factura| %>
+                            <tr>
+                                <th class="" scope="row"> <%= factura.reference %> </th>
+                                <td class="font-w600 font-size-sm"> <%= link_to factura.total_pagar.to_kwanza, details_purchase_path( factura_id: factura ) %> </td>
+                                <td class="d-none d-sm-table-cell"> <%= link_to factura.created_at.strftime("%d/%m/%Y"), details_purchase_path( factura_id: factura ) %> </td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <%= link_to details_purchase_path( factura_id: factura ), class: "btn btn-sm btn-light js-tooltip-enabled", "data-toggle": "tooltip", title: "", "data-original-title": "Ver detalhes" do %>
+                                            <i class="fa fa-fw fa-eye"></i>
+                                        <% end %>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="col-md-6">
+        <h2 class="h4 font-w400 ml-5 invisible" data-toggle="appear" data-timeout="250">Compras realizadas</h2>
+
+        <div class="block">
+            <div class="block-content">
+                <table class="table table-vcenter">
+                    <thead>
+                        <tr>
+                            <th>Referência</th>
+                            <th>Total</th>
+                            <th class="d-none d-sm-table-cell" style="width: 15%;">Data</th>
+                            <th class="text-center" style="width: 100px;">Acão</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% @my_pending_invoices.each do |factura| %>
+                            <tr>
+                                <th class="" scope="row"> <%= factura.reference %> </th>
+                                <td class="font-w600 font-size-sm"> <%= link_to factura.total_pagar.to_kwanza, details_purchase_path( factura_id: factura ) %> </td>
+                                <td class="d-none d-sm-table-cell"> <%= link_to factura.created_at.strftime("%d/%m/%Y"), details_purchase_path( factura_id: factura ) %> </td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <%= link_to details_purchase_path( factura_id: factura ), class: "btn btn-sm btn-light js-tooltip-enabled", "data-toggle": "tooltip", title: "", "data-original-title": "Ver detalhes" do %>
+                                            <i class="fa fa-fw fa-eye"></i>
+                                        <% end %>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

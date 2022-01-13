@@ -1,0 +1,78 @@
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Categorias</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Menu categorias</h2>
+                </div>
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                    <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                        <button type="button" class="btn btn-sm btn-p3 px-4 py-2" data-toggle="modal" data-target="#modal-create-category">
+                            <i class="fa fa-plus mr-1"></i> Nova categoria
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+
+
+
+<div class="content content-narrow">
+
+    <div class="row row-deck">
+        <div class="col-lg-12">
+            <div class="block block-mode-loading-oneui">
+                <div class="block-header border-bottom">
+                    <h3 class="block-title">Lista das loja registadas</h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                            <i class="si si-refresh"></i>
+                        </button>
+                        <button type="button" class="btn-block-option">
+                            <i class="si si-settings"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" style="background: whitesmoke;">
+      <% @categories.each do |category| %>
+
+            <div class="col-lg-3 m1 mb-5">
+                <%= link_to category, style: "color: red", method: :delete, data: { confirm: 'Tens certeza?' } do %>
+                    <span class="fa fa-times-circle"></span>
+                <% end %>
+                
+                <div class="block-content " style="background-color: #ffffff;">
+                    <div class="media d-flex align-items-center push">
+                        
+                        <div class="mr-3">
+                            <%= link_to category, class: "item item-rounded bg-p3" do %>
+                                <i class="fa fa-store fa-2x text-white-75"></i>
+                            <% end %>
+                        </div>
+
+                        <div class="media-body">
+                            <div class="font-w600"> <%= link_to category.name, category %> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+
+    </div>
+
+
+
+</div>
+
+<%= render 'categories/form' %>

@@ -1,0 +1,98 @@
+
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear"> <%= link_to @product.store.name, store_path(@product.store) %> </h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250"><%= @product.store.reference_number %></h2>
+                </div>
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                    <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                        <% if current_user.company? %>
+                            <%= link_to @product, class: "btn btn-sm btn-danger px-4 py-2 btn-sm", method: :delete, data: { confirm: 'Tens certeza ?' } do %>
+                                <i class="fa fa-trash mr-1"></i> Eliminar producto
+                            <% end %>
+                        <% end %>
+
+                        <button type="button" class="btn btn-sm btn-p3 px-4 py-2 btn-sm" data-toggle="modal" data-target="#modal-create-product">
+                            <i class="fa fa-plus mr-1"></i> Actualizar producto
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+
+
+
+<!-- Page Content -->
+<div class="content content-boxed">
+    <div class="row">
+
+        <div class="col-md-8">
+            <!-- Products -->
+            <div class="block">
+
+                
+                <div class="row" style="background: whitesmoke;">
+                    <div class="col-md-12 bg-white p-4">
+
+                        <div class="card-body">
+                            <p class="font-w600 mb-0">Nome do producto:</p>
+                            <p class="font-size-sm mb-2"><%= @product.name %></p>
+
+                            <p class="font-w600 mb-0">Código do producto:</p>
+                            <p class="font-size-sm mb-2"><%= @product.code %></p>
+
+                            <p class="font-w600 mb-0">Preço:</p>
+                            <p class="font-size-sm mb-2"><%= @product.real_price.to_kwanza %></p>
+
+                            <p class="font-w600 mb-0">Preço + Percentagem Paga3:</p>
+                            <p class="font-size-sm mb-2"><%= @product.price_with_commission.to_kwanza %></p>
+
+                            <p class="font-w600 mb-0">Nº de parcelas:</p>
+                            <p class="font-size-sm mb-2"><%= @product.render_number %></p>
+                            <hr>
+
+                            <p class="font-size-sm mb-2"><%= @product.description %></p>
+
+                            
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Updates -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+                        <% if @product.image.attached? %>
+                            <%= image_tag(@product.image, class: "img-fluid") %>
+                        <% else %>
+                            <i class="fa fa-store fa-2x text-white"></i>
+                        <% end %>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- END Updates -->
+        </div>
+
+    </div>
+</div>
+
+<%= render 'products/form' %>
+<%= render 'stores/form_purchase' %>
+

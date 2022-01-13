@@ -1,0 +1,43 @@
+<%= simple_form_for(@partner) do |f| %>
+
+    <div class="content content-boxed">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Updadtes -->
+                <ul class="timeline timeline-alt py-0">
+                    <li class="timeline-event">
+                        <div class="timeline-event-icon bg-p3">
+                            <i class="fa fa-edit"></i>
+                        </div>
+                        <div class="timeline-event-block block invisible" data-toggle="appear">
+                            <div class="block-header">
+                                <h3 class="block-title">Criar nova publicidade</h3>
+                            </div>
+
+                            <%= f.error_notification %>
+                            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+                            <div class="block-content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <%= f.input :name, label: "Nome do parceiro" %>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <%= f.input :avatar, label: "Logotipo do parceiro" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="form-actions text-right">
+                    <%= f.button :submit, "Adicionar", class: "btn btn-p3 btn-sm mr-2" %>
+                    <%= link_to 'Cancelar', partners_url , class: "btn btn-danger btn-sm mr-2"%>
+                </div>
+                <!-- End Updadtes -->
+            </div>
+        </div>
+    </div>
+
+<% end %>

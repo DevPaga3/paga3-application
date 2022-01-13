@@ -1,0 +1,43 @@
+<%= simple_form_for(@bank) do |f| %>
+    <div class="modal fade main-modal-p3" id="modal-create-bank" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-popin" role="document">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent mb-0">
+                    <div class="block-header bg-primary-dark">
+                        <% if @bank.id.present? %>
+                            <h3 class="block-title">Actualizar banco comercial</h3>
+                        <% else %>
+                            <h3 class="block-title">Registar banco comercial</h3>
+                        <% end %>
+
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="block-content font-size-md">
+                        <%= f.input :name, label: "Descrição completa do banco" %>
+                        <%= f.input :sigla, label: "Sigle" %>
+                        <%= f.input :swift %>
+                        <%= f.input :website %>
+                        <%= f.input :status, label: "Esta activa !" %>
+                    </div>
+
+                    <div class="block-content block-content-full text-right border-top">
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+                        <% if @bank.id.present? %>
+                            <button type="submit" class="ml-2 btn btn-p3 button btn-sm"> <i class="fa fa-check mr-1"></i>Actualizar </button>
+                        <% else %>
+                            <button type="submit" class="ml-2 btn btn-p3 button btn-sm"> <i class="fa fa-check mr-1"></i>Registar </button>
+                        <% end %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<% end %>
+

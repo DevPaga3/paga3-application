@@ -1,0 +1,239 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/*custom font*/
+
+/* variables to breakpoints */
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+.container-check {
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.form-outer {
+    width: 100%;
+    overflow: hidden;
+}
+
+.form-outer form {
+    display: flex;
+    width: 400%;
+}
+
+.form-outer form .page {
+    width: 25%;
+    position: relative;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.form-outer form .page .title {
+    text-align: left;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.form-outer form .page .field {
+    display: flex;
+    position: relative;
+}
+
+form .page .field .label {
+    position: absolute;
+    top: -30px;
+    font-weight: 500;
+}
+
+form .page .field input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+form .page .field select {
+    width: 100%;
+    padding-left: 10px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+form .page .btn-position button.next {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+}
+
+form .page .btn-position input.submit {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+}
+
+form .page .btn-position button.prev {
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+}
+
+.progress-bar-check {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 0 0;
+    user-select: none;
+}
+
+.progress-bar-check .step {
+    text-align: center;
+    width: 15%;
+    position: relative;
+}
+
+.progress-bar-check .step p {
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.progress-bar-check .step .bullet {
+    height: 25px;
+    width: 25px;
+    border: 2px solid rgba(0, 0, 0, 0.515);
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    transition: 0.2s;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+}
+
+.progress-bar-check .step .bullet.active {
+    border-color: #98bb43;
+    background: linear-gradient(90deg, #62c6cb 0%, #98bb43) !important;
+}
+
+.progress-bar-check .step .bullet span {
+    position: absolute;
+    left: 50%;
+    top: -10%;
+    font-size: .8rem;
+    font-weight: bold;
+    transform: translateX(-50%);
+}
+
+.progress-bar-check .step .bullet.active span {
+    display: none;
+}
+
+.progress-bar-check .step .bullet:before,
+.progress-bar-check .step .bullet:after {
+    position: absolute;
+    content: '';
+    bottom: 8px;
+    right: -154px;
+    height: 3px;
+    width: 153px;
+    background: darkgray;
+}
+
+.progress-bar-check .step .bullet.active:after {
+    background: linear-gradient(90deg, #62c6cb 0%, #98bb43) !important;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3s linear forwards;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.progress-bar-check .step:last-child .bullet:before,
+.progress-bar-check .step:last-child .bullet:after {
+    display: none;
+}
+
+.progress-bar-check .step p.active {
+    color: #5a8f2f;
+    transition: 0.2s linear;
+}
+
+.progress-bar-check .step .check {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    font-size: 15px;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.progress-bar-check .step .check.active {
+    display: block;
+    color: #fff;
+}
+
+// Small devices (landscape phones, 0px and up)
+@media (min-width: $xs) {
+    .progress-bar-check .step .bullet:before,
+    .progress-bar-check .step .bullet:after {
+        right: -38px;
+        width: 36px;
+    }
+
+    .progress-bar-check .step .check {
+        top: 76%;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: $sm) {
+    .progress-bar-check .step .bullet:before,
+    .progress-bar-check .step .bullet:after {
+        right: -64px;
+        width: 64px;
+    }
+}
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: $md) {
+    .progress-bar-check .step .bullet:before,
+    .progress-bar-check .step .bullet:after {
+        right: -125px;
+        width: 124px;
+    }
+
+    .progress-bar-check .step .check {
+        top: 70%;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: $lg) {
+    .progress-bar-check .step .bullet:before,
+    .progress-bar-check .step .bullet:after {
+        right: -122px;
+        width: 122px;
+    }
+}
+
+// X-Large devices (desktops, 992px and up)
+@media (min-width: $xl) {
+
+    .progress-bar-check .step .bullet:before,
+    .progress-bar-check .step .bullet:after {
+        right: -153px;
+        width: 152px;
+    }
+}
+

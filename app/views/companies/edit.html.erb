@@ -1,0 +1,67 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <% if @company.avatar.attached? %>
+                    <%= image_tag(@company.avatar, class: "img-avatar img-avatar-thumb") %>
+                <% else %>
+                    <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+                <% end %>
+            </div>
+            <h1 class="h2 text-white mb-0"><%= @company.name %></h1>
+            <span class="text-white-75"><%= @company.cell_phone %></span>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<%= simple_form_for(@company) do |f| %>
+
+    <div class="content content-boxed">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Updates -->
+                <ul class="timeline timeline-alt py-0">
+                    <li class="timeline-event">
+                        <div class="timeline-event-icon bg-p3">
+                            <i class="fa fa-edit"></i>
+                        </div>
+                        <div class="timeline-event-block block invisible" data-toggle="appear">
+                            <div class="block-header">
+                                <h3 class="block-title">Actualizar Informações</h3>
+                            </div>
+                            
+                            <div class="block-content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <%= f.input :name, label: 'Nome da empresa' %>
+                                        <%= f.input :email, label: 'E-mail' %>
+                                        <%= f.input :cell_phone, label: 'Nº telefone' %>
+                                        <%= f.input :address, label: 'Endereço' %>
+                                        <br>
+                                        <%= f.input :avatar, label: 'Logotipo da empresa' %>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <%= f.input :nif, label: 'NIF' %>
+                                        <%= f.input :accountNumber, label: 'Nº de conta', error: 'Nº de conta não pode estar em branco' %>
+                                        <%= f.input :iban, label: 'IBAN' %>
+                                        <%= f.association :category, label: 'Categoria' %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <div class="form-actions text-right">
+                    <%= f.button :submit, "Actualizar", class: "btn btn-p3 btn-sm mr-2" %>
+                    <%= link_to 'Cancelar', company_path(@company), class: 'btn btn-sm btn-danger' %>
+                </div>
+                <!-- END Updates -->
+            </div>
+        </div>
+    </div>
+
+<% end %>

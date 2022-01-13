@@ -1,0 +1,73 @@
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Menu Área De Atuação</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Área De Atuação</h2>
+                </div>
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                    <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                        <button type="button" class="btn btn-sm btn-p3 px-4 py-2" data-toggle="modal" data-target="#create-occupation">
+                            <i class="fa fa-plus mr-1"></i> Adicionar área de atuação
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<div class="content content-narrow">
+
+    <div class="row row-deck">
+        <div class="col-lg-12">
+            <div class="block block-mode-loading-oneui">
+                <div class="block-header border-bottom">
+                    <h3 class="block-title">Lista das áreas de atuação disponíveis</h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                            <i class="si si-refresh"></i>
+                        </button>
+                        <button type="button" class="btn-block-option">
+                            <i class="si si-settings"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="background: whitesmoke;">
+        <% @occupation_areas.each do |occupation_area| %>
+            <div class="col-sm-4">
+                <div class="block js-appear-enabled animated fadeIn" data-toggle="appear" data-offset="-400">
+                    <div class="block-content block-content-full">
+                        <div class="media d-flex align-items-center push">
+                            <%= link_to occupation_area_path(occupation_area), method: :delete, data: { confirm: 'Tens certeza?' }, "data-toggle": "tooltip", title: "Eliminar", class: "remove-bank" do %>
+                                <span class="fa fa-times-circle fa-2x"></span>
+                            <% end %>
+
+                            <div class="mr-3">
+                                <a class="item item-rounded bg-p3" href="javascript:void(0)">
+                                    <i class="fa fa-user-tie fa-2x text-white-75"></i>
+                                </a>
+                            </div>
+
+                            <div class="media-body">
+                                <div class="font-w600"><%= occupation_area.occupation %></div>
+                                <div class="font-size-sm text-truncate"><%= "#{occupation_area.description}" %></div>
+                            </div>
+                        </div>
+                           
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+</div>
+
+<%= render 'form', occupation_area: @occupation_area %>

@@ -1,0 +1,178 @@
+<p id="notice"><%= notice %></p>
+
+<div class="bg-body-light">
+    <div class="content content-full">
+        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+            <h1 class="flex-sm-fill h3 my-2">
+                Lista dos utilizadores
+            </h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="content">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="block">
+                <ul class="nav nav-tabs nav-tabs-block" data-toggle="tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link btn-warning active" href="#btabs-static-home">Utilizadores pendentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-success" href="#btabs-static-profile">Utilizadores activos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link btn-danger" href="#btabs-static-rejected">Utilizadores rejeitados</a>
+                    </li>
+
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="#btabs-static-settings">
+                            <i class="si si-settings"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="block-content tab-content">
+                    <div class="tab-pane active" id="btabs-static-home" role="tabpanel">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-vcenter">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="width: 100px;"><i class="far fa-user"></i></th>
+                                        <th>Nome</th>
+                                        <th>Nº telefone</th>
+                                        <th>Email</th>
+                                        <th>Estado</th>
+                                        <th class="text-center" style="width: 150px;">Acções</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @profiles_pending.each do |profile| %>
+                                        <tr>
+                                            <td class="text-center"><img class="img-table img-avatar48" src="/templete/assets/media/avatars/avatar7.jpg" alt=""></td>
+                                            <td class="font-w600 font-size-sm"><a href="<%= profile_path(profile) %>"><%= profile.name %></a></td>
+                                            <td class="font-size-sm"><em class="text-muted"><%= profile.user.cell_phone %></em></td>
+                                            <td class="font-size-sm"><em class="text-muted"><%= profile.user.email %></em></td>
+                                            <td><span class="badge badge-warning">pendente</span></td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <% if current_user.admin? %>
+                                                        <%= link_to profile, class: "btn btn-sm btn-danger js-tooltip-enabled", "data-toggle": "tooltip", "title": "Eliminar", "data-original-title": "Eliminar",
+                                                            method: :delete, data: { confirm: 'Tens certeza ?' } do %>
+                                                            <i class="fa fa-fw fa-trash"></i>
+                                                        <% end %>
+                                                    <% end %>
+
+                                                    <%= link_to profile_path(profile), class: "btn btn-sm btn-p3 js-tooltip-enabled", "data-toggle": "tooltip", "title": "Ver detalhes", "data-original-title": "Ver detalhes" do %>
+                                                        <i class="fa fa-fw fa-eye"></i> Avaliar
+                                                    <% end %>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                            <%== pagy_bootstrap_nav(@pagy).html_safe %>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="btabs-static-profile" role="tabpanel">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-vcenter">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="width: 100px;"><i class="far fa-user"></i></th>
+                                        <th>Nome</th>
+                                        <th>Nº telefone</th>
+                                        <th>Email</th>
+                                        <th>Estado</th>
+                                        <th class="text-center" style="width: 100px;">Acções</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @profiles_active.each do |profile| %>
+                                        <tr>
+                                            <td class="text-center"><img class="img-table img-avatar48" src="/templete/assets/media/avatars/avatar7.jpg" alt=""></td>
+                                            <td class="font-w600 font-size-sm"><a href="<%= profile_path(profile) %>"><%= profile.name %></a></td>
+                                            <td class="font-size-sm"><em class="text-muted"><%= profile.user.cell_phone %></em></td>
+                                            <td class="font-size-sm"><em class="text-muted"><%= profile.user.email %></em></td>
+                                            <td><span class="badge badge-warning">Activa</span></td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <%= link_to profile_path(profile), class: "btn btn-sm btn-p3 js-tooltip-enabled", "data-toggle": "tooltip", "title": "Ver detalhes", "data-original-title": "Ver detalhes" do %>
+                                                        <i class="fa fa-fw fa-eye"></i>
+                                                    <% end %>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                            <%== pagy_bootstrap_nav(@pagy).html_safe %>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="btabs-static-rejected" role="tabpanel">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-vcenter">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="width: 100px;"><i class="far fa-user"></i></th>
+                                        <th>Nome</th>
+                                        <th>Nº telefone</th>
+                                        <th>Email</th>
+                                        <th>Estado</th>
+                                        <th class="text-center" style="width: 100px;">Acções</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @profiles_rejecteds.each do |profile| %>
+                                        <tr>
+                                            <td class="text-center"><img class="img-table img-avatar48" src="/templete/assets/media/avatars/avatar7.jpg" alt=""></td>
+                                            <td class="font-w600 font-size-sm"><a href="<%= profile_path(profile) %>"><%= profile.name %></a></td>
+                                            <td class="font-size-sm"><em class="text-muted"><%= profile.user.cell_phone %></em></td>
+                                            <td class="font-size-sm"><em class="text-muted"><%= profile.user.email %></em></td>
+                                            <td><span class="badge badge-warning">Activa</span></td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <%= link_to profile_path(profile), class: "btn btn-sm btn-p3 js-tooltip-enabled", "data-toggle": "tooltip", "title": "Ver detalhes", "data-original-title": "Ver detalhes" do %>
+                                                        <i class="fa fa-fw fa-eye"></i>
+                                                    <% end %>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                            <%== pagy_bootstrap_nav(@pagy).html_safe %>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="btabs-static-settings" role="tabpanel">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- END Block Tabs -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

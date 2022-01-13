@@ -1,0 +1,64 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+            </div>
+            <h1 class="h2 text-white mb-0"> Detalhes do utilizador </h1>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<!-- Stats -->
+<div class="bg-white border-bottom">
+    <div class="content content-boxed">
+        <div class="row items-push text-center">
+            <div class="col-6 col-md-6">
+            </div>
+
+            <div class="col-6 col-md-6 float-right">
+                <%= link_to 'Eliminar conta', admin_path(@admin), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: 'Tens certeza ?' } %>
+
+                <%= link_to 'actualizar', edit_admin_path(@admin), class: "btn btn-sm btn-success" %>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="content content-boxed">
+    <div class="row">
+        <div class="col-md-7 col-xl-8">
+            <!-- Updates -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+                        <div class="block-header">
+                            <h3 class="block-title"><%= @admin.name %></h3>
+                        </div>
+                        
+                        <div class="block-content">
+                            <p><span class="font-w600 mb-2">Nome: </span><span class="font-size-sm"><%= @admin.name %></span></p>
+                            <p><span class="font-w600 mb-2">Nº telefone: </span><span class="font-size-sm"><%= @admin.cell_phone %></span></p>
+                            <p><span class="font-w600 mb-2">Tipo de acesso: </span><span class="font-size-sm"><%= t(@admin.user&.role) %></span></p>
+                            <p><span class="font-w600 mb-2">E-mail: </span><span class="font-size-sm"><%= @admin.email %></span></p>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- END Updates -->
+        </div>
+        <div class="col-md-5 col-xl-4">
+
+        </div>
+    </div>
+</div>
+<!-- END Page Content -->

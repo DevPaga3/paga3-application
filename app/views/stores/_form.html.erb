@@ -1,0 +1,45 @@
+<%= simple_form_for(@store) do |f| %>
+    <div class="modal fade main-modal-p3" id="modal-create-store" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-popin" role="document">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent mb-0">
+                    <div class="block-header bg-primary-dark">
+                        <% if @store.id.present? %>
+                            <h3 class="block-title">Actualizar loja</h3>
+                        <% else %>
+                            <h3 class="block-title">Registo de loja</h3>
+                        <% end %>
+
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="block-content font-size-md">
+                        <%= f.input :name, label: "Nome da loja" %>
+                        <%= f.input :reference_number, label: "Ref. da loja" %>
+                        <%= f.input :location, label: "Localização da loja" %>
+                        <%= f.association :category, label: "Categoria da loja" %>
+
+                        <%= f.input :description, label: "Descrição" %>
+                        <%= f.association :company, as: :hidden %>
+                    </div>
+
+                    <div class="block-content block-content-full text-right border-top">
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+                        <% if @store.id.present? %>
+                            <button type="submit" class="ml-2 btn btn-p3 button"> <i class="fa fa-check mr-1"></i>Actualizar </button>
+                        <% else %>
+                            <button type="submit" class="ml-2 btn btn-p3 button"> <i class="fa fa-check mr-1"></i>Registar </button>
+                        <% end %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<% end %>
+

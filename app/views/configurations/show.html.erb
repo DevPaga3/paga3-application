@@ -1,0 +1,110 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <% if @config.logo.attached? %>
+                    <%= image_tag(@config.logo, class: "img-avatar img-avatar-thumb") %>
+                <% else %>
+                    <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+                <% end %>
+            </div>
+            <h1 class="h2 text-white mb-0"><%= @config.name %></h1>
+            <span class="text-white-75"><%= @config.cell_phone %></span>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<!-- Stats -->
+<div class="bg-white border-bottom">
+    <div class="content content-boxed">
+        <div class="row items-push text-center">
+            <div class="col-6 col-md-3">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Facturação total</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= 0.to_kwanza %></a>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Total de Compensação à pagar</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= 0.to_kwanza %></a>
+            </div>
+
+            <div class="col-6 col-md-6">
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-form_bankble">
+                    <i class="fa fa-plus mr-1"></i> Adicionar banco
+                </button>
+
+                <%= link_to edit_configuration_path(@config), class: "btn btn-sm btn-p3" do %>
+                    <i class="nav-main-link-icon fa fa-edit"></i> Actualizar config.
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="content content-boxed">
+    <div class="row">
+        <div class="col-md-7 col-xl-8">
+            <!-- Updates -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+                        <div class="block-header">
+                            <h2 class="block-title">Detalhes da empresa</h2>
+                        </div>
+                        
+                        <div class="block-content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><span class="font-w600 mb-2">Nome: </span><span class="font-size-sm"><%= @config.name %></span></p>
+                                    <p><span class="font-w600 mb-2">E-mail: </span><span class="font-size-sm"><%= @config.cell_phone %></span></p>
+                                    <p><span class="font-w600 mb-2">NIF: </span><span class="font-size-sm"><%= @config.nif %></span></p>
+                                    <p><span class="font-w600 mb-2">Versão da Aplicação: </span><span class="font-size-sm"><%= @config.version %></span></p>
+                                    <hr>
+                                    <p><span class="font-w600 mb-2">TAXA DE ESFORÇO: </span><span class="font-size-sm"><%= @config.effort_rate %>%</span></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><span class="font-w600 mb-2">NIPC: </span><span class="font-size-sm"><%= @config.nipc %></span></p>
+                                    <p><span class="font-w600 mb-2">IEC: </span><span class="font-size-sm"><%= @config.iec %></span></p>
+                                    <p><span class="font-w600 mb-2">Endereço: </span><span class="font-size-sm"><%= @config.address %></span></p>
+                                    <p><span class="font-w600 mb-2">Município: </span><span class="font-size-sm"><%= @config.municipality %></span></p>
+                                    <p><span class="font-w600 mb-2">Província: </span><span class="font-size-sm"><%= @config.province %></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- END Updates -->
+        </div>
+
+        <div class="col-md-5 col-xl-4">
+
+            <div class="block">
+                <div class="block-header block-header-default">
+                    <h3 class="block-title">
+                        <i class="fa fa-briefcase text-muted mr-1"></i> Contas disponíveis
+                    </h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                            <i class="si si-refresh"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <%= render 'bank_accounts/bank_accounts', accountble: @config %>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- END Page Content -->
+
+<%= render 'bank_accounts/form', accountble: @config %>

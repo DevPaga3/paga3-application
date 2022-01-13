@@ -1,0 +1,38 @@
+<%= simple_form_for([accountble, BankAccount.new]) do |f| %>
+    <div class="modal fade main-modal-p3" id="modal-form_bankble" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-popin" role="document">
+            <div class="modal-content">
+
+
+                <div class="block block-themed block-transparent mb-0">
+                    <div class="block-header bg-primary-dark">
+
+                        <h3 class="block-title">Registar conta bancária</h3>
+
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="block-content font-size-md">
+                        <%= f.association :bank, label: "Selecione o banco comercial" %>
+                        <%= f.input :iban, label: "IBAN" %>
+                        <%= f.input :account_number, label: "Número da conta bancária" %>
+                    </div>
+
+                    <div class="block-content block-content-full text-right border-top">
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="ml-2 btn btn-p3 button btn-sm"> <i class="fa fa-check mr-1"></i>Registar </button>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+<% end %>
+

@@ -1,0 +1,62 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <% if @publicity.avatar.attached? %>
+                <%= image_tag(@publicity.avatar, class: "img-avatar img-avatar-thumb") %>
+                <% else %>
+                <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+                <% end %>
+            </div>
+            <span class="text-white-75"><%= @publicity.description %></span>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<%= simple_form_for(@publicity) do |f| %>
+<div class="content content-boxed">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Updadtes -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-edit"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+                        <div class="block-header">
+                            <h3 class="block-title">Atualizar dados da publicidade</h3>
+                        </div>
+
+                        <%= f.error_notification %>
+                        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+                        <div class="block-content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <%= f.input :description, label: "Descrição da publicidade" %>
+                                    <br>
+                                    <%= f.input :avatar, label: "Imagem da publicidade" %>
+                                </div>
+                                <div class="col-md-6">
+                                    <%= f.input :start_date, label: "Data De Início" %>
+                                    <%= f.input :end_date, label: "Data De Término" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="form-actions text-right">
+                <%= f.button :submit, "Atualizar", class: "btn btn-p3 btn-sm mr-2" %>
+                <%= link_to 'Cancelar', publicities_path, class: 'btn btn-sm btn-danger' %>
+            </div>
+            <!-- End Updadtes -->
+        </div>
+    </div>
+</div>
+
+<% end %>

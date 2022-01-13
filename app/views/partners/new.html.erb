@@ -1,0 +1,18 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <% if @partner.avatar.attached? %>
+                <%= image_tag(@partner.avatar, class: "img-avatar img-avatar-thumb") %>
+                <% else %>
+                <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+                <% end %>
+            </div>
+            <h1 class="h2 text-white mb-0"> Cadastrar parceiro </h1>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<%= render 'form', partner: @partner %>

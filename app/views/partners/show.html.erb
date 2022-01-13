@@ -1,0 +1,78 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <% if @partner.avatar.attached? %>
+                    <%= image_tag(@partner.avatar, class: "img-avatar img-avatar-thumb") %>
+                <% else %>
+                    <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+                <% end %>
+            </div>
+            <span class="text-white-75"><%= @partner.name %></span>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<!-- Stats -->
+<div class="bg-white border-bottom">
+    <div class="content content-boxed">
+        <div class="row items-push d-flex justify-content-end">
+            <div class="col-6 col-md-6 text-right">
+                <%= link_to 'actualizar', edit_partner_url(@partner), class: "btn btn-sm btn-success" %>
+
+                <% if current_user.admin? %>
+                    <% if @partner.status %>
+                        <%= link_to 'Remover do site', show_and_hide_partner_url(@partner), class: "btn btn-sm btn-info" %>
+                    <% else %>
+                        <%= link_to 'Mostrar no site', show_and_hide_partner_url(@partner), class: "btn btn-sm btn-info" %>
+                    <% end %>
+                <% end %>
+
+                <% if current_user.admin? %>
+                    <%= link_to 'Eliminar', @partner, class: "btn btn-sm btn-danger js-tooltip-enabled", "data-toggle": "tooltip", "title": "Eliminar", "data-original-title": "Eliminar", method: :delete, data: { confirm: 'Tens certeza ?' } %>
+                <% end %>
+                
+                <%= link_to 'Voltar', partners_url, class: "btn btn-sm btn-secondary" %>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Stats -->
+
+<!-- Page Content -->
+<div class="content content-boxed">
+    <div class="row">
+        <div class="col-md-9 col-sm-12">
+            <!-- Updates -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+                        <div class="block-header">
+                            <h2 class="block-title">Detalhes da publicidade</h2>
+                        </div>
+
+                        <div class="block-content">
+                            <p><span class="font-w600 mb-2">Nome: </span><span
+                                    class="font-size-sm"><%= @partner.name %></span></p>
+                            <p><span class="font-w600 mb-2">Visibilidade: </span>
+                                <% if @partner.status %>
+                                    <span class="font-size-sm">Está visível no site</span>
+                                <% else %>
+                                    <span class="font-size-sm">Não está visível no site</span>
+                                <% end %>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- END Updates -->
+        </div>
+    </div>
+</div>
+<!-- END Page Content -->

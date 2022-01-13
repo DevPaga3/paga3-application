@@ -1,0 +1,17 @@
+<% if notice.present? %>
+    <div class="alert alert-success text-center mb-0 alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <p class="mb-0"><%= notice %></p>
+    </div>
+<% end %>
+
+<% if alert.present? %>
+    <div class="alert alert-danger text-center mb-0 alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <p class="mb-0"><%= alert %>!</p>
+    </div>
+<% end %>

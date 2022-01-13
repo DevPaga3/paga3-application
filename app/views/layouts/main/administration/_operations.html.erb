@@ -1,0 +1,34 @@
+<li class="nav-main-item">
+    <%= link_to companies_path, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-building"></i>
+        <span class="nav-main-link-name">Empresas</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to profiles_path, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-users"></i>
+        <span class="nav-main-link-name">Clientes</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to "#", class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-swatchbook"></i>
+        <span class="nav-main-link-name">Parceiros</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to configuration_path(current_user.config), class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-cogs"></i>
+        <span class="nav-main-link-name">Config. Paga3</span>
+    </a>
+    <% end %>
+</li>
+
+
+<br>
+<br>
+<hr>
+

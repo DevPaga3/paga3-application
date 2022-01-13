@@ -1,0 +1,74 @@
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Detalhes do Envio</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Buks de Mensagens enviadas</h2>
+                </div>
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                    <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                        <%= link_to edit_message_path(@message), class: "btn btn-sm btn-p3 px-4 py-2" do  %>
+                            <i class="fa fa-comment mr-1"></i> Reenviar Mensagem
+                        <% end %>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<!-- Page Content -->
+<div class="content content-boxed">
+    <div class="row">
+        <div class="col-md-9 col-sm-12">
+            <!-- Updates -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+                        <div class="block-header">
+                            <h2 class="block-title">Detalhes da Mensagem</h2>
+                        </div>
+
+                        <div class="block-content">
+                            <p><span class="font-w600 mb-2">Corpo da Mensagem: </span><span class="font-size-sm"><%= @message.content %></span></p>
+                            <p><span class="font-w600 mb-2">Quantidade enviadas: </span><span class="font-size-sm"><%= @message.quantity %></span></p>
+                            <p>
+                                <span class="font-w600 mb-2">Enviadas Para Clientes: </span>
+                                <% if @message.send_to_customers %>
+                                    <span class="badge badge-success">SIM</span>
+                                <% else %>
+                                    <span class="badge badge-danger">NÃO</span>
+                                <% end %>                            
+                            </p>
+
+                            <p>
+                                <span class="font-w600 mb-2">Enviadas Para Empresas (logistas): </span>
+                                <% if @message.send_to_companies %>
+                                    <span class="badge badge-success">SIM</span>
+                                <% else %>
+                                    <span class="badge badge-danger">NÃO</span>
+                                <% end %>                            
+                            </p>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- END Updates -->
+        </div>
+
+        <div class="col-md-3 col-sm-12">
+            <div class="block">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<p id="notice"><%= notice %></p>

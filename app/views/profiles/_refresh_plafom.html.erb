@@ -1,0 +1,35 @@
+<%= form_tag(reduce_path(@profile.id), method: "PUT") do %>
+    <div class="modal fade main-modal-p3" id="modal-refresh-plafom" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-popin" role="document">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent mb-0">
+
+                <div class="block-header bg-primary-dark">
+                        <h3 class="block-title">Inserir o valor pago</h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="block-content font-size-md">
+                        <%= text_field_tag :amount_to_discount, params[:amount_to_discount], label: "Valor à descontar", placeholder: "Digite o valor a ser descontado", class: "form-control mr-2" %>
+                        
+                        <p class="is-credit">Selecione se é um Credito ?</p>
+                        <%= check_box_tag(:flag, 'yes', params[:is_credit]) %>
+
+
+                    </div>
+
+                    <div class="block-content block-content-full text-right border-top">
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="ml-2 btn btn-p3 button btn-sm"> <i class="fa fa-check mr-1"></i>Actualizar </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<% end %>

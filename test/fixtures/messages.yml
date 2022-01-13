@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  quantity: 0
+  send_to_companies: false
+  send_to_customers: false
+
+two:
+  content: MyString
+  quantity: 0
+  send_to_companies: false
+  send_to_customers: false

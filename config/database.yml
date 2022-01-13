@@ -1,0 +1,38 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+
+default: &default
+    adapter: postgresql
+    encoding: unicode
+    # For details on connection pooling, see Rails configuration guide
+    # https://guides.rubyonrails.org/configuring.html#database-pooling
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+    <<: *default
+    database: rails_paga3_development
+
+    # Warning: The database defined as "test" will be erased and
+    # re-generated from your development database when you run "rake".
+    # Do not set this db to the same as development or production.
+test:
+    <<: *default
+    database: rails_paga3_test
+
+    # Instead, provide the password as a unix environment variable when you boot
+    # the app. Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
+    # for a full rundown on how to provide these environment variables in a
+    # production deployment.
+    #
+    # On Heroku and other platform providers, you may have a full connection URL
+    # available as an environment variable. For example:
+    #
+    #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+
+production:
+    <<: *default
+    host: <%= Rails.application.credentials.database[:host] %>
+    database: <%= Rails.application.credentials.database[:database] %>
+    port: <%= Rails.application.credentials.database[:port] %>
+    username: <%= Rails.application.credentials.database[:username] %>
+    password: <%= Rails.application.credentials.database[:password] %>
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>.:: Paga3 ::.</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+        <link rel="stylesheet" id="css-main" href="/templete/assets/css/oneui.min.css">
+        <link rel="stylesheet" href="/templete/assets/js/plugins/select2/css/select2.min.css">
+        <link rel="stylesheet" href="/templete/assets/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    </head>
+
+    <body>
+        <% if user_signed_in? %>
+            <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
+                <%= render 'layouts/main/aside' %>
+                <%= render 'layouts/main/nav' %>
+                <%= render 'layouts/main/header' %>
+
+                <main id="main-container">
+                    <%= render 'layouts/flash' %>
+                    <!--
+                        <div>Registration closes in <span id="time">05:00</span> minutes!</div>
+                    -->
+                    <%= yield %>
+                </main>
+
+                <br>
+                <br>
+
+                <!-- Footer -->
+                <footer id="page-footer" class="bg-body-light">
+                    <div class="content py-3">
+                        <div class="row font-size-sm">
+                            <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
+                                <a class="font-w600" href="#" target="_blank">Paga3 </a> &copy; <span data-toggle="year-copy"></span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- END Footer -->
+            </div>
+        <% else %>
+            <%= yield %>
+        <% end %>
+
+        <script src="/templete/assets/js/oneui.core.min.js"></script>
+        <script src="/templete/assets/js/oneui.app.min.js"></script>
+        <script src="/templete/assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+        <script src="/templete/assets/js/pages/op_auth_signin.min.js"></script>
+        <script src="/templete/assets/js/plugins/chart.js/Chart.bundle.min.js"></script>
+        <script src="/templete/assets/js/pages/be_pages_dashboard.min.js"></script>
+        <script src="/templete/assets/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script src="/templete/assets/js/plugins/select2/js/select2.full.min.js"></script>
+
+        <script>jQuery(function(){ One.helpers(['datepicker', 'select2']); });</script>
+
+
+    </body>
+</html>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180678574-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-180678574-2');
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        $.fn.datepicker.defaults.language = 'pt';
+    });
+
+  
+/*
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer <= 0) {
+            window.location.href = '/users/sign_out'
+
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+*/
+
+</script>

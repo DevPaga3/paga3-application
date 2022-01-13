@@ -1,0 +1,54 @@
+
+<%= simple_form_for(@request) do |f| %>
+    <div class="content content-boxed">
+        <div class="row">
+            <div class="col-md-12">
+
+                <ul class="timeline timeline-alt py-0">
+                    <li class="timeline-event">
+                        <div class="timeline-event-icon bg-p3">
+                            <i class="fa fa-edit"></i>
+                        </div>
+                        <div class="timeline-event-block block invisible" data-toggle="appear">
+                            <div class="block-header">
+                                <h3 class="block-title">Nova solicitação</h3>
+                            </div>
+                            
+                            <%= f.error_notification %>
+                            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+                            <div class="block-content">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <%= f.input :store, collection: Store.all_of_request, label: "Selecione a loja" %>
+                                        <%= f.input :email, label: 'E-mail da loja' %>
+                                        <%= f.input :cell_phone, label: 'Nº telefone da loja' %>
+                                        <%= f.input :address, label: 'Endereço da loja' %>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <%= f.input :product, collection: Product.all_of_request, label: "Selecione o producto" %>
+                                        <%= f.input :price, label: 'Preço do producto' %>
+                                        <%= f.input :render_number, label: 'Nº de parcelas Pretendida' %>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+
+
+
+                <div class="form-actions text-left ml-5">
+                    <%= f.button :submit, "Registar", class: "btn btn-p3 btn-sm mr-2" %>
+                    <%= link_to 'Cancelar', back, class: 'btn btn-sm btn-danger' %>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<% end %>

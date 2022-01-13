@@ -1,0 +1,37 @@
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a class="block block-rounded block-link-pop border-left border-primary border-4x" href="javascript:void(0)">
+                        <div class="block-content block-content-full bg-p3">
+                            <div class="font-size-sm font-w600 text-uppercase text-muted">Saldo disponóvel</div>
+                            <div class="font-size-h2 font-w400 text-dark">
+                                <%= current_user.profile.purchase_amount.to_kwanza %>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <p class="mb-0">
+                        Ver Productos e lojas 
+                        <a href="<%= empresas_path %>" target="_blank">
+                            <span class="far fa-hand-point-right icon-go-to-profile" style="font-size: 38px;"></span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+        
+            <div class="row d-none d-lg-block">
+                <%= render 'dashboard/customer/publish' %>
+            </div>
+
+        </div>
+    </div>

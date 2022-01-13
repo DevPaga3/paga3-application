@@ -1,0 +1,41 @@
+// Place all the styles related to the site controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.span-title {
+  font: 700 2.725rem Poppins;
+  color: #141414;
+}
+
+.our-partners .team-member .team-img img {
+  height: 7vh;
+}
+
+h3.text-paga3 {
+  font-size: 50px;
+  font-weight: 400;
+  color: #ffffff !important;
+}
+
+.form .pass {
+  color: #62c5ca;
+  font-size: 0.875rem;
+  margin: 0px 0 20px 155px;
+}
+
+.form .message {
+  margin: 0.9375rem 0 0;
+  color: #b3b3b3;
+  font-size: 0.8125rem;
+}
+
+.form .message a {
+  color: #62c5ca;
+  text-decoration: none;
+}
+
+.attach img {
+  height: 12vh !important;
+  width: 100%;
+  object-fit: cover;
+}

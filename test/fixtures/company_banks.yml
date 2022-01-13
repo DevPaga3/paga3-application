@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  iabn: MyString
+  account: MyString
+  bank: one
+
+two:
+  iabn: MyString
+  account: MyString
+  bank: two

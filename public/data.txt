@@ -1,0 +1,6 @@
+pg_dump -h 165.22.14.201 -U deploy -F c paga3 > paga3_backup_06_08_2021.dmp
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -U jm -d rails_paga3_development paga3_backup_06_08_2021.dmp
+
+pg_dump -h db-paga3-prd-do-user-8097670-0.b.db.ondigitalocean.com -p 25060 -U deploy -F c paga_3_prd > paga3_backup_31_08_2021.dmp
+
+dy079lybc211ce26

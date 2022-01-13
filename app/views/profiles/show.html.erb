@@ -1,0 +1,189 @@
+
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <% if @profile.avatar.attached? %>
+                    <%= image_tag(@profile.avatar, class: "img-avatar img-avatar-thumb") %>
+                <% else %>
+                    <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+                <% end %>
+            </div>
+            <h1 class="h2 text-white mb-0"><%= @profile.name %></h1>
+            <span class="text-white-75"><%= @profile.bi %></span>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<!-- Stats -->
+<div class="bg-white border-bottom">
+    <div class="content content-boxed">
+        <div class="row items-push text-center">
+            <div class="col-6 col-md-3">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Disponível na carteira Paga3</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @profile.purchase_amount.to_kwanza %></a>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Valor válido</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @profile.percentage_valid.to_kwanza %></a>
+            </div>
+
+            <div class="col-6 col-md-6 text-right">
+                <% if current_user.admin? %>
+                    <%= link_to 'Habilitar edição', active_edit_path(@profile), class: "btn btn-sm btn-primary", data: { confirm: 'Tens certeza, esta acção vai habilitar a editação no cliente ?' } %>
+
+                    <% if @profile.pending? %>
+                        <%= link_to 'Validar conta', validate_profile_path(@profile), class: "btn btn-sm btn-info", data: { confirm: 'Tens certeza ?' } %>
+                    <% end %>
+
+                    <%= link_to 'Desactivar conta', @profile, class: "btn btn-sm btn-danger", method: :delete, data: { confirm: 'Tens certeza ?' } %>
+                <% end %>
+    
+                <a class="btn btn-sm btn-secondary dropdown" href="#" role="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-caret-down"></i>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li>
+                        <%= link_to edit_profile_path(@profile), class: "dropdown-item" do %>
+                            Editar
+                        <% end %>
+                    </li>
+                    <% if current_user.admin? %>
+                        <li>
+                            <%= link_to profile_path(@profile), class: "text-danger dropdown-item", data: { confirm: 'Tens certeza ?', :method => :delete } do %>
+                                Eliminar
+                            <% end %>
+                        </li>
+
+                        <li>
+                            <%= link_to new_moviment_path(profile: @profile.id), class: "dropdown-item" do %>
+                                Atualizar Plafom
+                            <% end %>
+                        </li>
+                    <% end %>
+                    <li>
+                        <% if @profile.moviments.present? %>
+                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#modal-history">
+                                Ver Histórico
+                            </button>
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="content content-boxed">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Updates -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="block-header">
+                                    <h3 class="block-title">Meu Perfil</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <div class="block-header">
+                                    <% if @profile.iban.present? && @profile.account_number.present? %>
+                                        <%= link_to adc_details_url(@profile.adc, format: "pdf"), target: "_blank", class: "btn btn-sm btn-p3 text-right" do %>
+                                            <i class="fa fa-print mr-1"></i> Imprimir ADC                    
+                                        <% end %>
+                                    <% else %>
+                                        <h4 class="alert-heading text-red font-w300 my-2 text-right">Por favor adicionar a conta bancária</h4>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        
+                        <div class="block-content">
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p><span class="font-w600 mb-2">Nome: </span><span class="font-size-sm"><%= @profile.name %></span></p>
+                                    <p><span class="font-w600 mb-2">Data de nascimento: </span><span class="font-size-sm"><%= @profile.birth&.strftime("%d/%m/%Y") %></span></p>
+                                    <p><span class="font-w600 mb-2">Idade: </span><span class="font-size-sm"><%= calc_age(@profile.birth) %></span></p>
+                                    <p><span class="font-w600 mb-2">Genero: </span><span class="font-size-sm"><%= @profile.genre %></span></p>
+                                    <p><span class="font-w600 mb-2">Bilhete de identidade: </span><span class="font-size-sm"><%= @profile.bi %></span></p>
+                                    <p><span class="font-w600 mb-2">Endereço: </span><span class="font-size-sm"><%= @profile.address %></span></p>
+
+                                    <p><span class="font-w600 mb-2">E-mail: </span><span class="font-size-sm"><%= @profile.user.email %></span></p>
+                                    <p><span class="font-w600 mb-2">Nº telefone: </span><span class="font-size-sm"><%= @profile.user.cell_phone %></span></p>
+                                    
+                                </div>
+
+                                <div class="col-md-4">
+                                    <p><span class="font-w600 mb-2">Salário: </span><span class="font-size-sm"><%= @profile.salary.to_kwanza %></span></p>
+                                    <p><span class="font-w600 mb-2">Função: </span><span class="font-size-sm"><%= @profile.position %></span></p>
+                                    <p><span class="font-w600 mb-2">Empresa ou sector: </span><span class="font-size-sm"><%= @profile.company_name %></span></p>
+
+                                    <hr>
+
+                                    <p>
+                                        <span class="font-w600 mb-2">Tem crédito bancário ? </span>
+                                        <button type="button" class="btn btn-sm btn-<%= @profile.have_credit ? 'warning' : 'success' %> push">
+                                            <i class="fa fa-<%= @profile.have_credit ? 'frown' : 'grin' %> mr-1"></i> <%= @profile.have_credit ? 'Sim tenho crédito' : 'Não tenho crédito' %>
+                                        </button>
+                                    </p>
+
+                                    <% if @profile.have_credit %>
+                                        <p><span class="font-w600 mb-2">Valor do crédito: </span><span class="font-size-sm"><%= @profile.amount_credit.to_kwanza %></span></p>
+                                    <% end %>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <% if @profile.work_declaration.attached? %>
+                                        <h4 class="mb-0" >Declaração do serviço</h4>
+                                        <%= link_to rails_blob_path(@profile.work_declaration, disposition: 'attachment'), target: :blank do %>
+                                            <span class="fa fa-file-pdf"></span> <%= @profile.work_declaration.filename  %>
+                                        <% end %>
+                                    <% end %>
+
+                                    <br>
+                                    <br>
+                                    
+                                    <% if @profile.banking_extrato.attached? %>
+                                        <h4 class="mb-0" >Extrato bancário</h4>
+                                        <%= link_to rails_blob_path(@profile.banking_extrato, disposition: 'attachment'), target: :blank do %>
+                                            <span class="fa fa-file-pdf"></span> <%= @profile.banking_extrato.filename  %>
+                                        <% end %>
+                                    <% end %>
+
+                                    <br>
+                                    <br>
+
+                                    <div class="alert alert-info alert-dismissable p-2" role="alert">
+                                        <h4 class="alert-heading font-w300 my-2"><%= @profile.account_number %></h4>
+                                        <p class="mb-0"><%= @profile.iban %></p>
+                                    </div>
+                                    <%#s render 'bank_accounts/bank_accounts', accountble: @profile %>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- END Updates -->
+        </div>
+    </div>
+</div>
+
+<%= render 'bank_accounts/form', accountble: @profile %>
+<%= render 'profiles/refresh_plafom' %>
+<%= render 'profiles/modal_history' %>

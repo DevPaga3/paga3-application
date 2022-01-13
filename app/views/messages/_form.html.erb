@@ -1,0 +1,47 @@
+
+<%= simple_form_for(@message) do |f| %>
+
+    <div class="content content-boxed">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="timeline timeline-alt py-0">
+                    <li class="timeline-event">
+                        <div class="timeline-event-icon bg-p3">
+                            <i class="fa fa-edit"></i>
+                        </div>
+                        <div class="timeline-event-block block invisible" data-toggle="appear">
+                            <div class="block-header">
+                                <h3 class="block-title">Mensagem</h3>
+                            </div>
+                            
+                            <div class="block-content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <%= f.error_notification %>
+                                        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+                                        <p style="color: red; font-size: 12px;" >Se for para enviar para contacto especifico, não selecionar nada ao lado direito</p>
+
+                                        <%= f.input :numbers, label: 'Números', placeholder: 'Separar os números por virgula, ex: 913000987, 923098098' %>
+                                        <%= f.input :content, as: :text, label: 'Corpo da mensagem' %>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <%= f.input :send_to_customers, label: 'Enviar para Todos clientes' %>
+                                        <%= f.input :send_to_companies, label: 'Enviar para Todas Empresas (Logistas)' %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="form-actions text-right">
+                    <%= f.button :submit, "Enviar", class: "btn btn-p3 btn-sm mr-2" %>
+                    <%= link_to 'Cancelar', messages_path, class: 'btn btn-sm btn-danger' %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<% end %>
+

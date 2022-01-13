@@ -1,0 +1,96 @@
+
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear"><%= @store.name %> - <%= @store.reference_number %></h1>
+                    <h2 class="h4 font-w400 text-white mb-0 invisible" data-toggle="appear" data-timeout="250"><%= link_to "Todas Lojas", stores_path %></h2>
+                </div>
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                    <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+
+                        <% if current_user.company? %>
+                            <!-- delete hidden store button -->
+                            <%#= link_to @store, class: "btn btn-sm btn-danger px-4 py-2", method: :delete, data: { confirm: 'Tens certeza ? Ao eliminar a loja, vai eliminar todos os productos associado a esta loja' } do %>
+                                <!-- <i class="fa fa-trash mr-1"></i> Eliminar loja -->
+                            <%# end %>
+
+                            <button type="button" class="btn btn-sm btn-p3 px-4 py-2" data-toggle="modal" data-target="#modal-create-store">
+                                <i class="fa fa-edit mr-1"></i> Actualizar loja
+                            </button>
+
+                            <button type="button" class="btn btn-sm btn-blue px-4 py-2" data-toggle="modal" data-target="#modal-create-product">
+                                <i class="fa fa-plus mr-1"></i> Novo producto
+                            </button>
+                        <% end %>
+
+                        <% if @store.products.present? %>
+                            <button type="button" class="btn btn-sm btn-warning px-4 py-2" data-toggle="modal" data-target="#modal-do-purchases">
+                                <i class="fa fa-plus mr-1"></i> Realizar venda
+                            </button>
+                        <% end %>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<!-- Stats -->
+<div class="bg-white border-bottom">
+    <div class="content content-boxed">
+        <div class="row items-push text-center">
+            <div class="col-6 col-md-3">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Productos</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @store.products.count %></a>
+            </div>
+            <div class="col-6 col-md-9 text-right">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Stats -->
+
+<!-- Page Content -->
+<div class="content">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="block">
+                <ul class="nav nav-tabs nav-tabs-block" data-toggle="tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#btabs-animated-slideup-home">Productos disponíveis na loja</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#btabs-animated-slideup-profile">Lista de vendas</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="#btabs-animated-slideup-settings">
+                            <i class="si si-settings"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="block-content tab-content overflow-hidden">
+                    <div class="tab-pane fade fade-up show active" id="btabs-animated-slideup-home" role="tabpanel">
+                        <%= render 'stores/details' %>
+                    </div>
+                    <div class="tab-pane fade fade-up " id="btabs-animated-slideup-profile" role="tabpanel">
+                        <%= render 'stores/purchases_list' %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>            
+</div>
+<!-- END Page Content -->
+
+
+<%= render 'stores/form' %>
+<%= render 'products/form' %>
+<%= render 'stores/form_purchase' %>

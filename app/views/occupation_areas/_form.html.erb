@@ -1,0 +1,41 @@
+<%= simple_form_for(@occupation_area) do |f| %>
+    <div class="modal fade main-modal-p3" id="create-occupation" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent mb-0">
+                    <div class="block-header bg-primary-dark">
+                        <% if @occupation_area.id.present? %>
+                            <h3 class="block-title">Actualizar area de atuação</h3>
+                        <% else %>
+                            <h3 class="block-title">Criar area de atuação</h3>
+                        <% end %>
+
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="block-content font-size-md">
+                        <%= f.input :occupation, label: "Área de atuação" %>
+                        <%= f.input :description, label: "Descrição" %>
+                        <%#= f.input :status, label: "Activado" %>
+
+                    </div>
+
+                    <div class="block-content block-content-full text-right border-top">
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+                        <% if @occupation_area.id.present? %>
+                            <button type="submit" class="ml-2 btn btn-p3 button btn-sm"> <i class="fa fa-check mr-1"></i>Actualizar </button>
+                        <% else %>
+                            <button type="submit" class="ml-2 btn btn-p3 button btn-sm"> <i class="fa fa-check mr-1"></i>Adicionar </button>
+                        <% end %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<% end %>

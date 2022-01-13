@@ -1,0 +1,71 @@
+<!-- Page Content -->
+<div class="hero-static d-flex align-items-center" style="background: #62c6cb; background: linear-gradient(90deg, #62c6cb 0%, #98bb43) !important;">
+    <div class="w-100">
+        <!-- Sign In Section -->
+        <div class="content content-full bg-white">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-3 py-4">
+                    <!-- Header -->
+                    <div class="text-center">
+                        <p class="mb-2">
+                            <img src="/logo.png" style="width: 150px;" alt="">
+                        </p>
+                        <h1 class="h4 mb-1">Recuperar senha</h1>
+                        <h2 class="h6 font-w400 text-muted mb-3">
+                            Por favor inserir o seu e-mail
+                        </h2>
+                    </div>
+
+                    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, class: "js-validation-signin") do |f| %>
+
+                        <div class="py-3">
+                            <div class="form-group">
+                                <%= f.input :email, required: true, autofocus: true, input_html: { class: "form-control form-control-lg form-control-alt" }, placeholder: "Seu Email", label: false %>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="d-md-flex align-items-md-center justify-content-md-between">
+                                    <div class="py-2">
+                                        <%= link_to "Criar conta", "/users/sign_up", class: "font-size-sm", class: "pass" %>
+                                    </div>
+                                    <div class="py-2">
+                                        <%= link_to "Iniciar sessão", "/users/sign_in", class: "font-size-sm", class: "pass" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center mb-0">
+                            <div class="col-md-6 col-xl-5">
+                                <button type="submit" class="btn btn-block btn-p3">
+                                    <i class="fa fa-sign-in-alt mr-1"></i> Enviar agora
+                                </button>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <!-- END Sign In Section -->
+
+        <!-- Footer -->
+        <div class="font-size-sm text-center text-muted py-3">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="text-footer-login text-white nav-link active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="text-footer-login text-white nav-link" href="/docs/termos_e_condicoes.pdf" target="_blank" >Termos e condições</a></li>
+                    <li class="nav-item"><a class="text-footer-login text-white nav-link" href="/docs/politicas_de_privacidade.pdf" target="_blank" >Politicas de privacidades</a></li>
+                    <li class="nav-item"><a class="text-footer-login text-white nav-link" href="/docs/contrato_de_adesao.pdf" target="_blank" >Contrato de adesão</a></li>
+                    <li class="nav-item"><a class="text-footer-login text-white nav-link" href="#"><b><%= version_app %></b> &copy; <span data-toggle="year-copy"></span></a></li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- END Footer -->
+    </div>
+</div>
+<!-- END Page Content -->
+
+
+
+
+

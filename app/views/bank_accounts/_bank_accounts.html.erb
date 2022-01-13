@@ -1,0 +1,10 @@
+<% accountble.bank_accounts.each do |account| %>
+
+<div class="alert alert-info alert-dismissable p-2" role="alert">
+    <h4 class="alert-heading font-w300 my-2"><%= account.bank.name %></h4>
+    <p class="mb-0"><%= account.account_number %></p>
+    <p class="mb-0"><%= account.iban %></p>
+</div>
+
+    
+<% end %>

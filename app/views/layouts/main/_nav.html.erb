@@ -1,0 +1,44 @@
+
+<nav id="sidebar" aria-label="Main Navigation">
+    <div class="content-header bg-white-5">
+        <a class="font-w600 text-dual" href="/">
+            <i class="fa fa-circle-notch text-primary"></i>
+            <span class="smini-hide">
+                <span class="font-w700 font-size-h5">.:::. Paga3</span>
+            </span>
+        </a>
+    </div>
+
+    <div class="content-side content-side-full">
+        <ul class="nav-main">
+
+            <li class="nav-main-item">
+                <a class="nav-main-link active" href="/">
+                    <i class="nav-main-link-icon si si-speedometer"></i>
+                    <span class="nav-main-link-name">Menu Principal</span>
+                </a>
+            </li>
+
+            <!--    Administration area -->
+            <%= render 'layouts/main/administration/admin'      if current_user.admin? %>
+            <%= render 'layouts/main/administration/operations' if current_user.operations? %>
+            <%= render 'layouts/main/administration/finances'   if current_user.finances? %>
+            <%= render 'layouts/main/administration/comercial'  if current_user.comercial? %>
+            <%= render 'layouts/main/administration/marketing'  if current_user.marketing? %>
+
+
+            <%= render 'layouts/main/nav_customer' if current_user.customer? %>
+            <%= render 'layouts/main/nav_company' if current_user.company? %>
+
+
+            <li class="nav-main-item destroy_session">
+                <%= link_to destroy_user_session_path, class: "btn-danger nav-main-link d-flex align-items-center justify-content-between" do %>
+                    <span class="text-white">Sair</span>
+                    <i class="si si-logout ml-1 text-white"></i>
+                <% end %>
+            </li>              
+
+        </ul>
+    </div>
+
+</nav>

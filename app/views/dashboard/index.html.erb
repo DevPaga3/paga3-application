@@ -1,0 +1,11 @@
+<% if current_user.admin? %>
+    <%= render "dashboard/admin" %>
+<% end %>
+
+<% if current_user.customer? %>
+    <%= render "dashboard/customer" %>
+<% end %>
+
+<% if current_user.company? %>
+    <%= render "dashboard/company" %>
+<% end %>

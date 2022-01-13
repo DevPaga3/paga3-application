@@ -1,0 +1,123 @@
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="col-md-4">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Menu Empresas</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Lista das empresas</h2>
+                </div>
+                <div class="col-md-8">
+                    <div class="row align-items-right">
+                        <div class="col-md-4"></div>
+                        <div class="col-6 col-md-4 col-sm-12">
+                            <a class="block block-rounded block-link-pop border-left border-primary border-4x" href="javascript:void(0)">
+                                <div class="block-content block-content-full bg-p3">
+                                    <div class="font-size-sm font-w600 text-uppercase text-white text-muted">Empresas activas</div>
+                                    <div class="font-size-h2 font-w400 text-white"><%= Company.where.not(name: nil).where(status: true).count %></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-sm-12">
+                            <a class="block block-rounded block-link-pop border-left border-primary border-4x" href="javascript:void(0)">
+                                <div class="block-content block-content-full bg-danger-p3">
+                                    <div class="font-size-sm font-w600 text-uppercase text-muted text-white">Empresas inactivas</div>
+                                    <div class="font-size-h2 font-w400 text-white"><%= Company.where.not(name: nil).where(status: false).count %></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+            <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                <%= link_to new_company_path, class: "btn btn-sm btn-p3 px-4 py-2" do  %>
+                    <i class="fa fa-plus mr-1"></i> Nova empresa
+                <% end %>
+            </span>
+
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <%= form_tag(companies_path, :method => "get", id: "search-form") do %>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <%= text_field_tag :search, params[:search], placeholder: "Pesquisar pelo nome, telefone, e-mail", class: "form-control mr-2" %>
+                    </div>
+
+                    <div class="col-md-3 text-left">
+                        <%= submit_tag "Pesquisar", class: "btn btn-primary btn-sm" %>
+                        <%= link_to "Limpar", companies_path, class: "btn btn-info btn-sm" %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <!-- Full Table -->
+    <div class="block">
+        <div class="block-header">
+            <div class="block-options">
+                <button type="button" class="btn-block-option">
+                <i class="si si-settings"></i>
+                </button>
+            </div>
+        </div>
+        <div class="block-content">
+    
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-vcenter">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="width: 100px;"><i class="far fa-building"></i></th>
+                            <th>Nome</th>
+                            <th>Nº telefone</th>
+                            <th>Email</th>
+                            <th>Estado</th>
+                            <th class="text-center" style="width: 100px;">Acções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @companies.each do |company| %>
+                            <tr>
+                                <td class="text-center"><i class="far fa-building fa-4" style="font-size: 40px; color: #64c6c5;"></i></td>
+                                <td class="font-w600 font-size-sm"><a href="<%= company_path(company) %>"><%= company.name %></a></td>
+                                <td class="font-size-sm"><em class="text-muted"><%= company.cell_phone %></em></td>
+                                <td class="font-size-sm"><em class="text-muted"><%= company.email %></em></td>
+                                <td>
+                                    <span class="badge badge-success">Activa</span>
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <% if current_user.admin? && false %>
+                                            <%= link_to company, class: "btn btn-sm btn-danger js-tooltip-enabled", "data-toggle": "tooltip", "title": "Eliminar", "data-original-title": "Eliminar",
+                                                method: :delete, data: { confirm: 'Tens certeza ? Ao eliminar a empresa vai eliminar todas as suas dependencias, lojas, productos e usuários' } do %>
+                                                <i class="fa fa-fw fa-trash"></i>
+                                            <% end %>
+                                        <% end %>
+
+                                        <%= link_to company_path(company), class: "btn btn-sm btn-p3 js-tooltip-enabled", "data-toggle": "tooltip", "title": "Ver detalhes", "data-original-title": "Ver detalhes" do %>
+                                            <i class="fa fa-fw fa-eye"></i>
+                                        <% end %>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+                <%== pagy_bootstrap_nav(@pagy).html_safe %>
+                <br>
+            </div>
+            
+        </div>
+    </div>
+    <!-- END Full Table -->
+
+</div>

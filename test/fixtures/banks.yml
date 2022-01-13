@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sigla: MyString
+  account: MyString
+  iban: MyString
+  status: false
+  configuration: one
+
+two:
+  name: MyString
+  sigla: MyString
+  account: MyString
+  iban: MyString
+  status: false
+  configuration: two

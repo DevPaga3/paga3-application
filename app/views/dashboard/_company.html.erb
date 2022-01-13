@@ -1,0 +1,54 @@
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Dashboard empresa</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Seja bem-vindo</h2>
+                </div>
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                    <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+<div class="content content-narrow">
+    <!-- Stats -->
+    <div class="row">
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4">
+            <a class="block block-rounded block-link-pop border-left border-primary border-4x" href="<%= stores_path %>">
+                <div class="block-content block-content-full bg-p3">
+                    <div class="shadow card-icon"><i class="fas fa-store-alt font-size-lg"></i></div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">lojas</div>
+                    <div class="font-size-h2 font-w400 text-dark"><%= current_user.company.stores.count %></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4">
+            <a class="block block-rounded block-link-pop border-left border-primary border-4x" href="javascript:void(0)">
+                <div class="block-content block-content-full bg-p3">
+                    <div class="shadow card-icon"><i class="fab fa-product-hunt"></i></div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">produtos</div>
+                    <div class="font-size-h2 font-w400 text-dark"><%= current_user.company.products.count %></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4">
+            <a class="block block-rounded block-link-pop border-left border-primary border-4x" href="<%= sales_path %>">
+                <div class="block-content block-content-full bg-p3">
+                    <div class="shadow card-icon"><i class="fas fa-file-invoice"></i></div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">facturas processadas</div>
+                    <div class="font-size-h2 font-w400 text-dark"><%= current_user.company.facturas.count %></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- END Stats -->
+</div>

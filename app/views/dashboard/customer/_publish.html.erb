@@ -1,0 +1,18 @@
+<div class="col-12">
+    <% @publicities.each do |publicity| %>
+        <a class="block block-rounded block-link-pop border-left border-primary border-4x" href="javascript:void(0)">
+            <div class="block-content block-content-full bg-p3" style="padding: 1px; min-height: 160px;">
+                <% if publicity.avatar.attached? %>
+                    <%= image_tag(publicity.avatar, class: 'img-fluid') %>
+                <% else %>
+                    <%= image_tag 'bna.png', class: 'img-fluid' %>
+                <% end %>
+                
+                <div class="text-right p-2 text-truncate">
+                    <span class="text-white-75 font-weight-bold"><%= publicity.description %></span>
+                </div>
+            </div>
+        </a>
+    <% end %>
+</div>
+

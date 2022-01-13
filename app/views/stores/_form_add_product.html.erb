@@ -1,0 +1,19 @@
+<%= simple_form_for :search, url: add_product_to_list_path(pre_order_id: pre_order.id), method: "POST", html: { class: 'mb-4' } do |f| %>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <%= f.input :product_id, 
+                    :as => :select, :collection => @store.products.map { |product| ["#{product.name} - #{product.price_with_commission.to_kwanza}", product.id] }, 
+                    input_html: { class: 'js-select2' },
+                    label: false, 
+                    placeholder: "Selecione o producto.." 
+                %>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-p3 btn-sm">Adicionar</button>
+        </div>
+    </div>
+<% end %>
+

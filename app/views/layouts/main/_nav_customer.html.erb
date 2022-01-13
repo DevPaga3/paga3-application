@@ -1,0 +1,25 @@
+<li class="nav-main-item">
+    <%= link_to my_requests_path, class: "nav-main-link" do %>
+        <i class="nav-main-link-icon fa fa-shopping-basket"></i>
+        <span class="nav-main-link-name">Minhas Solicitações</span>
+    </a>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to purchases_path, class: "nav-main-link" do %>
+        <i class="nav-main-link-icon fa fa-shopping-basket"></i>
+        <span class="nav-main-link-name">Minhas compras</span>
+    </a>
+    <% end %>
+</li>
+
+<hr>
+
+<li class="nav-main-item">
+    <%= link_to profile_path(current_user.profile), class: "nav-main-link" do %>
+        <i class="nav-main-link-icon fa fa-user"></i>
+        <span class="nav-main-link-name">Perfil</span>
+    </a>
+    <% end %>
+</li>

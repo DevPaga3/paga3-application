@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @request.profile_id %>
+</p>
+
+<p>
+  <strong>Store:</strong>
+  <%= @request.store %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @request.address %>
+</p>
+
+<p>
+  <strong>Cell phone:</strong>
+  <%= @request.cell_phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @request.email %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @request.product %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @request.price %>
+</p>
+
+<p>
+  <strong>Render number:</strong>
+  <%= @request.render_number %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @request.status %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

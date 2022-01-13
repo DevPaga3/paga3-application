@@ -1,0 +1,90 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <% if @company.avatar.attached? %>
+                    <%= image_tag(@company.avatar, class: "img-avatar img-avatar-thumb") %>
+                <% else %>
+                    <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+                <% end %>
+            </div>
+            <h1 class="h2 text-white mb-0"><%= @company.name %></h1>
+            <span class="text-white-75"><%= @company.cell_phone %></span>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+
+<!-- Stats -->
+<div class="bg-white border-bottom">
+    <div class="content content-boxed">
+        <div class="row items-push text-center">
+            <div class="col-6 col-md-2">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Compensação</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= 0.to_kwanza %></a>
+            </div>
+            <div class="col-6 col-md-2">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Quant. Lojas</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @company.stores.count %></a>
+            </div>
+            <div class="col-6 col-md-2">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Quant. Productos</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @company.products.count %></a>
+            </div>
+      
+            <div class="col-6 col-md-6">
+            <div class="col-6 col-md-6 float-right">
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-form_bankble">
+                    <i class="fa fa-plus mr-1"></i> Adicionar banco
+                </button>
+                
+                <%= link_to edit_company_path(@company), class: "btn btn-sm btn-success" do %>
+                    <span class="fa fa-edit"></span> actualizar
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="content content-boxed">
+    <div class="row">
+        <div class="col-md-7 col-xl-8">
+            <!-- Updates -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+                        <div class="block-header">
+                            <h3 class="block-title">Informações do perfil</h3>
+                        </div>
+                        
+                        <div class="block-content">
+                            <p><span class="font-w600 mb-2">Nome: </span><span class="font-size-sm"><%= @company.name %></span></p>
+                            <p><span class="font-w600 mb-2">E-mail: </span><span class="font-size-sm"><%= @company&.user.email %></span></p>
+                            <p><span class="font-w600 mb-2">Nº de telefone: </span><span class="font-size-sm"><%= @company.cell_phone %></span></p>
+                            <p><span class="font-w600 mb-2">Endereço: </span><span class="font-size-sm"><%= @company.address %></span></p>
+                            <p><span class="font-w600 mb-2">NIF: </span><span class="font-size-sm"><%= @company.nif %></span></p>
+                            <p><span class="font-w600 mb-2">Nº Conta: </span><span class="font-size-sm"><%= @company.accountNumber %></span></p>
+                            <p><span class="font-w600 mb-2">IBAN: </span><span class="font-size-sm"><%= @company.iban %></span></p>
+                            <p><span class="font-w600 mb-2">Endereço: </span><span class="font-size-sm"><%= @company.address %></span></p>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- END Updates -->
+        </div>
+        <div class="col-md-5 col-xl-4">
+            <%= render 'bank_accounts/bank_accounts', accountble: @company %>
+
+        </div>
+    </div>
+</div>
+<!-- END Page Content -->
+
+<%= render 'bank_accounts/form', accountble: @company %>

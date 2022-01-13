@@ -1,0 +1,66 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+            </div>
+            <h1 class="h2 text-white mb-0"> <%= @profile.name %> </h1>
+        </div>
+    </div>
+</div>
+
+<%= simple_form_for(@moviment) do |f| %>
+    <div class="content content-boxed">
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- Updates -->
+                <ul class="timeline timeline-alt py-0">
+                    <li class="timeline-event">
+                        <div class="timeline-event-icon bg-p3">
+                            <i class="fa fa-edit"></i>
+                        </div>
+                        <div class="timeline-event-block block invisible" data-toggle="appear">
+                            <div class="block-header">
+                                <h1 class="block-title">Registar Movimento</h1>
+                            </div>
+                            
+                            <%= f.error_notification %>
+                            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+                            <div class="block-content">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <%= f.input :profile_id, :as => :hidden, :input_html => { :value => @profile.id } %>
+                                        <%= f.input :amount, label: 'Valor do Movimento' %>
+                                        <%= f.input :is_credit, label: 'É um movimento de Crédito' %>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p><span class="font-size-sm">Disponível na carteira Paga3</span></p>
+                                        <h3 class="h2 mb-0"> <%= @profile.purchase_amount.to_kwanza %>  </h3>
+                                        <hr>
+                                        <p><span class="font-w600 mb-2">Nome: </span><span class="font-size-sm"><%= @profile.name %></span></p>
+                                        <p><span class="font-w600 mb-2">Bilhete de identidade: </span><span class="font-size-sm"><%= @profile.bi %></span></p>
+                                        <p><span class="font-w600 mb-2">Salário: </span><span class="font-size-sm"><%= @profile.salary.to_kwanza %></span></p>
+                                        <p><span class="font-w600 mb-2">Função: </span><span class="font-size-sm"><%= @profile.position %></span></p>
+                                        <p><span class="font-w600 mb-2">E-mail: </span><span class="font-size-sm"><%= @profile.user.email %></span></p>
+                                        <p><span class="font-w600 mb-2">Nº telefone: </span><span class="font-size-sm"><%= @profile.user.cell_phone %></span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="form-actions text-left ml-5">
+                    <%= f.button :submit, "Registar agora", class: "btn btn-p3 btn-sm mr-2" %>
+                    <%= link_to 'Cancelar', @profile, class: 'btn btn-sm btn-danger' %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

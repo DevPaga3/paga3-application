@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @moviment.profile_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @moviment.user_id %>
+</p>
+
+<p>
+  <strong>Is credit:</strong>
+  <%= @moviment.is_credit %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @moviment.amount %>
+</p>
+
+<%= link_to 'Edit', edit_moviment_path(@moviment) %> |
+<%= link_to 'Back', moviments_path %>

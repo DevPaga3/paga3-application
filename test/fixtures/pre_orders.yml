@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile: one
+  company: one
+  total: 9.99
+
+two:
+  profile: two
+  company: two
+  total: 9.99

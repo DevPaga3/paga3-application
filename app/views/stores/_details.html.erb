@@ -1,0 +1,71 @@
+<div class="row">
+
+    <div class="col-md-8">
+        <!-- Products -->
+        <div class="block">
+            <div class="row">
+
+                <% @store.products.each do |product| %>
+                    <div class="col-lg-4">
+                        <div class="card card-flex">
+                            <div class="img-resize">
+                                <% if product.image.attached? %>
+                                    <%= image_tag(product.image, class: "card-img-top flex-img") %>
+                                <% else %>
+                                    <i class="fa fa-store fa-2x text-white"></i>
+                                <% end %>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="m-2">
+                                    <h5 class="card-title"><%= product.name %></h5>
+                                    <p class="card-text mb-0"><b>Preço: </b><%= product.real_price.to_kwanza %></p>
+                                    <p class="card-text mb-0"><b>Preço + Paga3: </b><%= product.price_with_commission.to_kwanza %></p>
+                                </div>
+                                <a href="<%= product_path(product) %>" class="btn btn-p3 btn-block btn-line">ver Detalhes</a>
+                            </div>
+
+                        </div>
+                    </div>
+                <% end %>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <!-- Updates -->
+        <ul class="timeline timeline-alt py-0">
+            <li class="timeline-event">
+                <div class="timeline-event-icon bg-p3">
+                    <i class="fa fa-briefcase"></i>
+                </div>
+                <div class="timeline-event-block block invisible" data-toggle="appear">
+                    <div class="block-header">
+                        <h3 class="block-title">Detalhes da loja</h3>
+                    </div>
+                    <div class="block-content block-content-full">
+                        <p class="font-w600 mb-0">Nome da loja:</p>
+                        <p class="font-size-sm mb-2"><%= @store.name %></p>
+
+                        <p class="font-w600 mb-0">Categoria:</p>
+                        <p class="font-size-sm mb-2"><%= @store&.category&.name %></p>
+
+                        <p class="font-w600 mb-0">Referência:</p>
+                        <p class="font-size-sm mb-2"><%= @store.reference_number %></p>
+
+                        <p class="font-w600 mb-0">Localização:</p>
+                        <p class="font-size-sm mb-2"><%= @store.location %></p>
+
+                        <p class="font-w600 mb-0">Descrição:</p>
+                        <p class="font-size-sm mb-2"><%= @store.description %></p>
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <!-- END Updates -->
+    </div>
+
+</div>

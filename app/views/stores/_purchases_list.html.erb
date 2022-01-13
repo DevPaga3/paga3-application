@@ -1,0 +1,34 @@
+<div class="block">
+
+    <div class="block-content">
+        <table class="table table-vcenter">
+          
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Total</th>
+                    <th class="d-none d-sm-table-cell" style="width: 15%;">Data</th>
+                    <th class="text-center" style="width: 100px;">Acão</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% @store.facturas.each do |factura| %>
+                    <tr>
+                        <th class="" scope="row"> <%= factura.user.profile.name %> </th>
+                        <td class="font-w600 font-size-sm"> <%= link_to factura.total_pagar.to_kwanza, invoice_details_path( factura_id: factura ) %> </td>
+                        <td class="d-none d-sm-table-cell"> <%= link_to factura.created_at.strftime("%d/%m/%Y"), invoice_details_path( factura_id: factura ) %> </td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <%= link_to invoice_details_path( factura_id: factura ), class: "btn btn-sm btn-light js-tooltip-enabled", "data-toggle": "tooltip", title: "", "data-original-title": "Ver detalhes" do %>
+                                    <i class="fa fa-fw fa-eye"></i>
+                                <% end %>
+                            </div>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area bg-img">
+
+    <!-- ##### team Area Start ##### -->
+    <div class="striples-bg">
+        <div class="faq-timeline-area transparent section-padding-100-85" id="faq">
+            <div class="container">
+                <div class="section-heading text-center">
+                    
+                    <h2 class="fadeInUp" data-wow-delay="0.3s">  Perguntas mais frequentes</h2>
+                    <h3 class="fadeInUp" data-wow-delay="0.4s">
+                        Tudo que você precisa saber sobre a Paga3.
+                    </h3>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6 col-md-12">
+                        <div class="wrapper-counter">
+                            <img src="/site/img/about_photo.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-md-12">
+                        <div class="faq-area mt-s ">
+                            <dl style="margin-bottom:0">
+                                <!-- Single FAQ Area -->
+                                <dt class="wave fadeInUp" data-wow-delay="0.2s">Quem pode ser Cliente PAGA3?</dt>
+                                <dd class="fadeInUp" data-wow-delay="0.3s">
+                                    <p>
+                                        Todo cidadão que tenha salário recorrente, na função pública ou sector privado credível.
+                                    </p>
+                                </dd>
+                                <!-- Single FAQ Area -->
+                                <dt class="wave fadeInUp" data-wow-delay="0.3s">Quem Pode Vender na PAGA3?</dt>
+                                <dd>
+                                    <p>
+                                        Lojas, Prestadores de Serviços e Pessoas singulares empreendedoras que tenham algum negócio devidamente organizado.
+                                    </p>
+                                </dd>
+                                <!-- Single FAQ Area -->
+                                <dt class="wave fadeInUp" data-wow-delay="0.4s">Quem garante o pagamento integral em caso de incumprimentos por parte do cliente?</dt>
+                                <dd>
+                                    <p>
+                                        A PAGA3  possui uma estrutura funcional, capaz de suprir com os pagamentos nos casos de incumprimentos por parte dos clientes.
+                                    </p>
+                                </dd>
+                                <!-- Single FAQ Area -->
+                                <dt class="wave fadeInUp" data-wow-delay="0.5s">Em que província posso comprar com a PAGA3</dt>
+                                <dd>
+                                    <p>
+                                        A PAGA3 tem dimensão nacional, desde que hajam nossos parceiros na circunscrição onde nosso cliente reside.
+                                    </p>
+                                </dd>
+                                <!-- Single FAQ Area -->
+                                <dt class="wave fadeInUp" data-wow-delay="0.3s">Quais são os benefícios de ser Cliente PAGA3</dt>
+                                <dd>
+                                    <p>
+                                        Sendo Cliente PAGA3, os benefícios são vários, o principal, é a possibilidade de comprar variados produtos  de nossos parceiros, pagando a primeira prestação e levar o produto ou serviço de imediato.
+                                    </p>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <section class="our-partners clearfix section-padding-100-70">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <h2 class="fadeInUp" data-wow-delay="0.3s">O poder dos nossos parceiros</h2>
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <% @partners.each do |partner| %>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 attach">
+                            <% if partner.avatar.attached? %>
+                                <%= image_tag(partner.avatar, class: "img-fluid img-thumbnail center-block", title: "#{partner.name}") %>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- ##### team Area End ##### -->
+
+    <div class="footer-content-area mt-0">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 col-lg-4 col-md-6">
+                    <div class="footer-copywrite-info">
+                        <!-- Copywrite -->
+                        <div class="copywrite_text fadeInUp" data-wow-delay="0.2s">
+                            <div class="footer-logo">
+                                <a href="#"><img src="/logo.png" alt="logo" style="width: 110px;"></a>
+                            </div>
+                            <p>
+                               Dinamizamos Vendas Suavizamos Despesas
+                            </p>
+                        </div>
+                        <!-- Social Icon -->
+                        <div class="footer-social-info fadeInUp" data-wow-delay="0.4s">
+                            <a href="https://www.facebook.com/PagamentoParcelado/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"> <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://instagram.com/teampaga3?igshid=o0iym6t366p"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4 col-md-6">
+                    <div class="contact_info_area d-sm-flex justify-content-between">
+                        <!-- Content Info -->
+                        <div class="contact_info mt-x text-center fadeInUp" data-wow-delay="0.3s">
+                            <h5>TERMOS LEGAIS</h5>
+                            <a href="/docs/termos_e_condicoes.pdf" target="_blank" ><p>Termos e condições</p></a>
+                            <a href="/docs/politicas_de_privacidade.pdf" target="_blank" ><p>Politicas de privacidades</p></a>
+                            <a href="#"class="mt-2" ><p><b><%= version_app %></b> &copy; <span data-toggle="year-copy"></span></p></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-lg-4 col-md-6 ">
+                    <div class="contact_info_area d-sm-flex justify-content-between">
+                        <div class="contact_info mt-s text-center fadeInUp" data-wow-delay="0.4s">
+                            <h5>Nossos contactos</h5>
+                            <p><%= config.address %>></p>
+                            <p><%= config.cell_phone %></p>
+                            <p><%= config.email %>></p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+</footer>

@@ -1,0 +1,98 @@
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Solicitações</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Todas Solicitações</h2>
+                </div>
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                    <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="h4 font-w400 ml-5 invisible" data-toggle="appear" data-timeout="250">Compras Solicitadas</h2>
+
+        <div class="block">
+            <div class="block-content">
+                <table class="table table-vcenter">
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Loja</th>
+                            <th>Producto</th>
+                            <th>Preço</th>
+                            <th>Nº Parcelas</th>
+                            <th>Estado</th>
+                            <th class="d-none d-sm-table-cell" style="width: 15%;">Data</th>
+                            <th class="text-center" style="width: 150px;">Acão</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% @requests.each do |request| %>
+                            <tr>
+                                <th class="" scope="row"> <%= request.profile.name %> </th>
+                                <th class="font-w600 font-size-sm"> <%= request.store %> </th>
+                                <td class="font-w600 font-size-sm"> <%= request.product %> </td>
+                                <td class="font-w600 font-size-sm"> <%= request.price.to_kwanza %> </td>
+                                <td class="font-w600 font-size-sm"> <%= request.render_number %> X </td>
+                                <td class="font-w600 font-size-sm">
+                                    <% if request.PENDENTE? %>
+                                        <span class="badge badge-warning"><%= request.status %> </span>
+                                    <% end %>
+
+                                    <% if request.REJEITADO? %>
+                                        <span class="badge badge-danger"><%= request.status %> </span>
+                                    <% end %>
+
+                                    <% if request.EM_PROGRESSO? %>
+                                        <span class="badge badge-info"><%= request.status %> </span>
+                                    <% end %>
+
+                                    <% if request.APROVADO? %>
+                                        <span class="badge badge-success"><%= request.status %> </span>
+                                    <% end %>
+
+                                    <% if request.CONFIRMADO_PELO_CLIENTE? %>
+                                        <span class="badge badge-success"><%= request.status %> </span>
+                                    <% end %>
+
+                                    <% if request.CANCELADO? %>
+                                        <span class="badge badge-danger"><%= request.status %> </span>
+                                    <% end %>
+                                </td>
+                                <td class="d-none d-sm-table-cell"> <%= request.created_at.strftime("%d/%m/%Y") %> </td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <% if request.PENDENTE? %>
+                                            <%= link_to "Ajustar", edit_request_path(request), class: "btn btn-sm btn-warning js-tooltip-enabled", "data-toggle": "tooltip", title: "", "data-original-title": "Ajusatr" %>
+                                            <%= link_to "Aprovar", approve_request_path(request), method: :put, class: "btn btn-sm btn-success js-tooltip-enabled", "data-toggle": "tooltip", title: "", "data-original-title": "Aprovar",  data: { confirm: 'Tens certeza que deseja Aprovar?' } %>
+                                        <% end %>
+                                        
+                                        <% if request.APROVADO? %>
+                                            <%# link_to "Ajustar", edit_request_path(request), class: "btn btn-sm btn-danger js-tooltip-enabled", "data-toggle": "tooltip", title: "", "data-original-title": "Ver detalhes",  data: { confirm: 'Tens certeza que deseja cancelar?' } %>
+                                        
+                                        <% end %>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>

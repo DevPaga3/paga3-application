@@ -1,0 +1,32 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.icon-go-to-profile{
+    margin: 8px 20px;
+    font-size: 50px;
+}
+
+/* --------------------------------
+            CUSTOM ICON
+---------------------------------- */
+
+.card-icon {
+    position: absolute;
+    right: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #62c6cbc6;
+
+    i {
+        color: white;
+        font-size: 1.3rem;
+        display: flex;
+        height: inherit;
+        align-items: center;
+        justify-content: center;
+    }
+}

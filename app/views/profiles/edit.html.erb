@@ -1,0 +1,251 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <% if @profile.avatar.attached? %>
+                <%= image_tag(@profile.avatar, class: "img-avatar img-avatar-thumb") %>
+                <% else %>
+                <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+                <% end %>
+            </div>
+            <h1 class="h2 text-white mb-0"><%= @profile.name %></h1>
+            <span class="text-white-75"><%= @profile.bi %></span>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<!-- Progressive-bar -->
+<div class="container-check py-0">
+    <div class="progress-bar-check">
+        <div class="step">
+            <p class="small">Dados Pessoas</p>
+            <div class="bullet">
+                <span>1</span>
+            </div>
+            <div class="check fas fa-check">
+            </div>
+        </div>
+        <div class="step">
+            <p class="small">Dados Bancários</p>
+            <div class="bullet">
+                <span>2</span>
+            </div>
+            <div class="check fas fa-check">
+            </div>
+        </div>
+        <div class="step">
+            <p class="small">Anexar Documentos</p>
+            <div class="bullet">
+                <span>3</span>
+            </div>
+            <div class="check fas fa-check">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Progressive-bar -->
+
+<div class="content content-boxed">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Updates -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-edit"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+                        <div class="block-header">
+                            <h3 class="block-title">Actualizar perfil</h3>
+                        </div>
+                        <div class="block-content px-5 pb-4">
+                            <div class="form-outer">
+                                <%= simple_form_for(@profile) do |f| %>
+                                    <div class="page slide-page">
+                                        <div class="row mb-4">
+                                            <div class="col-md-6 justify-content-center">
+                                                <%= f.input :bi, label: 'Bilhete de identidade', onkeyup: "myFunction()" %>
+                                                <p class="work_declaration" id="error_buscador"></p>
+                                                <%= f.input :name, label: 'Nome completo'%>
+                                                <%= f.input :genre, :as => :select, :collection => Profile.genres.map { |key, value| [key, key] }, label: 'Genero' %>
+                                                <%= f.input :employer_address, label: "Endereço da entidade empregadora" %>
+                                            </div>
+                                            <div class="col-md-6 justify-content-center">
+                                                <%= f.input :address, label: 'Meu endereço' %>
+                                                <%= f.input :birth,  as: :date, start_year: Date.today.year - 51, end_year: Date.today.year - 18, order: [:day, :month, :year], label: 'Data de nascimento', input_html: { class: "" } %>
+                                                <%= f.input :operating_sector, :as => :select, :collection => Profile.operating_sectors.map { |key, value| [key, key] }, label: "Sector de atuação" %>
+                                                <%= f.association :occupationArea, :collection => OccupationArea.all.map { |element| [element.occupation, element.id] }, include_blank: false, label: "Selecione a área de atuação" %>
+                                            </div>
+                                        </div>
+                                        <div class="btn-position text-right">
+                                            <button  type="button" id="firstNext" class="next btn btn-p3 btn-sm px-4">Seguinte</button>
+                                        </div>
+                                    </div>
+                                    <div class="page">
+                                        <div class="row mb-5">
+
+                                            <div class="col-md-6">
+                                                <%= f.input :salary, label: 'Salário' %>
+                                                <div id="box_amount_credit">
+                                                    <%= f.input :amount_credit, label: 'Prestação mensal, se tem crédito bancário ?' %>
+                                                </div>
+                                                <%= f.input :account_number, label: "Número da conta bancária" %>
+                                                <br>
+                                                <%= f.input :have_credit, label: 'Tem crédito bancário ?' %>
+                                                <span id="text_not_credit" class="have-credit">Não tenho crédito</span>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <%= f.input :company_name, label: 'Nome da empresa' %>
+                                                <%= f.input :position, label: 'Função ou posição' %>
+                                                <%= f.association :bank, label: "Selecione o seu banco", include_blank: false %>
+                                                <%= f.input :iban, label: "Digite o seu IBAN" %>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn-position text-right">
+                                            <button type="button" id="prev-1" class="prev btn btn-p3 btn-sm px-4">Anterior</button>
+                                            <button type="button" id="next-1" class="next btn btn-p3 btn-sm px-4">Seguinte</button>
+                                        </div>
+
+                                    </div>
+                                    <div class="page">
+                                        <div class="row">
+
+                                            <div class="col">
+                                                <% unless @profile.can_edit %>
+                                                    <%= f.input :work_declaration, label: 'Declaração do serviço' %>
+                                                    <p class="work_declaration">É obrigatório adicionar uma declaração do serviço valido por 90 dias</p>
+                                                <% else %>
+                                                    <% if @profile.work_declaration.attached? %>
+                                                        <h5>Declaração do serviço</h5>
+                                                        <%= link_to rails_blob_path(@profile.work_declaration, disposition: 'attachment'), target: :blank do %>
+                                                            <span class="fa fa-file-pdf"></span> <%= @profile.work_declaration.filename  %>
+                                                        <% end %>
+                                                    <% else %>
+                                                        <%= f.input :work_declaration, label: 'Declaração do serviço' %>
+                                                        <p class="work_declaration">É obrigatório adicionar uma declaração do serviço valido por 90 dias</p>
+                                                    <% end %>
+                                                <% end %>
+                                            </div>
+
+                                            <div class="col">
+                                                <% unless @profile.can_edit %>
+                                                    <%= f.input :banking_extrato, label: 'Extrato bancário' %>
+                                                    <p class="work_declaration">É obrigatório adicionar extrato bancário valido por 90 dias</p>
+                                                <% else %>
+                                                    <% if @profile.banking_extrato.attached? %>
+                                                        <h5>Declaração do serviço</h5>
+                                                        <%= link_to rails_blob_path(@profile.banking_extrato, disposition: 'attachment'), target: :blank do %>
+                                                            <span class="fa fa-file-pdf"></span> <%= @profile.banking_extrato.filename  %>
+                                                        <% end %>
+                                                    <% else %>
+                                                        <%= f.input :banking_extrato, label: 'Extrato bancário' %>
+                                                        <p class="work_declaration">É obrigatório adicionar extrato bancário valido por 90 dias</p>
+                                                    <% end %>
+                                                <% end %>
+                                            </div>
+
+                                            <div class="col float-right">
+                                                <% unless @profile.can_edit %>
+                                                    <%= f.input :avatar, label: 'Fotografia do cliente' %>
+                                                <% else %>
+                                                    <% if @profile.avatar.attached? %>
+                                                        <h5>Fotografia</h5>
+                                                        <span class="fa fa-user"></span> <%= @profile.avatar.filename  %>
+                                                    <% else %>
+                                                        <%= f.input :avatar, label: 'Fotografia do cliente' %>
+                                                    <% end %>
+                                                <% end %>
+                                            </div>
+
+                                        </div>
+                                        <div class="btn-position">
+                                            <button type="button" id="prev-2" class="prev btn btn-p3 btn-sm px-4">Anterior</button>
+                                            <%= f.button :submit, "Actualizar", class: "submit btn btn-p3 btn-sm px-4" %>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- END Updates -->
+        </div>
+    </div>
+</div>
+
+
+
+<!--
+<script type="text/javascript">
+
+    function maskInput() {
+
+        var input = document.getElementById('inputmask');
+        var oldValue, oldCursor;
+
+        regex = new RegExp(/^\d{0,20}$/g);
+
+
+        mask = function (value) {
+
+            return new Intl.NumberFormat().format(value);
+
+        };
+
+        unmask = function (value) {
+            var output = value.replace(new RegExp(/[^\d]/, 'g'), '');
+            return output;
+        };
+
+        checkSeparator = function (position, interval) {
+            return Math.floor(position / (interval + 1));
+        };
+
+        keydownHandler = function (e) {
+            var el = e.target;
+            oldValue = el.value;
+            oldCursor = el.selectionEnd;
+        };
+
+        inputHandler = function (e) {
+            var el = e.target,
+                newCursorPosition,
+                newValue = unmask(el.value);
+
+            if (newValue.match(regex)) {
+                newValue = mask(newValue);
+                newCursorPosition = oldCursor - checkSeparator(oldCursor, 4) + checkSeparator(oldCursor + (newValue
+                    .length - oldValue.length), 4) + (unmask(newValue).length - unmask(oldValue).length);
+                if (newValue !== "") {
+                    el.value = newValue;
+                } else {
+                    el.value = "";
+                }
+            } else {
+                el.value = oldValue;
+                newCursorPosition = oldCursor;
+            }
+
+            var original_value = newValue.replace(/\s/g, '')
+
+            var profile_salary = document.getElementById("profile_salary");
+            profile_salary.setAttribute('value', original_value);
+
+            console.log(original_value)
+
+            return el.setSelectionRange(newCursorPosition, newCursorPosition);
+        };
+
+
+        input.addEventListener('keydown', keydownHandler);
+        input.addEventListener('input', inputHandler);
+
+    }
+</script>
+
+-->

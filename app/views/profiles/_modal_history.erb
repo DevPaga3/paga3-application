@@ -1,0 +1,48 @@
+<div class="modal fade main-modal-p3" id="modal-history" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-popin modal-lg" role="document">
+        <div class="modal-content">
+            <div class="block block-themed block-transparent mb-0">
+
+            <div class="block-header bg-primary-dark">
+                    <h3 class="block-title">Histórico de descontos</h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button>
+                    </div>
+                </div>
+                
+                
+                <div class="m-3">
+
+            
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-vcenter">
+                            <thead>
+                                <tr>
+                                    <th>Utilizador</th>
+                                    <th>Valor</th>
+                                    <th>Tipo de Movimento</th>
+                                    <th>Data</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% @profile.moviments.order("created_at DESC").each do |moviment| %>
+                                    <tr>
+                                        <td class="font-w600 font-size-sm"><%= moviment.user&.admin&.name %></td>
+                                        <td class="font-size-sm"><em class="text-muted"><%= moviment.amount.to_kwanza %></em></td>
+                                        <td><span class="badge badge-<%= moviment.is_credit ? 'success' : 'danger' %>"><%= moviment.is_credit ? 'CREDITO' : 'DEBITO' %></span></td>
+                                        <td class="font-size-sm"><em class="text-muted"><%= moviment.created_at.strftime("%d/%m/%Y, %H:%M:%S") %></em></td>
+                                    </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                        <br>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

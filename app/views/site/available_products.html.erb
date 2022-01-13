@@ -1,0 +1,72 @@
+<!-- Hero -->
+<div class="jumbotron bg-image-company" >
+    <div class="container">
+
+        <br>
+        <br>
+        <br>
+    
+        <h1 class="display-4"><%= @company.name %></h1>
+        <br>
+        <%= link_to 'Todas empresas e lojas', empresas_path %>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <% if @company.products.blank? %>
+            <div class="col text-center float-center">
+                <span class="m-5" style="font-size: 50px; font-weight: 100;">Nenhum produto encontrado</span>
+                <br>
+                <br>
+                <%= link_to 'Voltar - Todas empresas e lojas', empresas_path %>
+                <hr class="m-5">
+            </div>
+        <% else %>
+
+            <% @company.products.each do |product| %>
+                <div class="col-lg-4">
+                    <div class="card card-flex">
+                        <div class="img-resize">
+                            <% if product.image.attached? %>
+                                <div class="img-product" style="height: 100%; width: 100%; background-image: url(<%= rails_blob_path(product.image, only_path: true) %>);" ></div>
+                            <% else %>
+                                <div class="img-product" style="height: 100%; width: 100%; background-image: url('/logo.png');" ></div>
+                            <% end %>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="m-2">
+                                <h5 class="card-title"><%= product.name.truncate(26) %></h5>
+                                <p class="card-text mb-0"><b>Preço: </b> <%= product.calc_price_with_commission().to_kwanza %>
+                                <p class="card-text mb-0"><b><%= product.first_parcel.to_kwanza %> X </b> <%= product.render_number %></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            <% end %>
+
+        <% end %>
+    </div>
+</div>
+
+
+<style>
+    .bg-image-company {
+
+        background-image: linear-gradient(to bottom, rgb(0 0 0 / 82%), rgb(0 0 0 / 70%)), url(/home.svg);
+        background-position: 0 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .img-product{
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+</style>
+
+    

@@ -1,0 +1,50 @@
+<%= simple_form_for(admin) do |f| %>
+
+    <div class="content content-boxed">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Updates -->
+                <ul class="timeline timeline-alt py-0">
+                    <li class="timeline-event">
+                        <div class="timeline-event-icon bg-p3">
+                            <i class="fa fa-edit"></i>
+                        </div>
+                        <div class="timeline-event-block block invisible" data-toggle="appear">
+                            <div class="block-header">
+                                <h3 class="block-title">Novo utilizador</h3>
+                            </div>
+                            
+                            <%= f.error_notification %>
+                            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+                            <div class="block-content">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <%= f.input :email, label: 'E-mail' %>
+                                        <%= f.input :role, :as => :select, :collection => User.roles.map { |key, value| [t(key), key] }, label: 'Tipo de acesso' %>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <%= f.input :name, label: 'Nome completo' %>
+                                        <%= f.input :cell_phone, label: 'Nº telefone' %>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="form-actions text-left">
+                    <%= f.button :submit, "Registar", class: "btn btn-p3 btn-sm mr-2" %>
+                    <%= link_to 'Cancelar', back, class: 'btn btn-sm btn-danger' %>
+                </div>
+                <!-- END Updates -->
+            </div>
+        </div>
+    </div>
+
+<% end %>
+

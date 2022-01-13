@@ -1,0 +1,44 @@
+<%= simple_form_for(@product) do |f| %>
+    <div class="modal fade main-modal-p3" id="modal-create-product" tabindex="-1" role="dialog" aria-labelledby="modal-block-large" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-popin" role="document">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent mb-0">
+                    <div class="block-header bg-primary-dark">
+                        <% if @product.id.present? %>
+                            <h3 class="block-title">Actualizar producto</h3>
+                        <% else %>
+                            <h3 class="block-title">Registo de producto</h3>
+                        <% end %>
+
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="block-content font-size-md">
+                        <%= f.input :name, label: "Nome do producto" %>
+                        <%= f.input :real_price, label: "Preço" %>
+                        <%= f.input :render_number, label: "Parcelas à pagar" %>
+                        <%= f.input :description, :input_html => { :rows => 7, :style => 'width: 100%' }, label: "Descrição do producto" %>
+                        
+                        <%= f.input :image, label: "Foto do producto" %>
+                        <%= f.association :store, as: :hidden %>
+                    </div>
+
+                    <div class="block-content block-content-full text-right border-top">
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+                        <% if @product.id.present? %>
+                            <button type="submit" class="ml-2 btn btn-p3 button btn-sm"> <i class="fa fa-check mr-1"></i>Actualizar </button>
+                        <% else %>
+                            <button type="submit" class="ml-2 btn btn-p3 button btn-sm"> <i class="fa fa-check mr-1"></i>Registar </button>
+                        <% end %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<% end %>

@@ -1,0 +1,88 @@
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <%= link_to @store, class: "link-fx font-size-h3 text-white", "data-toggle": "tooltip", title: "", "data-original-title": "Ver detalhes" do %>
+                        <i class="fa fa-fw fa-trash"></i> Cancelar compra
+                    <% end %>
+                </div>
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear"><%= "Processo de validação da venda" %></h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250"><%= DateTime.now.strftime("%d/%m/%Y - %H:%M") %></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+
+<!-- Page Content -->
+<div class="content content-boxed">
+
+
+    <div class="row justify-content-md-center">
+
+        <%= simple_form_for :validation_code, url: validate_code_and_finish_path, method: "POST", html: { class: 'form-inline mb-3' } do |f| %>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" placeholder="código de validação" pattern="[0-9]{4}" maxlength="4" name="validation_code[code]" id="validation_code_code">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Confirmar</button>
+        <% end %>
+
+
+
+    </div>
+
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-10">
+            <!-- Updates -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+                        <div class="block-header">
+                            <h3 class="block-title">Detalhes</h3>
+                        </div>
+                        
+                        <div class="block-content">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="font-size-sm font-w600 text-muted text-uppercase">Total das compras</div>
+                                    <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @pre_order.total_to_pay.to_kwanza %></a>
+                                </div>
+
+                                <div class="col-6 text-right ">
+                                    <div class="font-size-sm font-w600 text-muted text-uppercase">Primeira Parcela</div>
+                                    <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @pre_order.first_instalment.to_kwanza %></a>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <p><span class="font-w600 mb-2">Nome: </span><span class="font-size-sm"><%= @pre_order.profile.name %></span></p>
+                            <p><span class="font-w600 mb-2">Nº de telefone: </span><span class="font-size-sm"><%= @pre_order.profile.user.cell_phone %></span></p>
+                            <p><span class="font-w600 mb-2">E-mail: </span><span class="font-size-sm"><%= @pre_order.profile.user.email %></span></p>
+                            <p><span class="font-w600 mb-2">Endereço: </span><span class="font-size-sm"><%= @pre_order.profile.address %></span></p>
+                            <p><span class="font-w600 mb-2">Nº Bilhete de identidade: </span><span class="font-size-sm"><%= @pre_order&.profile&.bi %></span></p>
+                            <hr>
+                            <p><span class="font-w600 mb-2">Entidade empregadora: </span><span class="font-size-sm"><%= @pre_order&.profile&.company_name %></span></p>
+                            <p><span class="font-w600 mb-2">Função: </span><span class="font-size-sm"><%= @pre_order&.profile&.position %></span></p>
+                            
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- END Updates -->
+        </div>
+        
+    </div>
+</div>
+<!-- END Page Content -->
+
+ 

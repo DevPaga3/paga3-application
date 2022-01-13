@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  factura: one
+  name: MyString
+  real_price: 9.99
+  render_number: 1
+
+two:
+  factura: two
+  name: MyString
+  real_price: 9.99
+  render_number: 1

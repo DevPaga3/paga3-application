@@ -1,0 +1,79 @@
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Menu Utilizadores</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Lista dos utilizadores Paga3</h2>
+                </div>
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                    <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                        <%= link_to new_admin_path, class: "btn btn-sm btn-p3 px-4 py-2" do  %>
+                            <i class="fa fa-plus mr-1"></i> Novo utilizador
+                        <% end %>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+
+<div class="content">
+    <!-- Full Table -->
+    <div class="block">
+        <div class="block-header">
+            <div class="block-options">
+                <button type="button" class="btn-block-option">
+                <i class="si si-settings"></i>
+                </button>
+            </div>
+        </div>
+        <div class="block-content">
+    
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-vcenter">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="width: 100px;"><i class="far fa-building"></i></th>
+                            <th>Nº telefone</th>
+                            <th>Email</th>
+                            <th>Tipo de acesso</th>
+                            <th class="text-center" style="width: 100px;">Acções</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <% @admins.each do |admin| %>
+                            <tr>
+                                <td class="text-center">
+                                    <i class="far fa-building fa-4" style="font-size: 40px; color: #64c6c5;"></i>
+                                </td>
+
+                                <td class="font-size-sm"><em class="text-muted"><%= admin.cell_phone %></em></td>
+                                <td class="font-size-sm"><em class="text-muted"><%= admin.email %></em></td>
+                                <td class="font-size-sm"><em class="text-muted"><%= t(admin.user&.role) %></em></td>
+
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <%= link_to admin_path(admin.id), class: "btn btn-sm btn-p3 js-tooltip-enabled", "data-toggle": "tooltip", "title": "Ver detalhes", "data-original-title": "Ver detalhes" do %>
+                                            <i class="fa fa-fw fa-eye"></i>
+                                        <% end %>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        <% end %>
+                    </tbody>
+                </table>
+                <%== pagy_bootstrap_nav(@pagy).html_safe %>
+                <br>
+            </div>
+            
+        </div>
+    </div>
+    <!-- END Full Table -->
+
+</div>

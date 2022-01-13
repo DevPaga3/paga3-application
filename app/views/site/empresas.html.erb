@@ -1,0 +1,34 @@
+<div class="clearfix"></div>
+<section class="section-padding-0-70 relative" id="feat" style=>
+    <div class="container">
+        <div class="section-heading-company text-center">
+            <h2 class="fadeInUp text-center" data-wow-delay="0.3s"> Lojas & prestadores disponíveis na Paga3</h2>
+        </div>
+
+        <div class="row">
+            <% @companies.each do |company| %>
+            <div class="col-12 col-md-6 col-lg-4">
+                <%= link_to  available_products_path(company) do %>
+
+                <div class="service_single_info text-center mb-100 fadeInUp" data-wow-delay="0.2s">
+                    <% if company.avatar.attached? %>
+                    <%= image_tag(company.avatar, class: "center-block img-responsive phone-img") %>
+                    <% else %>
+                    <img src="/site/img/bg-p3-2.png" class="center-block img-responsive phone-img" alt="">
+                    <% end %>
+                    <br>
+                    <p><%= company.name %></p>
+                    <p style="font-size: 12px"><%= company.cell_phone %></p>
+                </div>
+
+                <% end %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .footer-company {}
+</style>

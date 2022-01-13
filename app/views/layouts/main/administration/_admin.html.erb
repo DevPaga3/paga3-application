@@ -1,0 +1,121 @@
+<li class="nav-main-item">
+    <%= link_to occupation_areas_url, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-user-tie"></i>
+        <span class="nav-main-link-name">Área de atuação</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to companies_path, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-building"></i>
+        <span class="nav-main-link-name">Empresas</span>
+    <% end %>
+</li>
+
+
+<li class="nav-main-item">
+    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
+        <i class="nav-main-link-icon fa fa-users"></i>
+        <span class="nav-main-link-name">Clientes</span>
+    </a>
+
+    <ul class="nav-main-submenu">
+        <li class="nav-main-item">
+            <%= link_to profiles_pending_path, class: "nav-main-link active" do %>
+                <i class="nav-main-link-icon fa fa-user"></i>
+                <span class="nav-main-link-name">Clientes Novos</span>
+            <% end %>
+        </li>
+        
+        <li class="nav-main-item">
+            <%= link_to profiles_active_path, class: "nav-main-link active" do %>
+                <i class="nav-main-link-icon fa fa-user"></i>
+                <span class="nav-main-link-name">Clientes Activos</span>
+            <% end %>
+        </li>
+        
+        <li class="nav-main-item">
+            <%= link_to profiles_rejecteds_path, class: "nav-main-link active" do %>
+                <i class="nav-main-link-icon fa fa-user"></i>
+                <span class="nav-main-link-name">Clientes Rejeitados</span>
+            <% end %>
+        </li>
+
+    </ul>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to requests_path, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-archway"></i>
+        <span class="nav-main-link-name">Solicitações</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to categories_path, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-archway"></i>
+        <span class="nav-main-link-name">Categorias</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to banks_path, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-archway"></i>
+        <span class="nav-main-link-name">Bancos</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to invoices_path, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-credit-card"></i>
+        <span class="nav-main-link-name">Pagamentos</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to messages_path, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-comment"></i>
+        <span class="nav-main-link-name">Mensagens</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to publicities_url, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-bars"></i>
+        <span class="nav-main-link-name">Publicidades</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to partners_url, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-swatchbook"></i>
+        <span class="nav-main-link-name">Parceiros</span>
+    <% end %>
+</li>
+
+<li class="nav-main-item">
+    <%= link_to admins_path, class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-users"></i>
+        <span class="nav-main-link-name">Utilizadores</span>
+    <% end %>
+</li>
+
+<hr>
+
+<li class="nav-main-item">
+    <%= link_to configuration_path(current_user.config), class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-cogs"></i>
+        <span class="nav-main-link-name">Config. Paga3</span>
+    </a>
+    <% end %>
+</li>
+
+<hr>
+
+<li class="nav-main-item">
+    <%= link_to admins_details_path(current_user.admin), class: "nav-main-link active" do %>
+        <i class="nav-main-link-icon fa fa-user"></i>
+        <span class="nav-main-link-name">Perfil</span>
+    </a>
+    <% end %>
+</li>

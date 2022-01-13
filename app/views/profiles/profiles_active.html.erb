@@ -1,0 +1,95 @@
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Menu Clientes</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Lista dos clientes Aprovados/Activos</h2>
+                </div>
+                <div class="flex-sm-3 mt-3 mt-sm-0 ml-sm-3">
+                    <a class="block block-rounded block-link-pop border-left border-primary border-4x" href="javascript:void(0)">
+                        <div class="block-content block-content-full bg-p3">
+                            <div class="font-size-sm font-w600 text-uppercase text-white text-muted">Clientes Aprovados/Activos</div>
+                            <div class="font-size-h2 font-w400 text-white"><%= Profile.where(status: 1).count %></div>
+                        </div>
+                    </a>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <%= form_tag(profiles_active_path, :method => "get", id: "search-form") do %>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <%= text_field_tag :search, params[:search], placeholder: "Pesquisar pelo nome, telefone, e-mail", class: "form-control mr-2" %>
+                    </div>
+
+                    <div class="col-md-2 text-left">
+                        <%= submit_tag "Pesquisar", class: "btn btn-primary" %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+<div class="content">
+    <!-- Full Table -->
+    <div class="block">
+        <div class="block-header">
+            <div class="block-options">
+
+                <button type="button" class="btn-block-option">
+                <i class="si si-settings"></i>
+                </button>
+            </div>
+        </div>
+        <div class="block-content">
+    
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-vcenter">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="width: 100px;"><i class="far fa-user"></i></th>
+                            <th>Nome</th>
+                            <th>Nº telefone</th>
+                            <th>Email</th>
+                            <th>Estado</th>
+                            <th class="text-center" style="width: 100px;">Acções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @profiles_active.each do |profile| %>
+                            <tr>
+                                <td class="text-center"><img class="img-table img-avatar48" src="/templete/assets/media/avatars/avatar7.jpg" alt=""></td>
+                                <td class="font-w600 font-size-sm"><a href="<%= profile_path(profile) %>"><%= profile.name %></a></td>
+                                <td class="font-size-sm"><em class="text-muted"><%= profile.user.cell_phone %></em></td>
+                                <td class="font-size-sm"><em class="text-muted"><%= profile.user.email %></em></td>
+                                <td><span class="badge badge-success">Activa</span></td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <%= link_to profile_path(profile), class: "btn btn-sm btn-p3 js-tooltip-enabled", "data-toggle": "tooltip", "title": "Ver detalhes", "data-original-title": "Ver detalhes" do %>
+                                            <i class="fa fa-fw fa-eye"></i>
+                                        <% end %>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+                <%== pagy_bootstrap_nav(@pagy).html_safe %>
+                <br>
+            </div>
+            
+        </div>
+    </div>
+    <!-- END Full Table -->
+
+</div>

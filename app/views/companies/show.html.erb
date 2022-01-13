@@ -1,0 +1,120 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+                <% if @company.avatar.attached? %>
+                <%= image_tag(@company.avatar, class: "img-avatar img-avatar-thumb") %>
+                <% else %>
+                <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
+                <% end %>
+            </div>
+            <h1 class="h2 text-white mb-0"><%= @company.name %></h1>
+            <span class="text-white-75"><%= @company.cell_phone %></span>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+
+<!-- Stats -->
+<div class="bg-white border-bottom">
+    <div class="content content-boxed">
+        <div class="row items-push text-center">
+            <div class="col-6 col-md-2">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Compensação</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= 0.to_kwanza %></a>
+            </div>
+            <div class="col-6 col-md-2">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Quant. Lojas</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @company.stores.count %></a>
+            </div>
+            <div class="col-6 col-md-2">
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Quant. Productos</div>
+                <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @company.products.count %></a>
+            </div>
+            <div class="col-6 col-md-6 text-right">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-p3 btn-p3 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu Opções</button>
+                    <div class="dropdown-menu">
+                        <%= link_to 'actualizar', edit_company_path(@company), class: "dropdown-item" %>
+                        <% if current_user.admin? %>
+                            <% if @company.user.present? %>
+                                <% if @company.user.is_active %>
+                                    <%= link_to 'Desactivar conta', active_and_inactive_user_path(@company.user), class: "dropdown-item", data: { confirm: 'Tens certeza ?' } %>
+                                <% else %>
+                                    <%= link_to 'Activar conta', active_and_inactive_user_path(@company.user), class: "dropdown-item", data: { confirm: 'Tens certeza ?' } %>
+                                <% end %>
+
+                                <% if @company.show_in_site %>
+                                    <%= link_to 'Tirar do site', show_and_hidden_in_site_path(@company), class: "dropdown-item", data: { confirm: 'Tens certeza ?' } %>
+                                <% else %>
+                                    <%= link_to 'Mostrar no site', show_and_hidden_in_site_path(@company), class: "dropdown-item", data: { confirm: 'Tens certeza ?' } %>
+                                <% end %>
+                            <% else %>
+                                <%= link_to 'Associar Utilizador', associate_user_company_path(@company), class: "dropdown-item", data: { confirm: "Esta acção vai associar um utilizador à esta empresa \nTens certeza ?" } %>
+                            <% end %>
+                        <% end %>
+
+                        <div class="dropdown-divider"></div>
+                        <%= link_to 'Resetar Senha', reset_password_company_user_path(@company), class: "dropdown-item", style: "background-color: #70b9eb; color: #fff; margin-bottom: 5px;", data: { confirm: "Esta acção enviará uma nova senha ao utilizador ?\nUtilizador: #{@company.name}" } %>
+                        <%= link_to 'Eliminar empresa', company_path(@company), class: "dropdown-item", data: { confirm: 'Tens certeza ?', :method => :delete }, style: "background-color: #ff5722; color: #fff;" %>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="content content-boxed">
+    <div class="row">
+        <div class="col-md-9 col-sm-12">
+            <!-- Updates -->
+            <ul class="timeline timeline-alt py-0">
+                <li class="timeline-event">
+                    <div class="timeline-event-icon bg-p3">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-event-block block invisible" data-toggle="appear">
+                        <div class="block-header">
+                            <h2 class="block-title">Detalhes da empresa</h2>
+                        </div>
+
+                        <div class="block-content">
+                            <p><span class="font-w600 mb-2">Nome: </span><span class="font-size-sm"><%= @company.name %></span></p>
+                            <p><span class="font-w600 mb-2">E-mail: </span><span class="font-size-sm"><%= @company.email %></span></p>
+                            <p><span class="font-w600 mb-2">Nº de telefone: </span><span class="font-size-sm"><%= @company.cell_phone %></span></p>
+                            <p><span class="font-w600 mb-2">Nº Conta: </span><span class="font-size-sm"><%= @company.accountNumber %></span></p>
+                            <p><span class="font-w600 mb-2">IBAN: </span><span class="font-size-sm"><%= @company.iban %></span></p>
+                            <p><span class="font-w600 mb-2">Endereço: </span><span class="font-size-sm"><%= @company.address %></span></p>
+                            <p><span class="font-w600 mb-2">NIF: </span><span class="font-size-sm"><%= @company.nif %></span></p>
+                            <p><span class="font-w600 mb-2">Categoria: </span><span class="font-size-sm"><%= @company&.category&.name %></span></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- END Updates -->
+        </div>
+
+        <div class="col-md-3 col-sm-12">
+            <div class="block">
+                <div class="block-header block-header-default">
+                    <h3 class="block-title">
+                        <i class="fa fa-briefcase text-muted mr-1"></i> Historico de pagamentos
+                    </h3>
+                </div>
+                <div class="block-content">
+                    <% @company.recibos.each do |recibo| %>
+                        <%= link_to recibo_path(recibo, format: "pdf"), class: "js-swal-success btn btn-light push", target: "_blank" do %>
+                            <i class="si si-doc fa-2x text-success mr-1"></i>
+                            <span class="mb-1">Recibo de - <%= recibo.created_at.strftime("%d/%m/%Y")%></span>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

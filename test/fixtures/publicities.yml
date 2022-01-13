@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  status: false
+  start_date: 2020-12-15
+  end_date: 2020-12-15
+
+two:
+  description: MyString
+  status: false
+  start_date: 2020-12-15
+  end_date: 2020-12-15

@@ -1,0 +1,10 @@
+<% pre_order.item_orders.each do |item| %>
+    <div class="alert alert-success alert-dismissable" role="alert">
+        <%= link_to remove_item_order_path(item_order_id: item.id, pre_order_id: pre_order.id, id: @store.id), class: "close" do %>
+            <span aria-hidden="true">×</span>
+        <% end %>
+        <h3 class="alert-heading font-w300 my-2"><%= item.product.price_with_commission.to_kwanza %></h3>
+        <p class="mb-0"> <span><%= item.product.name %></span> <span class="parcel-text">Parcela <%= item.product.render_number %>x</span> </p>
+    </div>
+  
+<% end %>
