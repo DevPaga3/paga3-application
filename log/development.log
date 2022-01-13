@@ -33536,3 +33536,9 @@ Processing by DashboardController#index as HTML
 Completed 200 OK in 2178ms (Views: 499.3ms | ActiveRecord: 1623.6ms | Allocations: 36750)
 
 
+  [1m[36mUser Load (297.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (309.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "empresa.teste@paga3.com"], ["LIMIT", 1]]
+  [1m[35m (217.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (216.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["cell_phone", "937731992"], ["id", 1954], ["LIMIT", 1]]
+  [1m[36mUser Update (302.9ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$12$cV.EtzMvehL.94zSXvd4v.iv4vk7GYUTGkZjux/MwmlBWI1/r7DvW"], ["updated_at", "2022-01-13 13:07:26.931969"], ["id", 1954]]
+  [1m[35m (305.3ms)[0m  [1m[35mCOMMIT[0m
