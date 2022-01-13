@@ -3,17 +3,16 @@
 default: &default
     adapter: postgresql
     encoding: unicode
-    # For details on connection pooling, see Rails configuration guide
-    # https://guides.rubyonrails.org/configuring.html#database-pooling
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
     <<: *default
-    database: rails_paga3_development
+    host: staging-paga3-db-do-user-8097670-0.b.db.ondigitalocean.com
+    database: paga3-staging-db
+    port: 25060
+    username: deploy
+    password: CTrAnpH3brECVd25
 
-    # Warning: The database defined as "test" will be erased and
-    # re-generated from your development database when you run "rake".
-    # Do not set this db to the same as development or production.
 test:
     <<: *default
     database: rails_paga3_test

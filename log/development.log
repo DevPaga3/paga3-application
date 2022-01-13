@@ -31631,3 +31631,1651 @@ Processing by PublicitiesController#index as HTML
 Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 1.4ms | Allocations: 14935)
 
 
+Started GET "/" for ::1 at 2022-01-13 13:04:33 +0100
+  [1m[35m (305.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering site/index.html.erb within layouts/site
+  Rendered site/index.html.erb within layouts/site (Duration: 3.8ms | Allocations: 495)
+  [1m[36mConfiguration Load (215.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/joaocabanga/projects/paga3/paga3-application/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+npx browserslist@latest --update-db
+
+[Webpacker] Hash: 0edf684b4218cd019e7c
+Version: webpack 4.44.1
+Time: 2447ms
+Built at: 01/13/2022 1:04:54 PM
+                                     Asset       Size       Chunks                         Chunk Names
+        js/animate-cfa8971d093e138c445a.js    314 KiB      animate  [emitted] [immutable]  animate
+    js/animate-cfa8971d093e138c445a.js.map    372 KiB      animate  [emitted] [dev]        animate
+    js/application-f62942bb086f854566e6.js    436 KiB  application  [emitted] [immutable]  application
+js/application-f62942bb086f854566e6.js.map    509 KiB  application  [emitted] [dev]        application
+                             manifest.json  675 bytes               [emitted]              
+Entrypoint animate = js/animate-cfa8971d093e138c445a.js js/animate-cfa8971d093e138c445a.js.map
+Entrypoint application = js/application-f62942bb086f854566e6.js js/application-f62942bb086f854566e6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/animate.js] 541 bytes {animate} {application} [built]
+[./app/javascript/packs/application.js] 2.64 KiB {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {animate} {application} [built]
+    + 4 hidden modules
+
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/site/_navbar.html.erb (Duration: 0.2ms | Allocations: 105)
+  [1m[36mPartner Load (307.2ms)[0m  [1m[34mSELECT "partners".* FROM "partners" WHERE "partners"."status" = $1[0m  [["status", true]]
+  ↳ app/views/layouts/site/_footer.html.erb:80
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/site/_footer.html.erb (Duration: 578.9ms | Allocations: 4185)
+Completed 200 OK in 6593ms (Views: 4362.8ms | ActiveRecord: 2206.2ms | Allocations: 91098)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-13 13:10:28 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  [1m[36mConfiguration Load (307.8ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 964.7ms | Allocations: 19276)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+Completed 200 OK in 1825ms (Views: 405.7ms | ActiveRecord: 1369.8ms | Allocations: 45608)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-01-13 13:10:42 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"8zX1oVqzk186zeoXSTqQ6B3keup0zUX97w7G9WD6r0F6C5xgaSdTQOMiwwpMne+v9ewCrLlsE1B0BRGoHz8YCQ==", "user"=>{"login"=>"manucabanga@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (298.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(cell_phone) = 'manucabanga@gmail.com' OR lower(email) = 'manucabanga@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:140:in `find_for_database_authentication'
+Redirected to http://localhost:3000/
+Completed 302 Found in 564ms (ActiveRecord: 298.9ms | Allocations: 5293)
+
+
+Started GET "/" for ::1 at 2022-01-13 13:10:42 +0100
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (304.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/site_controller.rb:8:in `index'
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 612ms (ActiveRecord: 304.8ms | Allocations: 1280)
+
+
+Started GET "/dashboard" for ::1 at 2022-01-13 13:10:43 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (291.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[35m (306.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles"[0m
+  ↳ app/views/dashboard/_admin.html.erb:27
+  [1m[35m (299.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" WHERE "profiles"."status" = $1[0m  [["status", 1]]
+  ↳ app/views/dashboard/_admin.html.erb:36
+  [1m[35m (309.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies"[0m
+  ↳ app/views/dashboard/_admin.html.erb:44
+  Rendered dashboard/_admin.html.erb (Duration: 1497.1ms | Allocations: 4104)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1498.1ms | Allocations: 4508)
+  [1m[36mConfiguration Load (236.3ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.6ms | Allocations: 67)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (304.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 1287.4ms | Allocations: 14408)
+  Rendered layouts/main/_nav.html.erb (Duration: 1290.0ms | Allocations: 14948)
+  Rendered layouts/main/_header.html.erb (Duration: 0.4ms | Allocations: 87)
+  Rendered layouts/_flash.html.erb (Duration: 0.5ms | Allocations: 189)
+Completed 200 OK in 3716ms (Views: 431.1ms | ActiveRecord: 3222.0ms | Allocations: 44768)
+
+
+Started GET "/companies" for ::1 at 2022-01-13 13:10:56 +0100
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (286.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (294.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL[0m
+  ↳ app/controllers/companies_controller.rb:20:in `index'
+  Rendering companies/index.html.erb within layouts/application
+  [1m[35m (297.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL AND "companies"."status" = $1[0m  [["status", true]]
+  ↳ app/views/companies/index.html.erb:17
+  [1m[35m (217.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL AND "companies"."status" = $1[0m  [["status", false]]
+  ↳ app/views/companies/index.html.erb:25
+  [1m[36mCompany Load (282.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."name" IS NOT NULL ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/companies/index.html.erb:88
+  Rendered companies/index.html.erb within layouts/application (Duration: 1161.4ms | Allocations: 11369)
+  [1m[36mConfiguration Load (260.4ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (296.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 302.9ms | Allocations: 2029)
+  Rendered layouts/main/_nav.html.erb (Duration: 303.9ms | Allocations: 2154)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 25)
+Completed 200 OK in 2347ms (Views: 82.9ms | ActiveRecord: 2243.5ms | Allocations: 25721)
+
+
+  [1m[35m (301.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCompany Destroy (220.2ms)[0m  [1m[31mDELETE FROM "companies"[0m
+  [1m[36mProduct Destroy (308.3ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mItemOrder Destroy (307.1ms)[0m  [1m[31mDELETE FROM "item_orders"[0m
+  [1m[36mProduct Destroy (224.7ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mStore Destroy (219.4ms)[0m  [1m[31mDELETE FROM "stores"[0m
+  [1m[36mFactura Destroy (306.8ms)[0m  [1m[31mDELETE FROM "facturas"[0m
+  [1m[36mRecibo Destroy (214.1ms)[0m  [1m[31mDELETE FROM "recibos"[0m
+  [1m[36mFactura Destroy (315.0ms)[0m  [1m[31mDELETE FROM "facturas"[0m
+  [1m[36mItensFactura Destroy (309.5ms)[0m  [1m[31mDELETE FROM "itens_facturas"[0m
+  [1m[36mFactura Destroy (229.9ms)[0m  [1m[31mDELETE FROM "facturas"[0m
+  [1m[36mStore Destroy (217.5ms)[0m  [1m[31mDELETE FROM "stores"[0m
+  [1m[36mPreOrder Destroy (306.6ms)[0m  [1m[31mDELETE FROM "pre_orders"[0m
+  [1m[36mStore Destroy (247.1ms)[0m  [1m[31mDELETE FROM "stores"[0m
+  [1m[36mProfile Destroy (252.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mAdc Destroy (216.3ms)[0m  [1m[31mDELETE FROM "adcs"[0m
+  [1m[36mProfile Destroy (222.4ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mMoviment Destroy (306.4ms)[0m  [1m[31mDELETE FROM "moviments"[0m
+  [1m[36mProfile Destroy (316.5ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mHistoryOfProfile Destroy (213.8ms)[0m  [1m[31mDELETE FROM "history_of_profiles"[0m
+  [1m[36mProfile Destroy (371.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mMessage Destroy (304.0ms)[0m  [1m[31mDELETE FROM "messages"[0m
+  [1m[36mPurchaseCode Destroy (306.8ms)[0m  [1m[31mDELETE FROM "purchase_codes"[0m
+  [1m[36mRequest Destroy (306.5ms)[0m  [1m[31mDELETE FROM "requests"[0m
+Started GET "/companies" for ::1 at 2022-01-13 13:19:12 +0100
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (311.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (298.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL[0m
+  ↳ app/controllers/companies_controller.rb:20:in `index'
+  Rendering companies/index.html.erb within layouts/application
+  [1m[35m (298.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL AND "companies"."status" = $1[0m  [["status", true]]
+  ↳ app/views/companies/index.html.erb:17
+  [1m[35m (301.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL AND "companies"."status" = $1[0m  [["status", false]]
+  ↳ app/views/companies/index.html.erb:25
+  [1m[36mCompany Load (220.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."name" IS NOT NULL ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/companies/index.html.erb:88
+  Rendered companies/index.html.erb within layouts/application (Duration: 843.6ms | Allocations: 3414)
+  [1m[36mConfiguration Load (254.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (308.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 589.1ms | Allocations: 2018)
+  Rendered layouts/main/_nav.html.erb (Duration: 590.1ms | Allocations: 2142)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 23)
+Completed 200 OK in 3176ms (Views: 566.1ms | ActiveRecord: 2288.6ms | Allocations: 16922)
+
+
+Started GET "/clientes/pendentes" for ::1 at 2022-01-13 13:19:38 +0100
+Processing by ProfilesController#profiles_pending as HTML
+  [1m[36mUser Load (214.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (257.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" WHERE "profiles"."status" = $1[0m  [["status", 0]]
+  ↳ app/controllers/profiles_controller.rb:20:in `profiles_pending'
+  Rendering profiles/profiles_pending.html.erb within layouts/application
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" WHERE "profiles"."status" = $1[0m  [["status", 0]]
+  ↳ app/views/profiles/profiles_pending.html.erb:15
+  [1m[36mProfile Load (287.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."status" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["status", 0], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/profiles/profiles_pending.html.erb:68
+  Rendered profiles/profiles_pending.html.erb within layouts/application (Duration: 298.7ms | Allocations: 2014)
+  [1m[36mConfiguration Load (213.2ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (255.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 263.9ms | Allocations: 2033)
+  Rendered layouts/main/_nav.html.erb (Duration: 264.9ms | Allocations: 2159)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 25)
+Completed 200 OK in 1305ms (Views: 61.1ms | ActiveRecord: 1227.8ms | Allocations: 16119)
+
+
+  [1m[36mCompany Destroy (278.0ms)[0m  [1m[31mDELETE FROM "companies"[0m
+Started GET "/companies" for ::1 at 2022-01-13 13:19:54 +0100
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (215.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (259.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL[0m
+  ↳ app/controllers/companies_controller.rb:20:in `index'
+  Rendering companies/index.html.erb within layouts/application
+  [1m[35m (252.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL AND "companies"."status" = $1[0m  [["status", true]]
+  ↳ app/views/companies/index.html.erb:17
+  [1m[35m (242.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL AND "companies"."status" = $1[0m  [["status", false]]
+  ↳ app/views/companies/index.html.erb:25
+  [1m[36mCompany Load (306.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."name" IS NOT NULL ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/companies/index.html.erb:88
+  Rendered companies/index.html.erb within layouts/application (Duration: 812.2ms | Allocations: 2401)
+  [1m[36mConfiguration Load (292.8ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (276.7ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 284.2ms | Allocations: 2029)
+  Rendered layouts/main/_nav.html.erb (Duration: 284.9ms | Allocations: 2155)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 25)
+Completed 200 OK in 1919ms (Views: 59.8ms | ActiveRecord: 1845.0ms | Allocations: 15743)
+
+
+Started GET "/clientes/activos" for ::1 at 2022-01-13 13:20:00 +0100
+Processing by ProfilesController#profiles_active as HTML
+  [1m[36mUser Load (214.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (231.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" WHERE "profiles"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/profiles_controller.rb:28:in `profiles_active'
+  Rendering profiles/profiles_active.html.erb within layouts/application
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" WHERE "profiles"."status" = $1[0m  [["status", 1]]
+  ↳ app/views/profiles/profiles_active.html.erb:14
+  [1m[36mProfile Load (294.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."status" = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/profiles/profiles_active.html.erb:69
+  Rendered profiles/profiles_active.html.erb within layouts/application (Duration: 306.5ms | Allocations: 1962)
+  [1m[36mConfiguration Load (293.7ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (277.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 286.5ms | Allocations: 2029)
+  Rendered layouts/main/_nav.html.erb (Duration: 287.6ms | Allocations: 2155)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 25)
+Completed 200 OK in 1384ms (Views: 61.9ms | ActiveRecord: 1312.3ms | Allocations: 15433)
+
+
+Started GET "/requests" for ::1 at 2022-01-13 13:20:03 +0100
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (283.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (285.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:43
+  Rendered requests/index.html.erb within layouts/application (Duration: 800.8ms | Allocations: 2052)
+  [1m[36mConfiguration Load (294.8ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (274.7ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 284.0ms | Allocations: 2044)
+  Rendered layouts/main/_nav.html.erb (Duration: 285.1ms | Allocations: 2171)
+  Rendered layouts/main/_header.html.erb (Duration: 0.2ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 25)
+Completed 200 OK in 1729ms (Views: 64.9ms | ActiveRecord: 1645.0ms | Allocations: 16196)
+
+
+Started GET "/categories" for ::1 at 2022-01-13 13:20:05 +0100
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (215.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (240.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:48
+  Rendered categories/_form.html.erb (Duration: 19.0ms | Allocations: 3351)
+  Rendered categories/index.html.erb within layouts/application (Duration: 278.9ms | Allocations: 6965)
+  [1m[36mConfiguration Load (308.9ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 5)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (274.8ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 283.2ms | Allocations: 2033)
+  Rendered layouts/main/_nav.html.erb (Duration: 284.1ms | Allocations: 2159)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 25)
+Completed 200 OK in 1726ms (Views: 85.3ms | ActiveRecord: 1591.5ms | Allocations: 24926)
+
+
+Started GET "/banks" for ::1 at 2022-01-13 13:20:08 +0100
+Processing by BanksController#index as HTML
+  [1m[36mUser Load (327.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (214.8ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:46
+  Rendered banks/_form.html.erb (Duration: 22.0ms | Allocations: 6511)
+  Rendered banks/index.html.erb within layouts/application (Duration: 249.8ms | Allocations: 9345)
+  [1m[36mConfiguration Load (241.3ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 5)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (213.5ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 221.0ms | Allocations: 2029)
+  Rendered layouts/main/_nav.html.erb (Duration: 221.8ms | Allocations: 2155)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 25)
+Completed 200 OK in 1637ms (Views: 84.1ms | ActiveRecord: 1487.9ms | Allocations: 31766)
+
+
+Started GET "/pagamentos" for ::1 at 2022-01-13 13:20:11 +0100
+Processing by InvoicesController#index as HTML
+  [1m[36mUser Load (287.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (304.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "facturas"[0m
+  ↳ app/controllers/invoices_controller.rb:9:in `index'
+  Rendering invoices/index.html.erb within layouts/application
+  [1m[36mFactura Load (295.3ms)[0m  [1m[34mSELECT "facturas".* FROM "facturas" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/invoices/index.html.erb:45
+  Rendered invoices/index.html.erb within layouts/application (Duration: 301.6ms | Allocations: 1057)
+  [1m[36mConfiguration Load (213.9ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.2ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (214.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 225.0ms | Allocations: 2044)
+  Rendered layouts/main/_nav.html.erb (Duration: 226.1ms | Allocations: 2171)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.4ms | Allocations: 25)
+Completed 200 OK in 1697ms (Views: 62.4ms | ActiveRecord: 1601.4ms | Allocations: 18118)
+
+
+Started GET "/messages" for ::1 at 2022-01-13 13:20:14 +0100
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (214.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (305.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:7:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (292.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:49
+  Rendered messages/index.html.erb within layouts/application (Duration: 299.6ms | Allocations: 1278)
+  [1m[36mConfiguration Load (304.5ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (215.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 222.6ms | Allocations: 2030)
+  Rendered layouts/main/_nav.html.erb (Duration: 223.4ms | Allocations: 2156)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 14)
+Completed 200 OK in 1641ms (Views: 49.9ms | ActiveRecord: 1568.8ms | Allocations: 16071)
+
+
+Started GET "/admins" for ::1 at 2022-01-13 13:20:18 +0100
+Processing by AdminsController#index as HTML
+  [1m[36mUser Load (288.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (284.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "admins"[0m
+  ↳ app/controllers/admins_controller.rb:6:in `index'
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (213.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/admins/index.html.erb:49
+  [1m[36mUser Load (310.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/index.html.erb:57
+  [1m[36mUser Load (299.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admins/index.html.erb:57
+  [1m[36mUser Load (216.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admins/index.html.erb:57
+  Rendered admins/index.html.erb within layouts/application (Duration: 1559.1ms | Allocations: 4017)
+  [1m[36mConfiguration Load (213.6ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (235.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 243.1ms | Allocations: 2034)
+  Rendered layouts/main/_nav.html.erb (Duration: 244.0ms | Allocations: 2160)
+  Rendered layouts/main/_header.html.erb (Duration: 0.3ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 25)
+Completed 200 OK in 2653ms (Views: 573.8ms | ActiveRecord: 2061.6ms | Allocations: 18033)
+
+
+  [1m[36mUser Destroy (308.0ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mAdmin Destroy (306.5ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mUser Destroy (591.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (257.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (216.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "manucabanga@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (789.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 LIMIT $2[0m  [["cell_phone", "913747200"], ["LIMIT", 1]]
+  [1m[35m (304.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (215.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (299.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "manucabanga@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (214.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 LIMIT $2[0m  [["cell_phone", "913747200"], ["LIMIT", 1]]
+  [1m[36mUser Create (223.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "cell_phone", "role", "encrypted_password", "created_at", "updated_at", "confirmation_terms", "full_name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "manucabanga@gmail.com"], ["cell_phone", "913747200"], ["role", 222], ["encrypted_password", "$2a$12$2WIR0iOH0ITt4dY.JaY2O.DLGZXvZNAni0hBjAJQlvaWEE7FuSIvS"], ["created_at", "2022-01-13 12:23:17.513047"], ["updated_at", "2022-01-13 12:23:17.513047"], ["confirmation_terms", true], ["full_name", "JM Cabanga"]]
+  [1m[35m (213.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (297.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdmin Exists? (407.5ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."id" IS NOT NULL AND "admins"."slug" = $1 LIMIT $2[0m  [["slug", "jm-cabanga"], ["LIMIT", 1]]
+  [1m[36mAdmin Exists? (215.6ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."email") = LOWER($1) AND "admins"."user_id" = $2 LIMIT $3[0m  [["email", "manucabanga@gmail.com"], ["user_id", 1953], ["LIMIT", 1]]
+  [1m[36mAdmin Exists? (293.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."cell_phone") = LOWER($1) AND "admins"."user_id" = $2 LIMIT $3[0m  [["cell_phone", "913747200"], ["user_id", 1953], ["LIMIT", 1]]
+  [1m[36mAdmin Create (303.4ms)[0m  [1m[32mINSERT INTO "admins" ("name", "cell_phone", "user_id", "created_at", "updated_at", "slug", "role", "email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "JM Cabanga"], ["cell_phone", "913747200"], ["user_id", 1953], ["created_at", "2022-01-13 12:23:27.539852"], ["updated_at", "2022-01-13 12:23:27.539852"], ["slug", "jm-cabanga"], ["role", 222], ["email", "manucabanga@gmail.com"]]
+  [1m[35m (308.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2022-01-13 13:23:49 +0100
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (297.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/site_controller.rb:8:in `index'
+  Rendering site/index.html.erb within layouts/site
+  Rendered site/index.html.erb within layouts/site (Duration: 0.2ms | Allocations: 4)
+  [1m[36mConfiguration Load (292.3ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/site/_navbar.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mPartner Load (213.5ms)[0m  [1m[34mSELECT "partners".* FROM "partners" WHERE "partners"."status" = $1[0m  [["status", true]]
+  ↳ app/views/layouts/site/_footer.html.erb:80
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/site/_footer.html.erb (Duration: 501.5ms | Allocations: 3286)
+Completed 200 OK in 1136ms (Views: 325.1ms | ActiveRecord: 804.0ms | Allocations: 12596)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-13 13:23:55 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  [1m[36mConfiguration Load (214.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 231.8ms | Allocations: 4002)
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+Completed 200 OK in 289ms (Views: 71.6ms | ActiveRecord: 214.5ms | Allocations: 12381)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-01-13 13:24:03 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"67jWBEWqLdZglEHYqljAZZw3t9CqH3sBSKSeaNzT7HEO6U5CRJOxYRmDlov9PyneDVg5/LCjA+vSWXkxd1rNjQ==", "user"=>{"login"=>"manucabanga@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2100.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(cell_phone) = 'manucabanga@gmail.com' OR lower(email) = 'manucabanga@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:140:in `find_for_database_authentication'
+Redirected to http://localhost:3000/
+Completed 302 Found in 2355ms (ActiveRecord: 2100.2ms | Allocations: 2053)
+
+
+Started GET "/" for ::1 at 2022-01-13 13:24:07 +0100
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (284.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1953], ["LIMIT", 1]]
+  ↳ app/controllers/site_controller.rb:8:in `index'
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 293ms (ActiveRecord: 284.0ms | Allocations: 1263)
+
+
+Started GET "/dashboard" for ::1 at 2022-01-13 13:24:08 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (298.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1953], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[35m (298.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles"[0m
+  ↳ app/views/dashboard/_admin.html.erb:27
+  [1m[35m (303.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" WHERE "profiles"."status" = $1[0m  [["status", 1]]
+  ↳ app/views/dashboard/_admin.html.erb:36
+  [1m[35m (304.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies"[0m
+  ↳ app/views/dashboard/_admin.html.erb:44
+  Rendered dashboard/_admin.html.erb (Duration: 916.4ms | Allocations: 1970)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 917.2ms | Allocations: 2044)
+  [1m[36mConfiguration Load (217.3ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 5)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (238.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1953], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 245.9ms | Allocations: 2045)
+  Rendered layouts/main/_nav.html.erb (Duration: 246.9ms | Allocations: 2170)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.4ms | Allocations: 31)
+Completed 200 OK in 1745ms (Views: 75.5ms | ActiveRecord: 1661.4ms | Allocations: 14347)
+
+
+Started GET "/companies" for ::1 at 2022-01-13 13:32:37 +0100
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (306.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1953], ["LIMIT", 1]]
+  [1m[35m (304.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL[0m
+  ↳ app/controllers/companies_controller.rb:20:in `index'
+  Rendering companies/index.html.erb within layouts/application
+  [1m[35m (214.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL AND "companies"."status" = $1[0m  [["status", true]]
+  ↳ app/views/companies/index.html.erb:17
+  [1m[35m (213.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."name" IS NOT NULL AND "companies"."status" = $1[0m  [["status", false]]
+  ↳ app/views/companies/index.html.erb:25
+  [1m[36mCompany Load (214.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."name" IS NOT NULL ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/companies/index.html.erb:88
+  Rendered companies/index.html.erb within layouts/application (Duration: 647.1ms | Allocations: 2401)
+  [1m[36mConfiguration Load (311.5ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (215.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1953], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 1484.8ms | Allocations: 2034)
+  Rendered layouts/main/_nav.html.erb (Duration: 1485.2ms | Allocations: 2160)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 3957ms (Views: 1561.5ms | ActiveRecord: 2082.3ms | Allocations: 15943)
+
+
+Started GET "/companies/new" for ::1 at 2022-01-13 13:32:48 +0100
+Processing by CompaniesController#new as HTML
+  [1m[36mUser Load (226.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1953], ["LIMIT", 1]]
+  Rendering companies/new.html.erb within layouts/application
+  [1m[36mCategory Load (296.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/companies/new.html.erb:56
+  Rendered companies/new.html.erb within layouts/application (Duration: 622.4ms | Allocations: 18652)
+  [1m[36mConfiguration Load (298.5ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (297.7ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1953], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 300.7ms | Allocations: 2029)
+  Rendered layouts/main/_nav.html.erb (Duration: 301.0ms | Allocations: 2155)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 1462ms (Views: 42.4ms | ActiveRecord: 1416.3ms | Allocations: 31298)
+
+
+Started POST "/companies" for ::1 at 2022-01-13 13:34:09 +0100
+Processing by CompaniesController#create as HTML
+  Parameters: {"authenticity_token"=>"7rrja+PtaA3niN35nNtnMhZ5qv9vHKVVnigXB8tvPd653ULn9Ftt6ZVng8Qyxzt9IOSjmi8XPkYg79RXnYTK+Q==", "company"=>{"name"=>"Paga Mais", "cell_phone"=>"937731992", "accountNumber"=>"0030298383009393", "iban"=>"AO060030298383009393", "nif"=>"5000511528", "email"=>"teste@paga3.com", "address"=>"Pedro de Castro Vandune Loy", "category_id"=>"3"}, "commit"=>"Adicionar"}
+  [1m[36mUser Load (290.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1953], ["LIMIT", 1]]
+[31mUnpermitted parameter: :email[0m
+  [1m[35m (213.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:57:in `block in create'
+  [1m[36mCompany Exists? (214.5ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE "companies"."id" IS NOT NULL AND "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:57:in `block in create'
+  [1m[36mCompany Exists? (214.7ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."email") = LOWER($1) AND "companies"."user_id" IS NULL LIMIT $2[0m  [["email", "teste@paga3.com"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:57:in `block in create'
+  [1m[36mCompany Exists? (222.1ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."accountNumber") = LOWER($1) AND "companies"."user_id" IS NULL LIMIT $2[0m  [["accountNumber", "0030298383009393"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:57:in `block in create'
+  [1m[36mCompany Exists? (270.8ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."iban") = LOWER($1) AND "companies"."user_id" IS NULL LIMIT $2[0m  [["iban", "AO060030298383009393"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:57:in `block in create'
+  [1m[36mCompany Exists? (215.4ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."cell_phone") = LOWER($1) AND "companies"."user_id" IS NULL LIMIT $2[0m  [["cell_phone", "937731992"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:57:in `block in create'
+  [1m[36mCompany Create (218.7ms)[0m  [1m[32mINSERT INTO "companies" ("name", "nif", "address", "cell_phone", "created_at", "updated_at", "slug", "email", "category_id", "accountNumber", "iban") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Paga Mais"], ["nif", "5000511528"], ["address", "Pedro de Castro Vandune Loy"], ["cell_phone", "937731992"], ["created_at", "2022-01-13 12:34:11.464066"], ["updated_at", "2022-01-13 12:34:11.464066"], ["slug", "paga-mais"], ["email", "teste@paga3.com"], ["category_id", 3], ["accountNumber", "0030298383009393"], ["iban", "AO060030298383009393"]]
+  ↳ app/controllers/companies_controller.rb:57:in `block in create'
+  [1m[35m (213.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:57:in `block in create'
+  [1m[35m (213.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/company.rb:78:in `create_access_user'
+  [1m[36mUser Exists? (299.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "teste@paga3.com"], ["LIMIT", 1]]
+  ↳ app/models/company.rb:78:in `create_access_user'
+  [1m[36mUser Exists? (402.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 LIMIT $2[0m  [["cell_phone", "937731992"], ["LIMIT", 1]]
+  ↳ app/models/company.rb:78:in `create_access_user'
+  [1m[36mUser Create (301.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "cell_phone", "role", "encrypted_password", "created_at", "updated_at", "confirmation_terms", "full_name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "teste@paga3.com"], ["cell_phone", "937731992"], ["role", 1], ["encrypted_password", "$2a$12$1jk5M7ktGfdYf5ZQTZM6guUtDxj/yYOGo3SqalpiYWpOl/6MOo8ey"], ["created_at", "2022-01-13 12:34:13.078498"], ["updated_at", "2022-01-13 12:34:13.078498"], ["confirmation_terms", true], ["full_name", "Paga Mais"]]
+  ↳ app/models/company.rb:78:in `create_access_user'
+  [1m[35m (303.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/company.rb:78:in `create_access_user'
+  [1m[36mCompany Update (213.7ms)[0m  [1m[33mUPDATE "companies" SET "user_id" = $1 WHERE "companies"."id" = $2[0m  [["user_id", 1954], ["id", 39]]
+  ↳ app/models/company.rb:88:in `create_access_user'
+Redirected to http://localhost:3000/companies/paga-mais
+Completed 302 Found in 8703ms (ActiveRecord: 4059.8ms | Allocations: 43081)
+
+
+Started GET "/companies/paga-mais" for ::1 at 2022-01-13 13:34:18 +0100
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"paga-mais"}
+  [1m[36mUser Load (215.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1953], ["LIMIT", 1]]
+  [1m[36mCompany Load (246.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:113:in `set_comapny'
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (256.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 39], ["record_type", "Company"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/companies/show.html.erb:6
+  [1m[35m (258.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "stores" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/show.html.erb:30
+  [1m[35m (303.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "stores" ON "products"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/show.html.erb:34
+  [1m[36mUser Load (219.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/views/companies/show.html.erb:42
+  [1m[36mCategory Load (213.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/companies/show.html.erb:93
+  [1m[36mRecibo Load (294.0ms)[0m  [1m[34mSELECT "recibos".* FROM "recibos" INNER JOIN "facturas" ON "recibos"."factura_id" = "facturas"."id" INNER JOIN "stores" ON "facturas"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/show.html.erb:109
+  Rendered companies/show.html.erb within layouts/application (Duration: 4085.0ms | Allocations: 25946)
+  [1m[36mConfiguration Load (325.6ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (268.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1953], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 272.9ms | Allocations: 2035)
+  Rendered layouts/main/_nav.html.erb (Duration: 273.2ms | Allocations: 2160)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 31)
+Completed 200 OK in 5393ms (Views: 971.8ms | ActiveRecord: 4192.6ms | Allocations: 39170)
+
+
+  [1m[36mUser Load (215.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "teste@paga3.com"], ["LIMIT", 1]]
+  [1m[35m (283.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (311.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["cell_phone", "937731992"], ["id", 1954], ["LIMIT", 1]]
+  [1m[36mUser Update (287.0ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$12$/bZ4q.dzUUdtDBJsLEZ7gu3xwRhwtlF.X3v7kq7bEgD0nETW9XCCK"], ["updated_at", "2022-01-13 12:37:37.168288"], ["id", 1954]]
+  [1m[35m (213.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2022-01-13 13:38:16 +0100
+Processing by SiteController#index as HTML
+  Rendering site/index.html.erb within layouts/site
+  Rendered site/index.html.erb within layouts/site (Duration: 0.1ms | Allocations: 4)
+  [1m[36mConfiguration Load (213.8ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/site/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mPartner Load (215.6ms)[0m  [1m[34mSELECT "partners".* FROM "partners" WHERE "partners"."status" = $1[0m  [["status", true]]
+  ↳ app/views/layouts/site/_footer.html.erb:80
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/site/_footer.html.erb (Duration: 482.5ms | Allocations: 3285)
+Completed 200 OK in 736ms (Views: 304.1ms | ActiveRecord: 429.9ms | Allocations: 11659)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-13 13:38:23 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  [1m[36mConfiguration Load (287.3ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 299.1ms | Allocations: 4002)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+Completed 200 OK in 327ms (Views: 34.9ms | ActiveRecord: 287.4ms | Allocations: 12404)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-01-13 13:38:32 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ix3xkQLeZIjIeTto/EnrOQ4mpH/Ueb587ao3eDQBv6Yx9tAKbZ+DIYCIWc8RUavV9aO72T5AfeLU7TbTJaM/NQ==", "user"=>{"login"=>"teste@paga3.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (214.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(cell_phone) = 'teste@paga3.com' OR lower(email) = 'teste@paga3.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:140:in `find_for_database_authentication'
+Redirected to http://localhost:3000/
+Completed 302 Found in 467ms (ActiveRecord: 214.2ms | Allocations: 2068)
+
+
+Started GET "/" for ::1 at 2022-01-13 13:38:33 +0100
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (218.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/site_controller.rb:8:in `index'
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 227ms (ActiveRecord: 218.9ms | Allocations: 1283)
+
+
+Started GET "/dashboard" for ::1 at 2022-01-13 13:38:33 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (280.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mCompany Load (296.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/views/dashboard/_company.html.erb:28
+  [1m[35m (300.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "stores" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/dashboard/_company.html.erb:28
+  [1m[35m (298.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "stores" ON "products"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/dashboard/_company.html.erb:38
+  [1m[35m (299.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facturas" INNER JOIN "stores" ON "facturas"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/dashboard/_company.html.erb:48
+  Rendered dashboard/_company.html.erb (Duration: 1530.4ms | Allocations: 5050)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1532.0ms | Allocations: 5260)
+  [1m[36mConfiguration Load (292.2ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.7ms | Allocations: 346)
+  Rendered layouts/main/_nav.html.erb (Duration: 1.1ms | Allocations: 608)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 31)
+Completed 200 OK in 2134ms (Views: 358.6ms | ActiveRecord: 1768.1ms | Allocations: 15866)
+
+
+Started GET "/companies/details/39" for ::1 at 2022-01-13 13:38:47 +0100
+Processing by CompaniesController#details as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mUser Load (298.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (300.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "39"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:113:in `set_comapny'
+  [1m[36mCompany Load (215.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:113:in `set_comapny'
+  [1m[36mCompany Load (214.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  Rendering companies/details.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (213.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 39], ["record_type", "Company"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/companies/details.html.erb:6
+  [1m[35m (213.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "stores" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/details.html.erb:30
+  [1m[35m (311.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "stores" ON "products"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/details.html.erb:34
+  [1m[36mUser Load (305.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/views/companies/details.html.erb:68
+  [1m[36mBankAccount Load (214.0ms)[0m  [1m[34mSELECT "bank_accounts".* FROM "bank_accounts" WHERE "bank_accounts"."accountble_id" = $1 AND "bank_accounts"."accountble_type" = $2[0m  [["accountble_id", 39], ["accountble_type", "Company"]]
+  ↳ app/views/bank_accounts/_bank_accounts.html.erb:1
+  Rendered bank_accounts/_bank_accounts.html.erb (Duration: 737.1ms | Allocations: 2575)
+  [1m[36mBank Load (300.1ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/bank_accounts/_form.html.erb:19
+  Rendered bank_accounts/_form.html.erb (Duration: 607.6ms | Allocations: 11268)
+  Rendered companies/details.html.erb within layouts/application (Duration: 2413.2ms | Allocations: 18505)
+  [1m[36mConfiguration Load (279.5ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.5ms | Allocations: 114)
+  Rendered layouts/main/_nav.html.erb (Duration: 1.0ms | Allocations: 239)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 25)
+Completed 200 OK in 4121ms (Views: 316.8ms | ActiveRecord: 3444.5ms | Allocations: 35206)
+
+
+Started GET "/companies/paga-mais/edit" for ::1 at 2022-01-13 13:39:00 +0100
+Processing by CompaniesController#edit as HTML
+  Parameters: {"id"=>"paga-mais"}
+  [1m[36mUser Load (296.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (305.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:113:in `set_comapny'
+  [1m[36mCompany Load (265.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  Rendering companies/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (225.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 39], ["record_type", "Company"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/companies/edit.html.erb:6
+  [1m[36mCategory Load (214.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/companies/edit.html.erb:49
+  Rendered companies/edit.html.erb within layouts/application (Duration: 481.2ms | Allocations: 12539)
+  [1m[36mConfiguration Load (213.8ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.4ms | Allocations: 114)
+  Rendered layouts/main/_nav.html.erb (Duration: 0.9ms | Allocations: 239)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 1618ms (Views: 78.8ms | ActiveRecord: 1521.0ms | Allocations: 24637)
+
+
+Started PATCH "/companies/paga-mais" for ::1 at 2022-01-13 13:39:13 +0100
+Processing by CompaniesController#update as HTML
+  Parameters: {"authenticity_token"=>"dLWgkt3NkCjIjSaf1bXN0CRUivSatjhXMDQMA+JjqlSlNwrJ4EeGtP1AYEsWyB3Y7n+MuwjTRjUihAczDwcAeg==", "company"=>{"name"=>"Paga Mais", "email"=>"teste@paga3.com", "cell_phone"=>"930000123", "address"=>"Pedro de Castro Vandune Loy", "nif"=>"5000511528", "accountNumber"=>"0030298383009393", "iban"=>"AO060030298383009393", "category_id"=>"3"}, "commit"=>"Actualizar", "id"=>"paga-mais"}
+  [1m[36mUser Load (245.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (252.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:113:in `set_comapny'
+  [1m[36mCompany Load (300.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  [1m[36mUser Load (244.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/models/company.rb:109:in `get_user_by_id'
+  [1m[36mCompany Update (214.2ms)[0m  [1m[33mUPDATE "companies" SET "user_id" = $1 WHERE "companies"."id" = $2[0m  [["user_id", 1954], ["id", 39]]
+  ↳ app/models/company.rb:97:in `update_info_user'
+  [1m[35m (216.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/company.rb:102:in `update_info_user'
+  [1m[36mUser Exists? (214.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["cell_phone", "937731992"], ["id", 1954], ["LIMIT", 1]]
+  ↳ app/models/company.rb:102:in `update_info_user'
+  [1m[36mUser Update (275.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$12$Wdwc9l8bd5V68jU.jG5jkerQRC4evgumlBWGcshxkYAfF9OS.jRxG"], ["updated_at", "2022-01-13 12:39:15.294233"], ["id", 1954]]
+  ↳ app/models/company.rb:102:in `update_info_user'
+  [1m[35m (300.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/company.rb:102:in `update_info_user'
+[31mUnpermitted parameter: :email[0m
+  [1m[35m (252.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (303.5ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."email") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["email", "teste@paga3.com"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (302.1ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."accountNumber") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["accountNumber", "0030298383009393"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (301.3ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."iban") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["iban", "AO060030298383009393"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (303.4ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."cell_phone") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["cell_phone", "930000123"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Update (302.9ms)[0m  [1m[33mUPDATE "companies" SET "cell_phone" = $1, "updated_at" = $2 WHERE "companies"."id" = $3[0m  [["cell_phone", "930000123"], ["updated_at", "2022-01-13 12:39:19.361374"], ["id", 39]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[35m (303.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+Redirected to http://localhost:3000/companies/details/39
+Completed 302 Found in 6661ms (ActiveRecord: 4332.5ms | Allocations: 19592)
+
+
+Started GET "/companies/details/39" for ::1 at 2022-01-13 13:39:19 +0100
+Processing by CompaniesController#details as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mUser Load (297.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+Completed 401 Unauthorized in 306ms (ActiveRecord: 297.8ms | Allocations: 1725)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-13 13:39:20 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  [1m[36mConfiguration Load (264.9ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 280.7ms | Allocations: 3993)
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+Completed 200 OK in 322ms (Views: 53.9ms | ActiveRecord: 265.2ms | Allocations: 12410)
+
+
+  [1m[36mUser Load (214.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "teste@paga3.com"], ["LIMIT", 1]]
+  [1m[35m (215.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (213.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["cell_phone", "937731992"], ["id", 1954], ["LIMIT", 1]]
+  [1m[36mUser Update (213.1ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$12$Gn2xrlIXaK.KKBEw8JvlQO1seNFPIXyxU6Ro9Xpv27njS30U76bM."], ["updated_at", "2022-01-13 12:42:05.837723"], ["id", 1954]]
+  [1m[35m (213.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (214.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "teste@paga3.com"], ["LIMIT", 1]]
+  [1m[35m (216.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (267.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "empresa.teste@paga3.com"], ["id", 1954], ["LIMIT", 1]]
+  [1m[36mUser Exists? (300.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["cell_phone", "937731992"], ["id", 1954], ["LIMIT", 1]]
+  [1m[36mUser Update (306.8ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "empresa.teste@paga3.com"], ["updated_at", "2022-01-13 12:42:52.769328"], ["id", 1954]]
+  [1m[35m (215.5ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users/sign_in" for ::1 at 2022-01-13 13:43:12 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"JIe9wXXBrE6QO0wLm337Xa6flPKua6/aw33KbptGylWslEZw4LliLx20Nt28OXIEIh9WkLEaO/cuoPoLIKEfAQ==", "user"=>{"login"=>"empresa.teste@paga3.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (297.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(cell_phone) = 'empresa.teste@paga3.com' OR lower(email) = 'empresa.teste@paga3.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:140:in `find_for_database_authentication'
+Redirected to http://localhost:3000/companies/details/39
+Completed 302 Found in 553ms (ActiveRecord: 297.5ms | Allocations: 2049)
+
+
+Started GET "/companies/details/39" for ::1 at 2022-01-13 13:43:13 +0100
+Processing by CompaniesController#details as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mUser Load (214.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (217.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "39"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:113:in `set_comapny'
+  [1m[36mCompany Load (260.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:113:in `set_comapny'
+  [1m[36mCompany Load (291.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  Rendering companies/details.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (214.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 39], ["record_type", "Company"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/companies/details.html.erb:6
+  [1m[35m (213.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "stores" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/details.html.erb:30
+  [1m[35m (214.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "stores" ON "products"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/details.html.erb:34
+  [1m[36mUser Load (269.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/views/companies/details.html.erb:68
+  [1m[36mBankAccount Load (300.6ms)[0m  [1m[34mSELECT "bank_accounts".* FROM "bank_accounts" WHERE "bank_accounts"."accountble_id" = $1 AND "bank_accounts"."accountble_type" = $2[0m  [["accountble_id", 39], ["accountble_type", "Company"]]
+  ↳ app/views/bank_accounts/_bank_accounts.html.erb:1
+  Rendered bank_accounts/_bank_accounts.html.erb (Duration: 305.4ms | Allocations: 821)
+  [1m[36mBank Load (295.3ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/bank_accounts/_form.html.erb:19
+  Rendered bank_accounts/_form.html.erb (Duration: 306.0ms | Allocations: 5398)
+  Rendered companies/details.html.erb within layouts/application (Duration: 1545.6ms | Allocations: 10136)
+  [1m[36mConfiguration Load (298.8ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.4ms | Allocations: 111)
+  Rendered layouts/main/_nav.html.erb (Duration: 0.9ms | Allocations: 234)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+Completed 200 OK in 2889ms (Views: 74.3ms | ActiveRecord: 2790.9ms | Allocations: 22816)
+
+
+Started GET "/companies/paga-mais/edit" for ::1 at 2022-01-13 13:43:25 +0100
+Processing by CompaniesController#edit as HTML
+  Parameters: {"id"=>"paga-mais"}
+  [1m[36mUser Load (297.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (299.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:113:in `set_comapny'
+  [1m[36mCompany Load (246.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  Rendering companies/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (217.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 39], ["record_type", "Company"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/companies/edit.html.erb:6
+  [1m[36mCategory Load (316.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/companies/edit.html.erb:49
+  Rendered companies/edit.html.erb within layouts/application (Duration: 580.3ms | Allocations: 11879)
+  [1m[36mConfiguration Load (217.3ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.7ms | Allocations: 111)
+  Rendered layouts/main/_nav.html.erb (Duration: 1.3ms | Allocations: 234)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 1706ms (Views: 95.3ms | ActiveRecord: 1594.1ms | Allocations: 23831)
+
+
+Started PATCH "/companies/paga-mais" for ::1 at 2022-01-13 13:43:39 +0100
+Processing by CompaniesController#update as HTML
+  Parameters: {"authenticity_token"=>"xsKgkbYi0rmvDa3iDbsGFNFaENQagFBRJFnPGIpD3l1Hixf4Ps2lIW4RTyy5PtGSk4YlAer1cL5mEq4UgUtLeA==", "company"=>{"name"=>"Store Paga Mais", "email"=>"teste@paga3.com", "cell_phone"=>"930000123", "address"=>"Pedro de Castro Vandune Loy", "nif"=>"5000511528", "accountNumber"=>"0030298383009393", "iban"=>"AO060030298383009393", "category_id"=>"3"}, "commit"=>"Actualizar", "id"=>"paga-mais"}
+  [1m[36mUser Load (297.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (222.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:113:in `set_comapny'
+  [1m[36mCompany Load (250.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  [1m[36mUser Load (227.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/models/company.rb:109:in `get_user_by_id'
+  [1m[36mCompany Update (214.0ms)[0m  [1m[33mUPDATE "companies" SET "user_id" = $1 WHERE "companies"."id" = $2[0m  [["user_id", 1954], ["id", 39]]
+  ↳ app/models/company.rb:97:in `update_info_user'
+  [1m[35m (246.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/company.rb:102:in `update_info_user'
+  [1m[36mUser Exists? (304.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["cell_phone", "937731992"], ["id", 1954], ["LIMIT", 1]]
+  ↳ app/models/company.rb:102:in `update_info_user'
+  [1m[36mUser Update (300.8ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$12$cmfUsbXyDptu/lGHQVhpeu/bbsZVAFcWa/fJGAlXNwanOVWd2npUC"], ["updated_at", "2022-01-13 12:43:41.510608"], ["id", 1954]]
+  ↳ app/models/company.rb:102:in `update_info_user'
+  [1m[35m (718.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/company.rb:102:in `update_info_user'
+[31mUnpermitted parameter: :email[0m
+  [1m[35m (284.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (214.0ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."email") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["email", "teste@paga3.com"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (213.8ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."accountNumber") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["accountNumber", "0030298383009393"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (281.2ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."iban") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["iban", "AO060030298383009393"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (303.4ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."cell_phone") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["cell_phone", "930000123"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Update (303.5ms)[0m  [1m[33mUPDATE "companies" SET "name" = $1, "updated_at" = $2 WHERE "companies"."id" = $3[0m  [["name", "Store Paga Mais"], ["updated_at", "2022-01-13 12:43:45.612431"], ["id", 39]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[35m (299.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+Redirected to http://localhost:3000/companies/details/39
+Completed 302 Found in 6761ms (ActiveRecord: 4681.1ms | Allocations: 19188)
+
+
+Started GET "/companies/details/39" for ::1 at 2022-01-13 13:43:46 +0100
+Processing by CompaniesController#details as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mUser Load (296.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+Completed 401 Unauthorized in 305ms (ActiveRecord: 296.5ms | Allocations: 1735)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-13 13:43:46 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  [1m[36mConfiguration Load (255.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 269.9ms | Allocations: 3975)
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+Completed 200 OK in 303ms (Views: 44.9ms | ActiveRecord: 255.2ms | Allocations: 12404)
+
+
+  [1m[36mUser Load (215.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "teste@paga3.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (216.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "empresa.teste@paga3.com"], ["LIMIT", 1]]
+  [1m[35m (265.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (215.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["cell_phone", "937731992"], ["id", 1954], ["LIMIT", 1]]
+  [1m[36mUser Update (294.7ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$12$s8HGw6o1x3rLNLkVP.clpeSSkB4.sQz.J68jhRLTaqbvFYEA.xzxK"], ["updated_at", "2022-01-13 12:48:20.255996"], ["id", 1954]]
+  [1m[35m (304.8ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users/sign_in" for ::1 at 2022-01-13 13:48:29 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"pS+R+33/OegkMVHSOuzbzZcwHdagwgow/vzYP9MUFLcLeE0wZ7dZyS5qdzgOw3HsnlOLFOVX9F/Rka2Ks12dFw==", "user"=>{"login"=>"empresa.teste@paga3.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (217.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(cell_phone) = 'empresa.teste@paga3.com' OR lower(email) = 'empresa.teste@paga3.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:140:in `find_for_database_authentication'
+Redirected to http://localhost:3000/companies/details/39
+Completed 302 Found in 1329ms (ActiveRecord: 1050.0ms | Allocations: 16730)
+
+
+Started GET "/companies/details/39" for ::1 at 2022-01-13 13:48:31 +0100
+Processing by CompaniesController#details as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mUser Load (216.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (302.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "39"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (306.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (700.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  Rendering companies/details.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (216.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 39], ["record_type", "Company"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/companies/details.html.erb:6
+  [1m[35m (216.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "stores" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/details.html.erb:30
+  [1m[35m (214.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "stores" ON "products"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/details.html.erb:34
+  [1m[36mUser Load (264.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/views/companies/details.html.erb:68
+  [1m[36mBankAccount Load (213.7ms)[0m  [1m[34mSELECT "bank_accounts".* FROM "bank_accounts" WHERE "bank_accounts"."accountble_id" = $1 AND "bank_accounts"."accountble_type" = $2[0m  [["accountble_id", 39], ["accountble_type", "Company"]]
+  ↳ app/views/bank_accounts/_bank_accounts.html.erb:1
+  Rendered bank_accounts/_bank_accounts.html.erb (Duration: 442.7ms | Allocations: 2351)
+  [1m[36mBank Load (478.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/bank_accounts/_form.html.erb:19
+  Rendered bank_accounts/_form.html.erb (Duration: 1379.2ms | Allocations: 15549)
+  Rendered companies/details.html.erb within layouts/application (Duration: 4296.8ms | Allocations: 27429)
+  [1m[36mConfiguration Load (250.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.4ms | Allocations: 115)
+  Rendered layouts/main/_nav.html.erb (Duration: 0.7ms | Allocations: 245)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 31)
+Completed 200 OK in 7274ms (Views: 179.3ms | ActiveRecord: 6971.4ms | Allocations: 71344)
+
+
+Started GET "/companies/paga-mais/edit" for ::1 at 2022-01-13 13:48:45 +0100
+Processing by CompaniesController#edit as HTML
+  Parameters: {"id"=>"paga-mais"}
+  [1m[36mUser Load (295.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (303.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (7932.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  Rendering companies/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (240.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 39], ["record_type", "Company"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/companies/edit.html.erb:6
+  [1m[36mCategory Load (426.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/companies/edit.html.erb:49
+  Rendered companies/edit.html.erb within layouts/application (Duration: 1293.0ms | Allocations: 18196)
+  [1m[36mConfiguration Load (274.2ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.6ms | Allocations: 111)
+  Rendered layouts/main/_nav.html.erb (Duration: 1.2ms | Allocations: 234)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 10161ms (Views: 123.2ms | ActiveRecord: 10016.0ms | Allocations: 30188)
+
+
+Started PATCH "/companies/paga-mais" for ::1 at 2022-01-13 13:49:06 +0100
+Processing by CompaniesController#update as HTML
+  Parameters: {"authenticity_token"=>"gQTSz5yXy1hoT149QxnsDOHLdwBSw10awSuSRbjhZlLtcpn7xUnkwZh0rd/wG8LmAQjoXMY/GbhMM0/g6/BbKA==", "company"=>{"name"=>"Store Paga Mais", "email"=>"teste@paga3.com", "cell_phone"=>"930000123", "address"=>"Pedro de Castro Vandune Loy", "nif"=>"5000511528", "accountNumber"=>"0030298383009393", "iban"=>"AO060030298383009393", "category_id"=>"3"}, "commit"=>"Actualizar", "id"=>"paga-mais"}
+  [1m[36mUser Load (232.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (214.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (223.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+[31mUnpermitted parameter: :email[0m
+  [1m[35m (228.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (213.6ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."email") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["email", "teste@paga3.com"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (252.3ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."accountNumber") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["accountNumber", "0030298383009393"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (303.3ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."iban") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["iban", "AO060030298383009393"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (300.8ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."cell_phone") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["cell_phone", "930000123"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[35m (215.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+Redirected to http://localhost:3000/companies/paga-mais
+Completed 302 Found in 2239ms (ActiveRecord: 2184.9ms | Allocations: 10889)
+
+
+Started GET "/companies/paga-mais" for ::1 at 2022-01-13 13:49:09 +0100
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"paga-mais"}
+  [1m[36mUser Load (212.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (218.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (301.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+Redirected to http://localhost:3000/
+Completed 302 Found in 757ms (ActiveRecord: 732.9ms | Allocations: 4296)
+
+
+Started GET "/" for ::1 at 2022-01-13 13:49:10 +0100
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (304.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/site_controller.rb:8:in `index'
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 585ms (ActiveRecord: 573.0ms | Allocations: 2539)
+
+
+Started GET "/dashboard" for ::1 at 2022-01-13 13:49:11 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (290.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mCompany Load (299.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/views/dashboard/_company.html.erb:28
+  [1m[35m (301.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "stores" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/dashboard/_company.html.erb:28
+  [1m[35m (245.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "stores" ON "products"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/dashboard/_company.html.erb:38
+  [1m[35m (217.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "facturas" INNER JOIN "stores" ON "facturas"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/dashboard/_company.html.erb:48
+  Rendered dashboard/_company.html.erb (Duration: 1332.6ms | Allocations: 8759)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1333.4ms | Allocations: 8833)
+  [1m[36mConfiguration Load (298.6ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.6ms | Allocations: 113)
+  Rendered layouts/main/_nav.html.erb (Duration: 1.2ms | Allocations: 237)
+  Rendered layouts/main/_header.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 31)
+Completed 200 OK in 2281ms (Views: 88.9ms | ActiveRecord: 2173.6ms | Allocations: 20778)
+
+
+Started GET "/companies/details/39" for ::1 at 2022-01-13 13:50:32 +0100
+Processing by CompaniesController#details as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mUser Load (222.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (219.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "39"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (216.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (229.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  Rendering companies/details.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (223.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 39], ["record_type", "Company"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/companies/details.html.erb:6
+  [1m[35m (223.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "stores" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/details.html.erb:30
+  [1m[35m (305.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "stores" ON "products"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/details.html.erb:34
+  [1m[36mUser Load (295.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/views/companies/details.html.erb:68
+  [1m[36mBankAccount Load (317.0ms)[0m  [1m[34mSELECT "bank_accounts".* FROM "bank_accounts" WHERE "bank_accounts"."accountble_id" = $1 AND "bank_accounts"."accountble_type" = $2[0m  [["accountble_id", 39], ["accountble_type", "Company"]]
+  ↳ app/views/bank_accounts/_bank_accounts.html.erb:1
+  Rendered bank_accounts/_bank_accounts.html.erb (Duration: 611.7ms | Allocations: 2355)
+  [1m[36mBank Load (1132.3ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/bank_accounts/_form.html.erb:19
+  Rendered bank_accounts/_form.html.erb (Duration: 2006.1ms | Allocations: 15545)
+  Rendered companies/details.html.erb within layouts/application (Duration: 4826.1ms | Allocations: 27428)
+  [1m[36mConfiguration Load (224.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered layouts/main/_nav.html.erb (Duration: 0.5ms | Allocations: 245)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+Completed 200 OK in 9531ms (Views: 306.4ms | ActiveRecord: 9062.5ms | Allocations: 86226)
+
+
+Started GET "/companies/paga-mais/edit" for ::1 at 2022-01-13 13:50:44 +0100
+Processing by CompaniesController#edit as HTML
+  Parameters: {"id"=>"paga-mais"}
+  [1m[36mUser Load (1395.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (221.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (219.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  Rendering companies/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (248.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 39], ["record_type", "Company"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/companies/edit.html.erb:6
+  [1m[36mCategory Load (582.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/companies/edit.html.erb:49
+  Rendered companies/edit.html.erb within layouts/application (Duration: 1501.6ms | Allocations: 18193)
+  [1m[36mConfiguration Load (279.3ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.4ms | Allocations: 111)
+  Rendered layouts/main/_nav.html.erb (Duration: 0.9ms | Allocations: 234)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 3665ms (Views: 101.3ms | ActiveRecord: 3552.0ms | Allocations: 30148)
+
+
+Started PATCH "/companies/paga-mais" for ::1 at 2022-01-13 13:51:09 +0100
+Processing by CompaniesController#update as HTML
+  Parameters: {"authenticity_token"=>"yNf3hmS3GlSNMZtpWoGZc611AitZtyURtvbjV1fUc8WkobyyPWk1zX0KaIvpg7eZTbadd81LYbM77j7yBMVOvw==", "company"=>{"name"=>"Store Paga ", "email"=>"empresa.teste@paga3.com", "cell_phone"=>"930000123", "address"=>"Pedro de Castro Vandune Loy", "nif"=>"5000511528", "accountNumber"=>"0030298383009393", "iban"=>"AO060030298383009393", "category_id"=>"3"}, "commit"=>"Actualizar", "id"=>"paga-mais"}
+  [1m[36mUser Load (216.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (259.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (302.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+[31mUnpermitted parameter: :email[0m
+  [1m[35m (708.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (233.1ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."email") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["email", "teste@paga3.com"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (222.4ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."accountNumber") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["accountNumber", "0030298383009393"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (247.7ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."iban") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["iban", "AO060030298383009393"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Exists? (223.0ms)[0m  [1m[34mSELECT 1 AS one FROM "companies" WHERE LOWER("companies"."cell_phone") = LOWER($1) AND "companies"."id" != $2 AND "companies"."user_id" = $3 LIMIT $4[0m  [["cell_phone", "930000123"], ["id", 39], ["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[36mCompany Update (221.1ms)[0m  [1m[33mUPDATE "companies" SET "name" = $1, "updated_at" = $2 WHERE "companies"."id" = $3[0m  [["name", "Store Paga "], ["updated_at", "2022-01-13 12:51:12.513535"], ["id", 39]]
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+  [1m[35m (251.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:74:in `block in update'
+Redirected to http://localhost:3000/companies/paga-mais
+Completed 302 Found in 2945ms (ActiveRecord: 2885.7ms | Allocations: 11747)
+
+
+Started GET "/companies/paga-mais" for ::1 at 2022-01-13 13:51:13 +0100
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"paga-mais"}
+  [1m[36mUser Load (223.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (271.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "paga-mais"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (300.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+Redirected to http://localhost:3000/
+Completed 302 Found in 822ms (ActiveRecord: 796.0ms | Allocations: 4188)
+
+
+Started GET "/" for ::1 at 2022-01-13 13:51:14 +0100
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (242.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/controllers/site_controller.rb:8:in `index'
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 480ms (ActiveRecord: 466.4ms | Allocations: 2548)
+
+
+Started GET "/dashboard" for ::1 at 2022-01-13 13:51:14 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (2954.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mCompany Load (268.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/views/dashboard/_company.html.erb:28
+  [1m[35m (304.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "stores" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/dashboard/_company.html.erb:28
+  [1m[35m (300.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "stores" ON "products"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/dashboard/_company.html.erb:38
+  [1m[35m (255.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "facturas" INNER JOIN "stores" ON "facturas"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/dashboard/_company.html.erb:48
+  Rendered dashboard/_company.html.erb (Duration: 1398.2ms | Allocations: 8761)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1398.8ms | Allocations: 8835)
+  [1m[36mConfiguration Load (300.8ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.6ms | Allocations: 113)
+  Rendered layouts/main/_nav.html.erb (Duration: 1.0ms | Allocations: 237)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 31)
+Completed 200 OK in 5856ms (Views: 75.2ms | ActiveRecord: 5761.6ms | Allocations: 20752)
+
+
+Started GET "/companies/details/39" for ::1 at 2022-01-13 13:51:33 +0100
+Processing by CompaniesController#details as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mUser Load (1323.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  [1m[36mCompany Load (223.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "39"], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (273.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:112:in `set_comapny'
+  [1m[36mCompany Load (218.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1954], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:14:in `initialize'
+  Rendering companies/details.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (222.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 39], ["record_type", "Company"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/companies/details.html.erb:6
+  [1m[35m (875.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "stores" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/details.html.erb:30
+  [1m[35m (303.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "stores" ON "products"."store_id" = "stores"."id" WHERE "stores"."company_id" = $1[0m  [["company_id", 39]]
+  ↳ app/views/companies/details.html.erb:34
+  [1m[36mUser Load (302.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1954], ["LIMIT", 1]]
+  ↳ app/views/companies/details.html.erb:68
+  [1m[36mBankAccount Load (222.2ms)[0m  [1m[34mSELECT "bank_accounts".* FROM "bank_accounts" WHERE "bank_accounts"."accountble_id" = $1 AND "bank_accounts"."accountble_type" = $2[0m  [["accountble_id", 39], ["accountble_type", "Company"]]
+  ↳ app/views/bank_accounts/_bank_accounts.html.erb:1
+  Rendered bank_accounts/_bank_accounts.html.erb (Duration: 226.9ms | Allocations: 821)
+  [1m[36mBank Load (479.9ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/bank_accounts/_form.html.erb:19
+  Rendered bank_accounts/_form.html.erb (Duration: 499.0ms | Allocations: 5397)
+  Rendered companies/details.html.erb within layouts/application (Duration: 2451.7ms | Allocations: 10138)
+  [1m[36mConfiguration Load (253.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/main/_nav_company.html.erb (Duration: 0.5ms | Allocations: 111)
+  Rendered layouts/main/_nav.html.erb (Duration: 0.9ms | Allocations: 234)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 4804ms (Views: 83.9ms | ActiveRecord: 4697.5ms | Allocations: 22838)
+
+

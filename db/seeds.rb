@@ -11,6 +11,7 @@
 #   pg_restore --verbose --clean --no-acl --no-owner -h localhost -U joaocabanga -d rails_paga3_development paga3_backup_31_08_2021.dmp
 
 user = User.create(
+    full_name: 'JM Cabanga',
     email: "manucabanga@gmail.com", 
     cell_phone: "913747200", 
     role: 222,
