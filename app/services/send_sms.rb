@@ -14,7 +14,7 @@ class SendSMS
                 :body => {
                     "message": {
                         "api_key_app": Rails.application.credentials.sms[:telco_sms_api_key],
-                        "phone_number": '937731992',
+                        "phone_number": @number,
                         "message_body": @message
                     }
                 }.to_json
