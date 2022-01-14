@@ -7,7 +7,11 @@ default: &default
 
 development:
     <<: *default
-
+    host: <%= ENV.fetch("HOST_PAGA3") %>
+    database: <%= ENV.fetch("DATABASE_PAGA3") %>
+    port: <%= ENV.fetch("PORT_PAGA3") %>
+    username: <%= ENV.fetch("USERNAME_PAGA3") %>
+    password: <%= ENV.fetch("PASSWORD_PAGA3") %>
 
 test:
     <<: *default
@@ -25,9 +29,9 @@ test:
 
 production:
     <<: *default
-    host: staging-paga3-db-do-user-8097670-0.b.db.ondigitalocean.com
-    database: paga3-staging-db
-    port: 25060
-    username: deploy
-    password: CTrAnpH3brECVd25
+    host: <%= ENV.fetch("HOST_PAGA3") %>
+    database: <%= ENV.fetch("DATABASE_PAGA3") %>
+    port: <%= ENV.fetch("PORT_PAGA3") %>
+    username: <%= ENV.fetch("USERNAME_PAGA3") %>
+    password: <%= ENV.fetch("PASSWORD_PAGA3") %>
 

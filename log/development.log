@@ -33542,3 +33542,112 @@ Completed 200 OK in 2178ms (Views: 499.3ms | ActiveRecord: 1623.6ms | Allocation
   [1m[36mUser Exists? (216.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["cell_phone", "937731992"], ["id", 1954], ["LIMIT", 1]]
   [1m[36mUser Update (302.9ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$12$cV.EtzMvehL.94zSXvd4v.iv4vk7GYUTGkZjux/MwmlBWI1/r7DvW"], ["updated_at", "2022-01-13 13:07:26.931969"], ["id", 1954]]
   [1m[35m (305.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2022-01-14 12:22:35 +0100
+  [1m[35m (408.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering site/index.html.erb within layouts/site
+  Rendered site/index.html.erb within layouts/site (Duration: 3.1ms | Allocations: 383)
+  [1m[36mConfiguration Load (406.2ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/site/_navbar.html.erb (Duration: 1.8ms | Allocations: 102)
+  [1m[36mPartner Load (612.4ms)[0m  [1m[34mSELECT "partners".* FROM "partners" WHERE "partners"."status" = $1[0m  [["status", true]]
+  ↳ app/views/layouts/site/_footer.html.erb:80
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/site/_footer.html.erb (Duration: 1182.0ms | Allocations: 3914)
+Completed 200 OK in 4386ms (Views: 1070.2ms | ActiveRecord: 3288.8ms | Allocations: 34245)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-14 12:22:59 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  [1m[36mConfiguration Load (428.9ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 464.6ms | Allocations: 12192)
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+Completed 200 OK in 1333ms (Views: 79.3ms | ActiveRecord: 1198.5ms | Allocations: 38149)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-01-14 12:23:07 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ja5AlN79vjqKMcIDHxUedFpNzxQWpInWPsSvDWHxGBuFdZQjhhstn8Kvvc10LynK+ReCQ2eka2PdIqACe18EVA==", "user"=>{"login"=>"manucabanga@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (317.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(cell_phone) = 'manucabanga@gmail.com' OR lower(email) = 'manucabanga@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:140:in `find_for_database_authentication'
+Redirected to http://localhost:3000/
+Completed 302 Found in 580ms (ActiveRecord: 317.7ms | Allocations: 4462)
+
+
+Started GET "/" for ::1 at 2022-01-14 12:23:08 +0100
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (410.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1953], ["LIMIT", 1]]
+  ↳ app/controllers/site_controller.rb:8:in `index'
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 819ms (ActiveRecord: 410.9ms | Allocations: 1276)
+
+
+Started GET "/dashboard" for ::1 at 2022-01-14 12:23:10 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (313.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1953], ["LIMIT", 1]]
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[35m (402.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles"[0m
+  ↳ app/views/dashboard/_admin.html.erb:27
+  [1m[35m (405.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" WHERE "profiles"."status" = $1[0m  [["status", 1]]
+  ↳ app/views/dashboard/_admin.html.erb:36
+  [1m[35m (406.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies"[0m
+  ↳ app/views/dashboard/_admin.html.erb:44
+  Rendered dashboard/_admin.html.erb (Duration: 2722.7ms | Allocations: 4107)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 2724.4ms | Allocations: 4511)
+  [1m[36mConfiguration Load (400.4ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.6ms | Allocations: 67)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mAdmin Load (407.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1953], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 1720.9ms | Allocations: 12745)
+  Rendered layouts/main/_nav.html.erb (Duration: 1741.8ms | Allocations: 13285)
+  Rendered layouts/main/_header.html.erb (Duration: 1.1ms | Allocations: 87)
+  Rendered layouts/_flash.html.erb (Duration: 1.6ms | Allocations: 189)
+Completed 200 OK in 5726ms (Views: 582.4ms | ActiveRecord: 5076.1ms | Allocations: 42319)
+
+
