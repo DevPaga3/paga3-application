@@ -3336,3 +3336,623 @@ Entrypoint application = js/application-75a3bce5ffe1a48cecea.js js/application-7
   INFO [868f0705] Running /usr/bin/env echo "Branch master (at 6252ed026abd1c533bd60bce826c16a0917e46b5) deployed as release 20220114111452 by joaocabanga" >> /home/deploy/paga3/revisions.log as deploy@143.244.159.19
  DEBUG [868f0705] Command: cd /home/deploy/paga3/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env echo "Branch master (at 6252ed026abd1c533bd60bce826c16a0917e46b5) deployed as release 20220114111452 by joaocabanga" >> /home/deploy/paga3/revisions.log )
   INFO [868f0705] Finished in 2.651 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-01-14 12:27:19 +0100 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [6ee4bf11] Running [ -d $HOME/.rbenv/versions/2.7.1 ] as deploy@143.244.159.19
+ DEBUG [6ee4bf11] Command: [ -d $HOME/.rbenv/versions/2.7.1 ]
+ DEBUG [6ee4bf11] Finished in 8.577 seconds with exit status 0 (successful).
+ DEBUG [c7079467] Running /usr/bin/env which passenger as deploy@143.244.159.19
+ DEBUG [c7079467] Command: /usr/bin/env which passenger
+ DEBUG [c7079467] 	/usr/bin/passenger
+ DEBUG [c7079467] Finished in 1.542 seconds with exit status 0 (successful).
+  INFO [75c8fdf7] Running /usr/bin/env mkdir -p /tmp as deploy@143.244.159.19
+ DEBUG [75c8fdf7] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [75c8fdf7] Finished in 1.014 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-23c74ad45639681f69b9.sh 0.0%
+  INFO Uploading /tmp/git-ssh-23c74ad45639681f69b9.sh 100.0%
+  INFO [30cfe8c8] Running /usr/bin/env chmod 700 /tmp/git-ssh-23c74ad45639681f69b9.sh as deploy@143.244.159.19
+ DEBUG [30cfe8c8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-23c74ad45639681f69b9.sh )
+  INFO [30cfe8c8] Finished in 1.228 seconds with exit status 0 (successful).
+  INFO [aec47468] Running /usr/bin/env git ls-remote git@github.com:acholis/paga3.git HEAD as deploy@143.244.159.19
+ DEBUG [aec47468] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-23c74ad45639681f69b9.sh" ; /usr/bin/env git ls-remote git@github.com:acholis/paga3.git HEAD )
+ DEBUG [aec47468] 	6252ed026abd1c533bd60bce826c16a0917e46b5	HEAD
+  INFO [aec47468] Finished in 3.361 seconds with exit status 0 (successful).
+  INFO [c3c1b9a9] Running /usr/bin/env mkdir -p /home/deploy/paga3/shared /home/deploy/paga3/releases as deploy@143.244.159.19
+ DEBUG [c3c1b9a9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /home/deploy/paga3/shared /home/deploy/paga3/releases )
+  INFO [c3c1b9a9] Finished in 0.994 seconds with exit status 0 (successful).
+  INFO [42806ce9] Running /usr/bin/env mkdir -p /home/deploy/paga3/shared/log /home/deploy/paga3/shared/tmp/pids /home/deploy/paga3/shared/tmp/cache /home/deploy/paga3/shared/tmp/sockets /home/deploy/paga3/shared/vendor/bundle /home/deploy/paga3/shared/.bundle /home/deploy/paga3/shared/public/system /home/deploy/paga3/shared/public/uploads /home/deploy/paga3/shared/public/packs /home/deploy/paga3/shared/node_modules /home/deploy/paga3/shared/public/assets as deploy@143.244.159.19
+ DEBUG [42806ce9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /home/deploy/paga3/shared/log /home/deploy/paga3/shared/tmp/pids /home/deploy/paga3/shared/tmp/cache /home/deploy/paga3/shared/tmp/sockets /home/deploy/paga3/shared/vendor/bundle /home/deploy/paga3/shared/.bundle /home/deploy/paga3/shared/public/system /home/deploy/paga3/shared/public/uploads /home/deploy/paga3/shared/public/packs /home/deploy/paga3/shared/node_modules /home/deploy/paga3/shared/public/assets )
+  INFO [42806ce9] Finished in 0.948 seconds with exit status 0 (successful).
+ DEBUG [7f093179] Running [ -f /home/deploy/paga3/current/REVISION ] as deploy@143.244.159.19
+ DEBUG [7f093179] Command: [ -f /home/deploy/paga3/current/REVISION ]
+ DEBUG [7f093179] Finished in 0.990 seconds with exit status 0 (successful).
+ DEBUG [edca0068] Running /usr/bin/env cat /home/deploy/paga3/current/REVISION 2>/dev/null as deploy@143.244.159.19
+ DEBUG [edca0068] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env cat /home/deploy/paga3/current/REVISION 2>/dev/null )
+ DEBUG [edca0068] 	6252ed026abd1c533bd60bce826c16a0917e46b5
+ DEBUG [edca0068] Finished in 2.098 seconds with exit status 0 (successful).
+ DEBUG [1a746ad1] Running [ -f /home/deploy/paga3/repo/HEAD ] as deploy@143.244.159.19
+ DEBUG [1a746ad1] Command: [ -f /home/deploy/paga3/repo/HEAD ]
+ DEBUG [1a746ad1] Finished in 1.141 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/paga3/repo
+ DEBUG [011fcc0e] Running if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [011fcc0e] Command: if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi
+ DEBUG [011fcc0e] Finished in 0.949 seconds with exit status 0 (successful).
+  INFO [7858b95e] Running /usr/bin/env git remote set-url origin git@github.com:acholis/paga3.git as deploy@143.244.159.19
+ DEBUG [7858b95e] Command: cd /home/deploy/paga3/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-23c74ad45639681f69b9.sh" ; /usr/bin/env git remote set-url origin git@github.com:acholis/paga3.git )
+  INFO [7858b95e] Finished in 0.995 seconds with exit status 0 (successful).
+  INFO [4aa9c33f] Running /usr/bin/env git remote update --prune as deploy@143.244.159.19
+ DEBUG [4aa9c33f] Command: cd /home/deploy/paga3/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-23c74ad45639681f69b9.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4aa9c33f] 	Fetching origin
+  INFO [4aa9c33f] Finished in 3.362 seconds with exit status 0 (successful).
+ DEBUG [dd82f465] Running if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [dd82f465] Command: if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi
+ DEBUG [dd82f465] Finished in 0.779 seconds with exit status 0 (successful).
+  INFO [b9194856] Running /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220114112742 as deploy@143.244.159.19
+ DEBUG [b9194856] Command: cd /home/deploy/paga3/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-23c74ad45639681f69b9.sh" ; /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220114112742 )
+  INFO [b9194856] Finished in 1.052 seconds with exit status 0 (successful).
+  INFO [75e1253a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/paga3/releases/20220114112742 as deploy@143.244.159.19
+ DEBUG [75e1253a] Command: cd /home/deploy/paga3/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-23c74ad45639681f69b9.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/paga3/releases/20220114112742 )
+  INFO [75e1253a] Finished in 1.741 seconds with exit status 0 (successful).
+ DEBUG [b098e0ae] Running if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [b098e0ae] Command: if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi
+ DEBUG [b098e0ae] Finished in 1.229 seconds with exit status 0 (successful).
+ DEBUG [ed23e9ff] Running /usr/bin/env git rev-list --max-count=1 master as deploy@143.244.159.19
+ DEBUG [ed23e9ff] Command: cd /home/deploy/paga3/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-23c74ad45639681f69b9.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [ed23e9ff] 	6252ed026abd1c533bd60bce826c16a0917e46b5
+ DEBUG [ed23e9ff] Finished in 1.130 seconds with exit status 0 (successful).
+ DEBUG [46152331] Running if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [46152331] Command: if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi
+ DEBUG [46152331] Finished in 1.021 seconds with exit status 0 (successful).
+  INFO [701d833c] Running /usr/bin/env echo "6252ed026abd1c533bd60bce826c16a0917e46b5" > REVISION as deploy@143.244.159.19
+ DEBUG [701d833c] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env echo "6252ed026abd1c533bd60bce826c16a0917e46b5" > REVISION )
+  INFO [701d833c] Finished in 1.035 seconds with exit status 0 (successful).
+  INFO [d599ef6a] Running /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220114112742 /home/deploy/paga3/releases/20220114112742/tmp /home/deploy/paga3/releases/20220114112742/vendor /home/deploy/paga3/releases/20220114112742/public as deploy@143.244.159.19
+ DEBUG [d599ef6a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220114112742 /home/deploy/paga3/releases/20220114112742/tmp /home/deploy/paga3/releases/20220114112742/vendor /home/deploy/paga3/releases/20220114112742/public )
+  INFO [d599ef6a] Finished in 1.112 seconds with exit status 0 (successful).
+ DEBUG [50cfc02d] Running [ -L /home/deploy/paga3/releases/20220114112742/log ] as deploy@143.244.159.19
+ DEBUG [50cfc02d] Command: [ -L /home/deploy/paga3/releases/20220114112742/log ]
+ DEBUG [50cfc02d] Finished in 1.739 seconds with exit status 1 (failed).
+ DEBUG [e53f6d9c] Running [ -d /home/deploy/paga3/releases/20220114112742/log ] as deploy@143.244.159.19
+ DEBUG [e53f6d9c] Command: [ -d /home/deploy/paga3/releases/20220114112742/log ]
+ DEBUG [e53f6d9c] Finished in 0.991 seconds with exit status 0 (successful).
+  INFO [d28ffd6a] Running /usr/bin/env rm -rf /home/deploy/paga3/releases/20220114112742/log as deploy@143.244.159.19
+ DEBUG [d28ffd6a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env rm -rf /home/deploy/paga3/releases/20220114112742/log )
+  INFO [d28ffd6a] Finished in 1.161 seconds with exit status 0 (successful).
+  INFO [87bf6254] Running /usr/bin/env ln -s /home/deploy/paga3/shared/log /home/deploy/paga3/releases/20220114112742/log as deploy@143.244.159.19
+ DEBUG [87bf6254] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/log /home/deploy/paga3/releases/20220114112742/log )
+  INFO [87bf6254] Finished in 1.833 seconds with exit status 0 (successful).
+ DEBUG [842ecb89] Running [ -L /home/deploy/paga3/releases/20220114112742/tmp/pids ] as deploy@143.244.159.19
+ DEBUG [842ecb89] Command: [ -L /home/deploy/paga3/releases/20220114112742/tmp/pids ]
+ DEBUG [842ecb89] Finished in 2.161 seconds with exit status 1 (failed).
+ DEBUG [ee73b599] Running [ -d /home/deploy/paga3/releases/20220114112742/tmp/pids ] as deploy@143.244.159.19
+ DEBUG [ee73b599] Command: [ -d /home/deploy/paga3/releases/20220114112742/tmp/pids ]
+ DEBUG [ee73b599] Finished in 1.034 seconds with exit status 0 (successful).
+  INFO [8a4cf16f] Running /usr/bin/env rm -rf /home/deploy/paga3/releases/20220114112742/tmp/pids as deploy@143.244.159.19
+ DEBUG [8a4cf16f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env rm -rf /home/deploy/paga3/releases/20220114112742/tmp/pids )
+  INFO [8a4cf16f] Finished in 2.244 seconds with exit status 0 (successful).
+  INFO [2734d8b9] Running /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/pids /home/deploy/paga3/releases/20220114112742/tmp/pids as deploy@143.244.159.19
+ DEBUG [2734d8b9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/pids /home/deploy/paga3/releases/20220114112742/tmp/pids )
+  INFO [2734d8b9] Finished in 3.170 seconds with exit status 0 (successful).
+ DEBUG [0f753ce5] Running [ -L /home/deploy/paga3/releases/20220114112742/tmp/cache ] as deploy@143.244.159.19
+ DEBUG [0f753ce5] Command: [ -L /home/deploy/paga3/releases/20220114112742/tmp/cache ]
+ DEBUG [0f753ce5] Finished in 1.639 seconds with exit status 1 (failed).
+ DEBUG [2b24ff40] Running [ -d /home/deploy/paga3/releases/20220114112742/tmp/cache ] as deploy@143.244.159.19
+ DEBUG [2b24ff40] Command: [ -d /home/deploy/paga3/releases/20220114112742/tmp/cache ]
+ DEBUG [2b24ff40] Finished in 2.159 seconds with exit status 1 (failed).
+  INFO [8e89eba7] Running /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/cache /home/deploy/paga3/releases/20220114112742/tmp/cache as deploy@143.244.159.19
+ DEBUG [8e89eba7] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/cache /home/deploy/paga3/releases/20220114112742/tmp/cache )
+  INFO [8e89eba7] Finished in 1.032 seconds with exit status 0 (successful).
+ DEBUG [57da712d] Running [ -L /home/deploy/paga3/releases/20220114112742/tmp/sockets ] as deploy@143.244.159.19
+ DEBUG [57da712d] Command: [ -L /home/deploy/paga3/releases/20220114112742/tmp/sockets ]
+ DEBUG [57da712d] Finished in 1.120 seconds with exit status 1 (failed).
+ DEBUG [4c0534e6] Running [ -d /home/deploy/paga3/releases/20220114112742/tmp/sockets ] as deploy@143.244.159.19
+ DEBUG [4c0534e6] Command: [ -d /home/deploy/paga3/releases/20220114112742/tmp/sockets ]
+ DEBUG [4c0534e6] Finished in 3.983 seconds with exit status 1 (failed).
+  INFO [14cbcdd4] Running /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/sockets /home/deploy/paga3/releases/20220114112742/tmp/sockets as deploy@143.244.159.19
+ DEBUG [14cbcdd4] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/sockets /home/deploy/paga3/releases/20220114112742/tmp/sockets )
+  INFO [14cbcdd4] Finished in 0.954 seconds with exit status 0 (successful).
+ DEBUG [2c3a35c8] Running [ -L /home/deploy/paga3/releases/20220114112742/vendor/bundle ] as deploy@143.244.159.19
+ DEBUG [2c3a35c8] Command: [ -L /home/deploy/paga3/releases/20220114112742/vendor/bundle ]
+ DEBUG [2c3a35c8] Finished in 1.407 seconds with exit status 1 (failed).
+ DEBUG [ed31a79e] Running [ -d /home/deploy/paga3/releases/20220114112742/vendor/bundle ] as deploy@143.244.159.19
+ DEBUG [ed31a79e] Command: [ -d /home/deploy/paga3/releases/20220114112742/vendor/bundle ]
+ DEBUG [ed31a79e] Finished in 1.124 seconds with exit status 1 (failed).
+  INFO [d34e076c] Running /usr/bin/env ln -s /home/deploy/paga3/shared/vendor/bundle /home/deploy/paga3/releases/20220114112742/vendor/bundle as deploy@143.244.159.19
+ DEBUG [d34e076c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/vendor/bundle /home/deploy/paga3/releases/20220114112742/vendor/bundle )
+  INFO [d34e076c] Finished in 1.228 seconds with exit status 0 (successful).
+ DEBUG [3796ee9c] Running [ -L /home/deploy/paga3/releases/20220114112742/.bundle ] as deploy@143.244.159.19
+ DEBUG [3796ee9c] Command: [ -L /home/deploy/paga3/releases/20220114112742/.bundle ]
+ DEBUG [3796ee9c] Finished in 2.451 seconds with exit status 1 (failed).
+ DEBUG [77744f78] Running [ -d /home/deploy/paga3/releases/20220114112742/.bundle ] as deploy@143.244.159.19
+ DEBUG [77744f78] Command: [ -d /home/deploy/paga3/releases/20220114112742/.bundle ]
+ DEBUG [77744f78] Finished in 2.963 seconds with exit status 1 (failed).
+  INFO [e4eba45a] Running /usr/bin/env ln -s /home/deploy/paga3/shared/.bundle /home/deploy/paga3/releases/20220114112742/.bundle as deploy@143.244.159.19
+ DEBUG [e4eba45a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/.bundle /home/deploy/paga3/releases/20220114112742/.bundle )
+  INFO [e4eba45a] Finished in 1.229 seconds with exit status 0 (successful).
+ DEBUG [8d2d87df] Running [ -L /home/deploy/paga3/releases/20220114112742/public/system ] as deploy@143.244.159.19
+ DEBUG [8d2d87df] Command: [ -L /home/deploy/paga3/releases/20220114112742/public/system ]
+ DEBUG [8d2d87df] Finished in 1.636 seconds with exit status 1 (failed).
+ DEBUG [0e1066bf] Running [ -d /home/deploy/paga3/releases/20220114112742/public/system ] as deploy@143.244.159.19
+ DEBUG [0e1066bf] Command: [ -d /home/deploy/paga3/releases/20220114112742/public/system ]
+ DEBUG [0e1066bf] Finished in 1.126 seconds with exit status 1 (failed).
+  INFO [390ce67d] Running /usr/bin/env ln -s /home/deploy/paga3/shared/public/system /home/deploy/paga3/releases/20220114112742/public/system as deploy@143.244.159.19
+ DEBUG [390ce67d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/public/system /home/deploy/paga3/releases/20220114112742/public/system )
+  INFO [390ce67d] Finished in 1.230 seconds with exit status 0 (successful).
+ DEBUG [0d49776a] Running [ -L /home/deploy/paga3/releases/20220114112742/public/uploads ] as deploy@143.244.159.19
+ DEBUG [0d49776a] Command: [ -L /home/deploy/paga3/releases/20220114112742/public/uploads ]
+ DEBUG [0d49776a] Finished in 1.220 seconds with exit status 1 (failed).
+ DEBUG [84a16021] Running [ -d /home/deploy/paga3/releases/20220114112742/public/uploads ] as deploy@143.244.159.19
+ DEBUG [84a16021] Command: [ -d /home/deploy/paga3/releases/20220114112742/public/uploads ]
+ DEBUG [84a16021] Finished in 1.842 seconds with exit status 1 (failed).
+  INFO [e9bdb6b4] Running /usr/bin/env ln -s /home/deploy/paga3/shared/public/uploads /home/deploy/paga3/releases/20220114112742/public/uploads as deploy@143.244.159.19
+ DEBUG [e9bdb6b4] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/public/uploads /home/deploy/paga3/releases/20220114112742/public/uploads )
+  INFO [e9bdb6b4] Finished in 2.356 seconds with exit status 0 (successful).
+ DEBUG [30ecae7f] Running [ -L /home/deploy/paga3/releases/20220114112742/public/packs ] as deploy@143.244.159.19
+ DEBUG [30ecae7f] Command: [ -L /home/deploy/paga3/releases/20220114112742/public/packs ]
+ DEBUG [30ecae7f] Finished in 1.576 seconds with exit status 1 (failed).
+ DEBUG [7d8cbf01] Running [ -d /home/deploy/paga3/releases/20220114112742/public/packs ] as deploy@143.244.159.19
+ DEBUG [7d8cbf01] Command: [ -d /home/deploy/paga3/releases/20220114112742/public/packs ]
+ DEBUG [7d8cbf01] Finished in 1.404 seconds with exit status 1 (failed).
+  INFO [52adebd5] Running /usr/bin/env ln -s /home/deploy/paga3/shared/public/packs /home/deploy/paga3/releases/20220114112742/public/packs as deploy@143.244.159.19
+ DEBUG [52adebd5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/public/packs /home/deploy/paga3/releases/20220114112742/public/packs )
+  INFO [52adebd5] Finished in 1.026 seconds with exit status 0 (successful).
+ DEBUG [8ee143d7] Running [ -L /home/deploy/paga3/releases/20220114112742/node_modules ] as deploy@143.244.159.19
+ DEBUG [8ee143d7] Command: [ -L /home/deploy/paga3/releases/20220114112742/node_modules ]
+ DEBUG [8ee143d7] Finished in 3.085 seconds with exit status 1 (failed).
+ DEBUG [d14b8b78] Running [ -d /home/deploy/paga3/releases/20220114112742/node_modules ] as deploy@143.244.159.19
+ DEBUG [d14b8b78] Command: [ -d /home/deploy/paga3/releases/20220114112742/node_modules ]
+ DEBUG [d14b8b78] Finished in 1.714 seconds with exit status 1 (failed).
+  INFO [14081964] Running /usr/bin/env ln -s /home/deploy/paga3/shared/node_modules /home/deploy/paga3/releases/20220114112742/node_modules as deploy@143.244.159.19
+ DEBUG [14081964] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/node_modules /home/deploy/paga3/releases/20220114112742/node_modules )
+  INFO [14081964] Finished in 2.881 seconds with exit status 0 (successful).
+ DEBUG [deb8b1cb] Running [ -L /home/deploy/paga3/releases/20220114112742/public/assets ] as deploy@143.244.159.19
+ DEBUG [deb8b1cb] Command: [ -L /home/deploy/paga3/releases/20220114112742/public/assets ]
+ DEBUG [deb8b1cb] Finished in 2.653 seconds with exit status 1 (failed).
+ DEBUG [3dc527af] Running [ -d /home/deploy/paga3/releases/20220114112742/public/assets ] as deploy@143.244.159.19
+ DEBUG [3dc527af] Command: [ -d /home/deploy/paga3/releases/20220114112742/public/assets ]
+ DEBUG [3dc527af] Finished in 1.629 seconds with exit status 1 (failed).
+  INFO [7366fc98] Running /usr/bin/env ln -s /home/deploy/paga3/shared/public/assets /home/deploy/paga3/releases/20220114112742/public/assets as deploy@143.244.159.19
+ DEBUG [7366fc98] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/public/assets /home/deploy/paga3/releases/20220114112742/public/assets )
+  INFO [7366fc98] Finished in 1.741 seconds with exit status 0 (successful).
+ DEBUG [896629b1] Running if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [896629b1] Command: if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi
+ DEBUG [896629b1] Finished in 1.606 seconds with exit status 0 (successful).
+  INFO [d63fc547] Running $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true as deploy@143.244.159.19
+ DEBUG [d63fc547] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true )
+  INFO [d63fc547] Finished in 1.276 seconds with exit status 0 (successful).
+  INFO [88935080] Running $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/paga3/shared/bundle as deploy@143.244.159.19
+ DEBUG [88935080] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/paga3/shared/bundle )
+  INFO [88935080] Finished in 1.179 seconds with exit status 0 (successful).
+  INFO [c78a0e9c] Running $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test as deploy@143.244.159.19
+ DEBUG [c78a0e9c] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test )
+  INFO [c78a0e9c] Finished in 1.756 seconds with exit status 0 (successful).
+ DEBUG [71737b84] Running if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [71737b84] Command: if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi
+ DEBUG [71737b84] Finished in 2.543 seconds with exit status 0 (successful).
+ DEBUG [08604b55] Running $HOME/.rbenv/bin/rbenv exec bundle check as deploy@143.244.159.19
+ DEBUG [08604b55] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; $HOME/.rbenv/bin/rbenv exec bundle check )
+ DEBUG [08604b55] 	The Gemfile's dependencies are satisfied
+ DEBUG [08604b55] Finished in 1.950 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+ DEBUG [deebe955] Running if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [deebe955] Command: if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi
+ DEBUG [deebe955] Finished in 1.147 seconds with exit status 0 (successful).
+  INFO [8c8d412c] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as deploy@143.244.159.19
+ DEBUG [8c8d412c] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [8c8d412c] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [8c8d412c] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [8c8d412c] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [8c8d412c] 	yarn install v1.22.17
+ DEBUG [8c8d412c] 	[1/4] Resolving packages...
+ DEBUG [8c8d412c] 	[2/4] Fetching packages...
+ DEBUG [8c8d412c] 	[3/4] Linking dependencies...
+ DEBUG [8c8d412c] 	warning " > webpack-dev-server@3.11.0" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [8c8d412c] 	warning "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [8c8d412c] 	[4/4] Building fresh packages...
+ DEBUG [8c8d412c] 	Done in 5.55s.
+ DEBUG [8c8d412c] 	yarn install v1.22.17
+ DEBUG [8c8d412c] 	[1/4] Resolving packages...
+ DEBUG [8c8d412c] 	[2/4] Fetching packages...
+ DEBUG [8c8d412c] 	[3/4] Linking dependencies...
+ DEBUG [8c8d412c] 	warning " > webpack-dev-server@3.11.0" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [8c8d412c] 	warning "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [8c8d412c] 	[4/4] Building fresh packages...
+ DEBUG [8c8d412c] 	Done in 5.24s.
+ DEBUG [8c8d412c] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [8c8d412c] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [8c8d412c] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [8c8d412c] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [8c8d412c] 	Everything's up-to-date. Nothing to do
+ DEBUG [8c8d412c] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+  INFO [8c8d412c] Finished in 14.849 seconds with exit status 0 (successful).
+ DEBUG [da4a51b0] Running if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [da4a51b0] Command: if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi
+ DEBUG [da4a51b0] Finished in 2.354 seconds with exit status 0 (successful).
+  INFO [8147a4f8] Running /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220114112742/assets_manifest_backup as deploy@143.244.159.19
+ DEBUG [8147a4f8] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220114112742/assets_manifest_backup )
+  INFO [8147a4f8] Finished in 1.228 seconds with exit status 0 (successful).
+ DEBUG [bde1cb80] Running /usr/bin/env ls /home/deploy/paga3/releases/20220114112742/public/assets/.sprockets-manifest* as deploy@143.244.159.19
+ DEBUG [bde1cb80] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ls /home/deploy/paga3/releases/20220114112742/public/assets/.sprockets-manifest* )
+ DEBUG [bde1cb80] 	/home/deploy/paga3/releases/20220114112742/public/assets/.sprockets-manifest-0ee118ca70a2616deb9e1ef49056c4d3.json
+ DEBUG [bde1cb80] Finished in 1.228 seconds with exit status 0 (successful).
+ DEBUG [9cffa841] Running /usr/bin/env ls /home/deploy/paga3/releases/20220114112742/public/assets/.sprockets-manifest* as deploy@143.244.159.19
+ DEBUG [9cffa841] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ls /home/deploy/paga3/releases/20220114112742/public/assets/.sprockets-manifest* )
+ DEBUG [9cffa841] 	/home/deploy/paga3/releases/20220114112742/public/assets/.sprockets-manifest-0ee118ca70a2616deb9e1ef49056c4d3.json
+ DEBUG [9cffa841] Finished in 1.044 seconds with exit status 0 (successful).
+  INFO [17b1706d] Running /usr/bin/env cp /home/deploy/paga3/releases/20220114112742/public/assets/.sprockets-manifest-0ee118ca70a2616deb9e1ef49056c4d3.json /home/deploy/paga3/releases/20220114112742/assets_manifest_backup as deploy@143.244.159.19
+ DEBUG [17b1706d] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env cp /home/deploy/paga3/releases/20220114112742/public/assets/.sprockets-manifest-0ee118ca70a2616deb9e1ef49056c4d3.json /home/deploy/paga3/releases/20220114112742/assets_manifest_backup )
+  INFO [17b1706d] Finished in 1.974 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [706fe8c3] Running if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [706fe8c3] Command: if test ! -d /home/deploy/paga3/releases/20220114112742; then echo "Directory does not exist '/home/deploy/paga3/releases/20220114112742'" 1>&2; false; fi
+ DEBUG [706fe8c3] Finished in 2.402 seconds with exit status 0 (successful).
+  INFO [9ff14fee] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as deploy@143.244.159.19
+ DEBUG [9ff14fee] Command: cd /home/deploy/paga3/releases/20220114112742 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+ DEBUG [9ff14fee] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [9ff14fee] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [9ff14fee] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+  INFO [9ff14fee] Finished in 3.071 seconds with exit status 0 (successful).
+  INFO [5dbc4b36] Running /usr/bin/env ln -s /home/deploy/paga3/releases/20220114112742 /home/deploy/paga3/releases/current as deploy@143.244.159.19
+ DEBUG [5dbc4b36] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/releases/20220114112742 /home/deploy/paga3/releases/current )
+  INFO [5dbc4b36] Finished in 2.454 seconds with exit status 0 (successful).
+  INFO [b40b7549] Running /usr/bin/env mv /home/deploy/paga3/releases/current /home/deploy/paga3 as deploy@143.244.159.19
+ DEBUG [b40b7549] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mv /home/deploy/paga3/releases/current /home/deploy/paga3 )
+  INFO [b40b7549] Finished in 2.511 seconds with exit status 0 (successful).
+ DEBUG [4a72b07a] Running /usr/bin/env pwd as deploy@143.244.159.19
+ DEBUG [4a72b07a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env pwd )
+ DEBUG [4a72b07a] 	/home/deploy
+ DEBUG [4a72b07a] Finished in 1.313 seconds with exit status 0 (successful).
+ DEBUG [80f35cef] Running if test ! -d /home/deploy; then echo "Directory does not exist '/home/deploy'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [80f35cef] Command: if test ! -d /home/deploy; then echo "Directory does not exist '/home/deploy'" 1>&2; false; fi
+ DEBUG [80f35cef] Finished in 2.552 seconds with exit status 0 (successful).
+  INFO [36cc2483] Running /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220114112742/tmp as deploy@143.244.159.19
+ DEBUG [36cc2483] Command: cd /home/deploy && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220114112742/tmp )
+  INFO [36cc2483] Finished in 1.182 seconds with exit status 0 (successful).
+  INFO [478e155e] Running /usr/bin/env touch /home/deploy/paga3/releases/20220114112742/tmp/restart.txt as deploy@143.244.159.19
+ DEBUG [478e155e] Command: cd /home/deploy && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env touch /home/deploy/paga3/releases/20220114112742/tmp/restart.txt )
+  INFO [478e155e] Finished in 1.141 seconds with exit status 0 (successful).
+ DEBUG [e94bc93c] Running /usr/bin/env ls -x /home/deploy/paga3/releases as deploy@143.244.159.19
+ DEBUG [e94bc93c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ls -x /home/deploy/paga3/releases )
+ DEBUG [e94bc93c] 	20220113105052	20220113125355	20220113130153	20220113135643	20220114111452
+20220114112742
+ DEBUG [e94bc93c] Finished in 1.741 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 143.244.159.19
+ DEBUG [b70b92c4] Running [ -d /home/deploy/paga3/current ] as deploy@143.244.159.19
+ DEBUG [b70b92c4] Command: [ -d /home/deploy/paga3/current ]
+ DEBUG [b70b92c4] Finished in 1.413 seconds with exit status 0 (successful).
+ DEBUG [d1f6e7f1] Running /usr/bin/env readlink /home/deploy/paga3/current as deploy@143.244.159.19
+ DEBUG [d1f6e7f1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env readlink /home/deploy/paga3/current )
+ DEBUG [d1f6e7f1] 	/home/deploy/paga3/releases/20220114112742
+ DEBUG [d1f6e7f1] Finished in 1.749 seconds with exit status 0 (successful).
+  INFO [81ba4a70] Running /usr/bin/env rm -rf /home/deploy/paga3/releases/20220113105052 as deploy@143.244.159.19
+ DEBUG [81ba4a70] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env rm -rf /home/deploy/paga3/releases/20220113105052 )
+  INFO [81ba4a70] Finished in 1.288 seconds with exit status 0 (successful).
+ DEBUG [77ff72a0] Running if test ! -d /home/deploy/paga3/releases; then echo "Directory does not exist '/home/deploy/paga3/releases'" 1>&2; false; fi as deploy@143.244.159.19
+ DEBUG [77ff72a0] Command: if test ! -d /home/deploy/paga3/releases; then echo "Directory does not exist '/home/deploy/paga3/releases'" 1>&2; false; fi
+ DEBUG [77ff72a0] Finished in 2.080 seconds with exit status 0 (successful).
+  INFO [7cb8714d] Running /usr/bin/env echo "Branch master (at 6252ed026abd1c533bd60bce826c16a0917e46b5) deployed as release 20220114112742 by joaocabanga" >> /home/deploy/paga3/revisions.log as deploy@143.244.159.19
+ DEBUG [7cb8714d] Command: cd /home/deploy/paga3/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env echo "Branch master (at 6252ed026abd1c533bd60bce826c16a0917e46b5) deployed as release 20220114112742 by joaocabanga" >> /home/deploy/paga3/revisions.log )
+  INFO [7cb8714d] Finished in 1.056 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-01-14 13:14:27 +0100 cap staging rails:c
+  INFO ---------------------------------------------------------------------------
+ DEBUG [97c1b5e4] Running [ -d $HOME/.rbenv/versions/2.7.1 ] as deploy@143.244.159.19
+ DEBUG [97c1b5e4] Command: [ -d $HOME/.rbenv/versions/2.7.1 ]
+ DEBUG [97c1b5e4] Finished in 4.607 seconds with exit status 0 (successful).
+ DEBUG [50de03bc] Running /usr/bin/env which passenger as deploy@143.244.159.19
+ DEBUG [50de03bc] Command: /usr/bin/env which passenger
+ DEBUG [50de03bc] 	/usr/bin/passenger
+ DEBUG [50de03bc] Finished in 2.927 seconds with exit status 0 (successful).
+ DEBUG [da7d154d] Running /usr/bin/env true as deploy@143.244.159.19
+ DEBUG [da7d154d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env true )
+ DEBUG [da7d154d] Finished in 1.023 seconds with exit status 0 (successful).
+  INFO [bf74c817] Running $HOME/.rbenv/bin/rbenv exec bundle exec rails console -e production as deploy@143.244.159.19
+ DEBUG [bf74c817] Command: cd /home/deploy/paga3/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; $HOME/.rbenv/bin/rbenv exec bundle exec rails console -e production )
+ DEBUG ssh -t -A -l deploy 143.244.159.19 '$SHELL -l -c "cd /home/deploy/paga3/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; $HOME/.rbenv/bin/rbenv exec bundle exec rails console -e production )"'
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-01-15 09:46:25 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [8205a70c] Running [ -d $HOME/.rbenv/versions/2.7.1 ] as deploy@147.182.180.125
+ DEBUG [8205a70c] Command: [ -d $HOME/.rbenv/versions/2.7.1 ]
+ DEBUG [8205a70c] Finished in 9.307 seconds with exit status 0 (successful).
+ DEBUG [a0123889] Running /usr/bin/env which passenger as deploy@147.182.180.125
+ DEBUG [a0123889] Command: /usr/bin/env which passenger
+ DEBUG [a0123889] 	/usr/bin/passenger
+ DEBUG [a0123889] Finished in 0.901 seconds with exit status 0 (successful).
+  INFO [7fa399c7] Running /usr/bin/env mkdir -p /tmp as deploy@147.182.180.125
+ DEBUG [7fa399c7] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [7fa399c7] Finished in 0.900 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-550f28c11af908f72ff7.sh 0.0%
+  INFO Uploading /tmp/git-ssh-550f28c11af908f72ff7.sh 100.0%
+  INFO [4590994d] Running /usr/bin/env chmod 700 /tmp/git-ssh-550f28c11af908f72ff7.sh as deploy@147.182.180.125
+ DEBUG [4590994d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-550f28c11af908f72ff7.sh )
+  INFO [4590994d] Finished in 0.904 seconds with exit status 0 (successful).
+  INFO [e7e7cb10] Running /usr/bin/env git ls-remote git@github.com:acholis/paga3.git HEAD as deploy@147.182.180.125
+ DEBUG [e7e7cb10] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-550f28c11af908f72ff7.sh" ; /usr/bin/env git ls-remote git@github.com:acholis/paga3.git HEAD )
+ DEBUG [e7e7cb10] 	6252ed026abd1c533bd60bce826c16a0917e46b5	HEAD
+  INFO [e7e7cb10] Finished in 1.824 seconds with exit status 0 (successful).
+  INFO [b2c64384] Running /usr/bin/env mkdir -p /home/deploy/paga3/shared /home/deploy/paga3/releases as deploy@147.182.180.125
+ DEBUG [b2c64384] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /home/deploy/paga3/shared /home/deploy/paga3/releases )
+  INFO [b2c64384] Finished in 0.678 seconds with exit status 0 (successful).
+  INFO [a6711194] Running /usr/bin/env mkdir -p /home/deploy/paga3/shared/log /home/deploy/paga3/shared/tmp/pids /home/deploy/paga3/shared/tmp/cache /home/deploy/paga3/shared/tmp/sockets /home/deploy/paga3/shared/vendor/bundle /home/deploy/paga3/shared/.bundle /home/deploy/paga3/shared/public/system /home/deploy/paga3/shared/public/uploads /home/deploy/paga3/shared/public/packs /home/deploy/paga3/shared/node_modules /home/deploy/paga3/shared/public/assets as deploy@147.182.180.125
+ DEBUG [a6711194] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /home/deploy/paga3/shared/log /home/deploy/paga3/shared/tmp/pids /home/deploy/paga3/shared/tmp/cache /home/deploy/paga3/shared/tmp/sockets /home/deploy/paga3/shared/vendor/bundle /home/deploy/paga3/shared/.bundle /home/deploy/paga3/shared/public/system /home/deploy/paga3/shared/public/uploads /home/deploy/paga3/shared/public/packs /home/deploy/paga3/shared/node_modules /home/deploy/paga3/shared/public/assets )
+  INFO [a6711194] Finished in 0.896 seconds with exit status 0 (successful).
+ DEBUG [2ae10229] Running [ -f /home/deploy/paga3/current/REVISION ] as deploy@147.182.180.125
+ DEBUG [2ae10229] Command: [ -f /home/deploy/paga3/current/REVISION ]
+ DEBUG [2ae10229] Finished in 0.816 seconds with exit status 0 (successful).
+ DEBUG [020b86d1] Running /usr/bin/env cat /home/deploy/paga3/current/REVISION 2>/dev/null as deploy@147.182.180.125
+ DEBUG [020b86d1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env cat /home/deploy/paga3/current/REVISION 2>/dev/null )
+ DEBUG [020b86d1] 	6252ed026abd1c533bd60bce826c16a0917e46b5
+ DEBUG [020b86d1] Finished in 0.703 seconds with exit status 0 (successful).
+ DEBUG [3da1c4cc] Running [ -f /home/deploy/paga3/repo/HEAD ] as deploy@147.182.180.125
+ DEBUG [3da1c4cc] Command: [ -f /home/deploy/paga3/repo/HEAD ]
+ DEBUG [3da1c4cc] Finished in 0.784 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/paga3/repo
+ DEBUG [d574d6d3] Running if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [d574d6d3] Command: if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi
+ DEBUG [d574d6d3] Finished in 0.901 seconds with exit status 0 (successful).
+  INFO [78472bf9] Running /usr/bin/env git remote set-url origin git@github.com:acholis/paga3.git as deploy@147.182.180.125
+ DEBUG [78472bf9] Command: cd /home/deploy/paga3/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-550f28c11af908f72ff7.sh" ; /usr/bin/env git remote set-url origin git@github.com:acholis/paga3.git )
+  INFO [78472bf9] Finished in 0.902 seconds with exit status 0 (successful).
+  INFO [6539d917] Running /usr/bin/env git remote update --prune as deploy@147.182.180.125
+ DEBUG [6539d917] Command: cd /home/deploy/paga3/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-550f28c11af908f72ff7.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [6539d917] 	Fetching origin
+  INFO [6539d917] Finished in 1.850 seconds with exit status 0 (successful).
+ DEBUG [05ca3a4e] Running if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [05ca3a4e] Command: if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi
+ DEBUG [05ca3a4e] Finished in 0.758 seconds with exit status 0 (successful).
+  INFO [71bc8824] Running /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220115084644 as deploy@147.182.180.125
+ DEBUG [71bc8824] Command: cd /home/deploy/paga3/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-550f28c11af908f72ff7.sh" ; /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220115084644 )
+  INFO [71bc8824] Finished in 0.900 seconds with exit status 0 (successful).
+  INFO [d7d6dad0] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/paga3/releases/20220115084644 as deploy@147.182.180.125
+ DEBUG [d7d6dad0] Command: cd /home/deploy/paga3/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-550f28c11af908f72ff7.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/paga3/releases/20220115084644 )
+  INFO [d7d6dad0] Finished in 1.705 seconds with exit status 0 (successful).
+ DEBUG [6f61693d] Running if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [6f61693d] Command: if test ! -d /home/deploy/paga3/repo; then echo "Directory does not exist '/home/deploy/paga3/repo'" 1>&2; false; fi
+ DEBUG [6f61693d] Finished in 0.800 seconds with exit status 0 (successful).
+ DEBUG [7d2d4ac1] Running /usr/bin/env git rev-list --max-count=1 master as deploy@147.182.180.125
+ DEBUG [7d2d4ac1] Command: cd /home/deploy/paga3/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-550f28c11af908f72ff7.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [7d2d4ac1] 	6252ed026abd1c533bd60bce826c16a0917e46b5
+ DEBUG [7d2d4ac1] Finished in 0.903 seconds with exit status 0 (successful).
+ DEBUG [42def992] Running if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [42def992] Command: if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi
+ DEBUG [42def992] Finished in 0.901 seconds with exit status 0 (successful).
+  INFO [a09b6c89] Running /usr/bin/env echo "6252ed026abd1c533bd60bce826c16a0917e46b5" > REVISION as deploy@147.182.180.125
+ DEBUG [a09b6c89] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env echo "6252ed026abd1c533bd60bce826c16a0917e46b5" > REVISION )
+  INFO [a09b6c89] Finished in 2.607 seconds with exit status 0 (successful).
+  INFO [f498d08e] Running /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220115084644 /home/deploy/paga3/releases/20220115084644/tmp /home/deploy/paga3/releases/20220115084644/vendor /home/deploy/paga3/releases/20220115084644/public as deploy@147.182.180.125
+ DEBUG [f498d08e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220115084644 /home/deploy/paga3/releases/20220115084644/tmp /home/deploy/paga3/releases/20220115084644/vendor /home/deploy/paga3/releases/20220115084644/public )
+  INFO [f498d08e] Finished in 0.598 seconds with exit status 0 (successful).
+ DEBUG [794560ca] Running [ -L /home/deploy/paga3/releases/20220115084644/log ] as deploy@147.182.180.125
+ DEBUG [794560ca] Command: [ -L /home/deploy/paga3/releases/20220115084644/log ]
+ DEBUG [794560ca] Finished in 0.701 seconds with exit status 1 (failed).
+ DEBUG [e3b95c7b] Running [ -d /home/deploy/paga3/releases/20220115084644/log ] as deploy@147.182.180.125
+ DEBUG [e3b95c7b] Command: [ -d /home/deploy/paga3/releases/20220115084644/log ]
+ DEBUG [e3b95c7b] Finished in 0.617 seconds with exit status 0 (successful).
+  INFO [8596ca89] Running /usr/bin/env rm -rf /home/deploy/paga3/releases/20220115084644/log as deploy@147.182.180.125
+ DEBUG [8596ca89] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env rm -rf /home/deploy/paga3/releases/20220115084644/log )
+  INFO [8596ca89] Finished in 0.560 seconds with exit status 0 (successful).
+  INFO [801f7f86] Running /usr/bin/env ln -s /home/deploy/paga3/shared/log /home/deploy/paga3/releases/20220115084644/log as deploy@147.182.180.125
+ DEBUG [801f7f86] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/log /home/deploy/paga3/releases/20220115084644/log )
+  INFO [801f7f86] Finished in 0.726 seconds with exit status 0 (successful).
+ DEBUG [d9327d56] Running [ -L /home/deploy/paga3/releases/20220115084644/tmp/pids ] as deploy@147.182.180.125
+ DEBUG [d9327d56] Command: [ -L /home/deploy/paga3/releases/20220115084644/tmp/pids ]
+ DEBUG [d9327d56] Finished in 0.802 seconds with exit status 1 (failed).
+ DEBUG [100b7898] Running [ -d /home/deploy/paga3/releases/20220115084644/tmp/pids ] as deploy@147.182.180.125
+ DEBUG [100b7898] Command: [ -d /home/deploy/paga3/releases/20220115084644/tmp/pids ]
+ DEBUG [100b7898] Finished in 0.601 seconds with exit status 0 (successful).
+  INFO [2a57a3f7] Running /usr/bin/env rm -rf /home/deploy/paga3/releases/20220115084644/tmp/pids as deploy@147.182.180.125
+ DEBUG [2a57a3f7] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env rm -rf /home/deploy/paga3/releases/20220115084644/tmp/pids )
+  INFO [2a57a3f7] Finished in 0.702 seconds with exit status 0 (successful).
+  INFO [44e95088] Running /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/pids /home/deploy/paga3/releases/20220115084644/tmp/pids as deploy@147.182.180.125
+ DEBUG [44e95088] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/pids /home/deploy/paga3/releases/20220115084644/tmp/pids )
+  INFO [44e95088] Finished in 0.600 seconds with exit status 0 (successful).
+ DEBUG [ca196f0c] Running [ -L /home/deploy/paga3/releases/20220115084644/tmp/cache ] as deploy@147.182.180.125
+ DEBUG [ca196f0c] Command: [ -L /home/deploy/paga3/releases/20220115084644/tmp/cache ]
+ DEBUG [ca196f0c] Finished in 0.704 seconds with exit status 1 (failed).
+ DEBUG [069ed978] Running [ -d /home/deploy/paga3/releases/20220115084644/tmp/cache ] as deploy@147.182.180.125
+ DEBUG [069ed978] Command: [ -d /home/deploy/paga3/releases/20220115084644/tmp/cache ]
+ DEBUG [069ed978] Finished in 0.601 seconds with exit status 1 (failed).
+  INFO [52d51e58] Running /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/cache /home/deploy/paga3/releases/20220115084644/tmp/cache as deploy@147.182.180.125
+ DEBUG [52d51e58] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/cache /home/deploy/paga3/releases/20220115084644/tmp/cache )
+  INFO [52d51e58] Finished in 0.702 seconds with exit status 0 (successful).
+ DEBUG [0d551283] Running [ -L /home/deploy/paga3/releases/20220115084644/tmp/sockets ] as deploy@147.182.180.125
+ DEBUG [0d551283] Command: [ -L /home/deploy/paga3/releases/20220115084644/tmp/sockets ]
+ DEBUG [0d551283] Finished in 0.601 seconds with exit status 1 (failed).
+ DEBUG [8245fe14] Running [ -d /home/deploy/paga3/releases/20220115084644/tmp/sockets ] as deploy@147.182.180.125
+ DEBUG [8245fe14] Command: [ -d /home/deploy/paga3/releases/20220115084644/tmp/sockets ]
+ DEBUG [8245fe14] Finished in 0.701 seconds with exit status 1 (failed).
+  INFO [ba9a9108] Running /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/sockets /home/deploy/paga3/releases/20220115084644/tmp/sockets as deploy@147.182.180.125
+ DEBUG [ba9a9108] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/tmp/sockets /home/deploy/paga3/releases/20220115084644/tmp/sockets )
+  INFO [ba9a9108] Finished in 0.601 seconds with exit status 0 (successful).
+ DEBUG [c3af93d8] Running [ -L /home/deploy/paga3/releases/20220115084644/vendor/bundle ] as deploy@147.182.180.125
+ DEBUG [c3af93d8] Command: [ -L /home/deploy/paga3/releases/20220115084644/vendor/bundle ]
+ DEBUG [c3af93d8] Finished in 0.701 seconds with exit status 1 (failed).
+ DEBUG [4bd26b8c] Running [ -d /home/deploy/paga3/releases/20220115084644/vendor/bundle ] as deploy@147.182.180.125
+ DEBUG [4bd26b8c] Command: [ -d /home/deploy/paga3/releases/20220115084644/vendor/bundle ]
+ DEBUG [4bd26b8c] Finished in 0.601 seconds with exit status 1 (failed).
+  INFO [f5eaa053] Running /usr/bin/env ln -s /home/deploy/paga3/shared/vendor/bundle /home/deploy/paga3/releases/20220115084644/vendor/bundle as deploy@147.182.180.125
+ DEBUG [f5eaa053] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/vendor/bundle /home/deploy/paga3/releases/20220115084644/vendor/bundle )
+  INFO [f5eaa053] Finished in 0.702 seconds with exit status 0 (successful).
+ DEBUG [409ba5a6] Running [ -L /home/deploy/paga3/releases/20220115084644/.bundle ] as deploy@147.182.180.125
+ DEBUG [409ba5a6] Command: [ -L /home/deploy/paga3/releases/20220115084644/.bundle ]
+ DEBUG [409ba5a6] Finished in 0.600 seconds with exit status 1 (failed).
+ DEBUG [e5488247] Running [ -d /home/deploy/paga3/releases/20220115084644/.bundle ] as deploy@147.182.180.125
+ DEBUG [e5488247] Command: [ -d /home/deploy/paga3/releases/20220115084644/.bundle ]
+ DEBUG [e5488247] Finished in 0.702 seconds with exit status 1 (failed).
+  INFO [0d50acd6] Running /usr/bin/env ln -s /home/deploy/paga3/shared/.bundle /home/deploy/paga3/releases/20220115084644/.bundle as deploy@147.182.180.125
+ DEBUG [0d50acd6] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/.bundle /home/deploy/paga3/releases/20220115084644/.bundle )
+  INFO [0d50acd6] Finished in 0.601 seconds with exit status 0 (successful).
+ DEBUG [58fc2a5b] Running [ -L /home/deploy/paga3/releases/20220115084644/public/system ] as deploy@147.182.180.125
+ DEBUG [58fc2a5b] Command: [ -L /home/deploy/paga3/releases/20220115084644/public/system ]
+ DEBUG [58fc2a5b] Finished in 0.729 seconds with exit status 1 (failed).
+ DEBUG [b40c912c] Running [ -d /home/deploy/paga3/releases/20220115084644/public/system ] as deploy@147.182.180.125
+ DEBUG [b40c912c] Command: [ -d /home/deploy/paga3/releases/20220115084644/public/system ]
+ DEBUG [b40c912c] Finished in 0.675 seconds with exit status 1 (failed).
+  INFO [7fd411ec] Running /usr/bin/env ln -s /home/deploy/paga3/shared/public/system /home/deploy/paga3/releases/20220115084644/public/system as deploy@147.182.180.125
+ DEBUG [7fd411ec] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/public/system /home/deploy/paga3/releases/20220115084644/public/system )
+  INFO [7fd411ec] Finished in 0.800 seconds with exit status 0 (successful).
+ DEBUG [5d41d20e] Running [ -L /home/deploy/paga3/releases/20220115084644/public/uploads ] as deploy@147.182.180.125
+ DEBUG [5d41d20e] Command: [ -L /home/deploy/paga3/releases/20220115084644/public/uploads ]
+ DEBUG [5d41d20e] Finished in 0.902 seconds with exit status 1 (failed).
+ DEBUG [de865a85] Running [ -d /home/deploy/paga3/releases/20220115084644/public/uploads ] as deploy@147.182.180.125
+ DEBUG [de865a85] Command: [ -d /home/deploy/paga3/releases/20220115084644/public/uploads ]
+ DEBUG [de865a85] Finished in 0.903 seconds with exit status 1 (failed).
+  INFO [026a106d] Running /usr/bin/env ln -s /home/deploy/paga3/shared/public/uploads /home/deploy/paga3/releases/20220115084644/public/uploads as deploy@147.182.180.125
+ DEBUG [026a106d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/public/uploads /home/deploy/paga3/releases/20220115084644/public/uploads )
+  INFO [026a106d] Finished in 0.802 seconds with exit status 0 (successful).
+ DEBUG [6efb854f] Running [ -L /home/deploy/paga3/releases/20220115084644/public/packs ] as deploy@147.182.180.125
+ DEBUG [6efb854f] Command: [ -L /home/deploy/paga3/releases/20220115084644/public/packs ]
+ DEBUG [6efb854f] Finished in 0.902 seconds with exit status 1 (failed).
+ DEBUG [2789c6c8] Running [ -d /home/deploy/paga3/releases/20220115084644/public/packs ] as deploy@147.182.180.125
+ DEBUG [2789c6c8] Command: [ -d /home/deploy/paga3/releases/20220115084644/public/packs ]
+ DEBUG [2789c6c8] Finished in 0.902 seconds with exit status 1 (failed).
+  INFO [ebd7fa7d] Running /usr/bin/env ln -s /home/deploy/paga3/shared/public/packs /home/deploy/paga3/releases/20220115084644/public/packs as deploy@147.182.180.125
+ DEBUG [ebd7fa7d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/public/packs /home/deploy/paga3/releases/20220115084644/public/packs )
+  INFO [ebd7fa7d] Finished in 0.902 seconds with exit status 0 (successful).
+ DEBUG [f64143c2] Running [ -L /home/deploy/paga3/releases/20220115084644/node_modules ] as deploy@147.182.180.125
+ DEBUG [f64143c2] Command: [ -L /home/deploy/paga3/releases/20220115084644/node_modules ]
+ DEBUG [f64143c2] Finished in 0.902 seconds with exit status 1 (failed).
+ DEBUG [a6982cf2] Running [ -d /home/deploy/paga3/releases/20220115084644/node_modules ] as deploy@147.182.180.125
+ DEBUG [a6982cf2] Command: [ -d /home/deploy/paga3/releases/20220115084644/node_modules ]
+ DEBUG [a6982cf2] Finished in 1.705 seconds with exit status 1 (failed).
+  INFO [64191f1c] Running /usr/bin/env ln -s /home/deploy/paga3/shared/node_modules /home/deploy/paga3/releases/20220115084644/node_modules as deploy@147.182.180.125
+ DEBUG [64191f1c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/node_modules /home/deploy/paga3/releases/20220115084644/node_modules )
+  INFO [64191f1c] Finished in 0.903 seconds with exit status 0 (successful).
+ DEBUG [cacc0692] Running [ -L /home/deploy/paga3/releases/20220115084644/public/assets ] as deploy@147.182.180.125
+ DEBUG [cacc0692] Command: [ -L /home/deploy/paga3/releases/20220115084644/public/assets ]
+ DEBUG [cacc0692] Finished in 1.002 seconds with exit status 1 (failed).
+ DEBUG [2f15cb86] Running [ -d /home/deploy/paga3/releases/20220115084644/public/assets ] as deploy@147.182.180.125
+ DEBUG [2f15cb86] Command: [ -d /home/deploy/paga3/releases/20220115084644/public/assets ]
+ DEBUG [2f15cb86] Finished in 0.901 seconds with exit status 1 (failed).
+  INFO [8813394b] Running /usr/bin/env ln -s /home/deploy/paga3/shared/public/assets /home/deploy/paga3/releases/20220115084644/public/assets as deploy@147.182.180.125
+ DEBUG [8813394b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/shared/public/assets /home/deploy/paga3/releases/20220115084644/public/assets )
+  INFO [8813394b] Finished in 0.903 seconds with exit status 0 (successful).
+ DEBUG [7eebca92] Running if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [7eebca92] Command: if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi
+ DEBUG [7eebca92] Finished in 0.900 seconds with exit status 0 (successful).
+  INFO [fb79694c] Running $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true as deploy@147.182.180.125
+ DEBUG [fb79694c] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true )
+  INFO [fb79694c] Finished in 1.303 seconds with exit status 0 (successful).
+  INFO [564fa849] Running $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/paga3/shared/bundle as deploy@147.182.180.125
+ DEBUG [564fa849] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/paga3/shared/bundle )
+  INFO [564fa849] Finished in 1.102 seconds with exit status 0 (successful).
+  INFO [409f33f4] Running $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test as deploy@147.182.180.125
+ DEBUG [409f33f4] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test )
+  INFO [409f33f4] Finished in 0.966 seconds with exit status 0 (successful).
+ DEBUG [db49a809] Running if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [db49a809] Command: if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi
+ DEBUG [db49a809] Finished in 0.665 seconds with exit status 0 (successful).
+ DEBUG [be5bcde8] Running $HOME/.rbenv/bin/rbenv exec bundle check as deploy@147.182.180.125
+ DEBUG [be5bcde8] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; $HOME/.rbenv/bin/rbenv exec bundle check )
+ DEBUG [be5bcde8] 	The Gemfile's dependencies are satisfied
+ DEBUG [be5bcde8] Finished in 1.276 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+ DEBUG [36b6d506] Running if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [36b6d506] Command: if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi
+ DEBUG [36b6d506] Finished in 0.900 seconds with exit status 0 (successful).
+  INFO [88bffcd0] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as deploy@147.182.180.125
+ DEBUG [88bffcd0] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [88bffcd0] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [88bffcd0] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [88bffcd0] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [88bffcd0] 	yarn install v1.22.5
+ DEBUG [88bffcd0] 	[1/4] Resolving packages...
+ DEBUG [88bffcd0] 	[2/4] Fetching packages...
+ DEBUG [88bffcd0] 	info fsevents@2.1.3: The platform "linux" is incompatible with this module.
+ DEBUG [88bffcd0] 	info "fsevents@2.1.3" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [88bffcd0] 	info fsevents@1.2.13: The platform "linux" is incompatible with this module.
+ DEBUG [88bffcd0] 	info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [88bffcd0] 	[3/4] Linking dependencies...
+ DEBUG [88bffcd0] 	warning " > webpack-dev-server@3.11.0" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [88bffcd0] 	warning "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [88bffcd0] 	[4/4] Building fresh packages...
+ DEBUG [88bffcd0] 	Done in 6.94s.
+ DEBUG [88bffcd0] 	yarn install v1.22.5
+ DEBUG [88bffcd0] 	[1/4] Resolving packages...
+ DEBUG [88bffcd0] 	[2/4] Fetching packages...
+ DEBUG [88bffcd0] 	info fsevents@2.1.3: The platform "linux" is incompatible with this module.
+ DEBUG [88bffcd0] 	info "fsevents@2.1.3" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [88bffcd0] 	info fsevents@1.2.13: The platform "linux" is incompatible with this module.
+ DEBUG [88bffcd0] 	info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [88bffcd0] 	[3/4] Linking dependencies...
+ DEBUG [88bffcd0] 	warning " > webpack-dev-server@3.11.0" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [88bffcd0] 	warning "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [88bffcd0] 	[4/4] Building fresh packages...
+ DEBUG [88bffcd0] 	Done in 5.50s.
+ DEBUG [88bffcd0] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [88bffcd0] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [88bffcd0] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [88bffcd0] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [88bffcd0] 	Everything's up-to-date. Nothing to do
+ DEBUG [88bffcd0] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+  INFO [88bffcd0] Finished in 16.648 seconds with exit status 0 (successful).
+ DEBUG [0a66741d] Running if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [0a66741d] Command: if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi
+ DEBUG [0a66741d] Finished in 1.013 seconds with exit status 0 (successful).
+  INFO [9317398a] Running /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220115084644/assets_manifest_backup as deploy@147.182.180.125
+ DEBUG [9317398a] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220115084644/assets_manifest_backup )
+  INFO [9317398a] Finished in 0.913 seconds with exit status 0 (successful).
+ DEBUG [6f45a2fa] Running /usr/bin/env ls /home/deploy/paga3/releases/20220115084644/public/assets/.sprockets-manifest* as deploy@147.182.180.125
+ DEBUG [6f45a2fa] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ls /home/deploy/paga3/releases/20220115084644/public/assets/.sprockets-manifest* )
+ DEBUG [6f45a2fa] 	/home/deploy/paga3/releases/20220115084644/public/assets/.sprockets-manifest-a1705dde23ab1ea63a9b27dfbafd5c9d.json
+ DEBUG [6f45a2fa] Finished in 0.883 seconds with exit status 0 (successful).
+ DEBUG [3bb1d3b6] Running /usr/bin/env ls /home/deploy/paga3/releases/20220115084644/public/assets/.sprockets-manifest* as deploy@147.182.180.125
+ DEBUG [3bb1d3b6] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ls /home/deploy/paga3/releases/20220115084644/public/assets/.sprockets-manifest* )
+ DEBUG [3bb1d3b6] 	/home/deploy/paga3/releases/20220115084644/public/assets/.sprockets-manifest-a1705dde23ab1ea63a9b27dfbafd5c9d.json
+ DEBUG [3bb1d3b6] Finished in 0.903 seconds with exit status 0 (successful).
+  INFO [4208595b] Running /usr/bin/env cp /home/deploy/paga3/releases/20220115084644/public/assets/.sprockets-manifest-a1705dde23ab1ea63a9b27dfbafd5c9d.json /home/deploy/paga3/releases/20220115084644/assets_manifest_backup as deploy@147.182.180.125
+ DEBUG [4208595b] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env cp /home/deploy/paga3/releases/20220115084644/public/assets/.sprockets-manifest-a1705dde23ab1ea63a9b27dfbafd5c9d.json /home/deploy/paga3/releases/20220115084644/assets_manifest_backup )
+  INFO [4208595b] Finished in 0.901 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [d1032a50] Running if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [d1032a50] Command: if test ! -d /home/deploy/paga3/releases/20220115084644; then echo "Directory does not exist '/home/deploy/paga3/releases/20220115084644'" 1>&2; false; fi
+ DEBUG [d1032a50] Finished in 0.760 seconds with exit status 0 (successful).
+  INFO [f11d9015] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as deploy@147.182.180.125
+ DEBUG [f11d9015] Command: cd /home/deploy/paga3/releases/20220115084644 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+ DEBUG [f11d9015] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [f11d9015] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+ DEBUG [f11d9015] 	/home/deploy/paga3/shared/bundle/ruby/2.7.0/gems/json-1.8.6/lib/json/common.rb:155: warning: Using the last argument as keyword parameters is deprecated
+  INFO [f11d9015] Finished in 3.271 seconds with exit status 0 (successful).
+  INFO [88a6dc1c] Running /usr/bin/env ln -s /home/deploy/paga3/releases/20220115084644 /home/deploy/paga3/releases/current as deploy@147.182.180.125
+ DEBUG [88a6dc1c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ln -s /home/deploy/paga3/releases/20220115084644 /home/deploy/paga3/releases/current )
+  INFO [88a6dc1c] Finished in 0.772 seconds with exit status 0 (successful).
+  INFO [22abe939] Running /usr/bin/env mv /home/deploy/paga3/releases/current /home/deploy/paga3 as deploy@147.182.180.125
+ DEBUG [22abe939] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mv /home/deploy/paga3/releases/current /home/deploy/paga3 )
+  INFO [22abe939] Finished in 0.912 seconds with exit status 0 (successful).
+ DEBUG [d98d5df1] Running /usr/bin/env pwd as deploy@147.182.180.125
+ DEBUG [d98d5df1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env pwd )
+ DEBUG [d98d5df1] 	/home/deploy
+ DEBUG [d98d5df1] Finished in 0.890 seconds with exit status 0 (successful).
+ DEBUG [eb5ad9ed] Running if test ! -d /home/deploy; then echo "Directory does not exist '/home/deploy'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [eb5ad9ed] Command: if test ! -d /home/deploy; then echo "Directory does not exist '/home/deploy'" 1>&2; false; fi
+ DEBUG [eb5ad9ed] Finished in 0.900 seconds with exit status 0 (successful).
+  INFO [1cbc31de] Running /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220115084644/tmp as deploy@147.182.180.125
+ DEBUG [1cbc31de] Command: cd /home/deploy && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env mkdir -p /home/deploy/paga3/releases/20220115084644/tmp )
+  INFO [1cbc31de] Finished in 0.902 seconds with exit status 0 (successful).
+  INFO [18cb76ec] Running /usr/bin/env touch /home/deploy/paga3/releases/20220115084644/tmp/restart.txt as deploy@147.182.180.125
+ DEBUG [18cb76ec] Command: cd /home/deploy && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env touch /home/deploy/paga3/releases/20220115084644/tmp/restart.txt )
+  INFO [18cb76ec] Finished in 0.901 seconds with exit status 0 (successful).
+ DEBUG [705fcb90] Running /usr/bin/env ls -x /home/deploy/paga3/releases as deploy@147.182.180.125
+ DEBUG [705fcb90] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env ls -x /home/deploy/paga3/releases )
+ DEBUG [705fcb90] 	20210901141445	20211107073644	20220107083132	20220107083829	20220113140106
+20220115084644
+ DEBUG [705fcb90] Finished in 0.896 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 147.182.180.125
+ DEBUG [8013f36e] Running [ -d /home/deploy/paga3/current ] as deploy@147.182.180.125
+ DEBUG [8013f36e] Command: [ -d /home/deploy/paga3/current ]
+ DEBUG [8013f36e] Finished in 0.900 seconds with exit status 0 (successful).
+ DEBUG [3c28ab2f] Running /usr/bin/env readlink /home/deploy/paga3/current as deploy@147.182.180.125
+ DEBUG [3c28ab2f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env readlink /home/deploy/paga3/current )
+ DEBUG [3c28ab2f] 	/home/deploy/paga3/releases/20220115084644
+ DEBUG [3c28ab2f] Finished in 0.804 seconds with exit status 0 (successful).
+  INFO [78f48bcc] Running /usr/bin/env rm -rf /home/deploy/paga3/releases/20210901141445 as deploy@147.182.180.125
+ DEBUG [78f48bcc] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env rm -rf /home/deploy/paga3/releases/20210901141445 )
+  INFO [78f48bcc] Finished in 0.967 seconds with exit status 0 (successful).
+ DEBUG [21ac2215] Running if test ! -d /home/deploy/paga3/releases; then echo "Directory does not exist '/home/deploy/paga3/releases'" 1>&2; false; fi as deploy@147.182.180.125
+ DEBUG [21ac2215] Command: if test ! -d /home/deploy/paga3/releases; then echo "Directory does not exist '/home/deploy/paga3/releases'" 1>&2; false; fi
+ DEBUG [21ac2215] Finished in 0.935 seconds with exit status 0 (successful).
+  INFO [7b99ba72] Running /usr/bin/env echo "Branch master (at 6252ed026abd1c533bd60bce826c16a0917e46b5) deployed as release 20220115084644 by joaocabanga" >> /home/deploy/paga3/revisions.log as deploy@147.182.180.125
+ DEBUG [7b99ba72] Command: cd /home/deploy/paga3/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.1" ; /usr/bin/env echo "Branch master (at 6252ed026abd1c533bd60bce826c16a0917e46b5) deployed as release 20220115084644 by joaocabanga" >> /home/deploy/paga3/revisions.log )
+  INFO [7b99ba72] Finished in 0.901 seconds with exit status 0 (successful).

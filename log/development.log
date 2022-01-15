@@ -33651,3 +33651,8 @@ Processing by DashboardController#index as HTML
 Completed 200 OK in 5726ms (Views: 582.4ms | ActiveRecord: 5076.1ms | Allocations: 42319)
 
 
+  [1m[36mUser Load (506.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (316.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (978.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cell_phone" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["cell_phone", "937731990"], ["id", 1955], ["LIMIT", 1]]
+  [1m[36mUser Update (314.6ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$12$HHGcrCWVYi/heZjuwDMaceEH8S78UwWGEsG7KXI4fmIuJMwtz/jh."], ["updated_at", "2022-01-14 12:08:46.763270"], ["id", 1955]]
+  [1m[35m (314.2ms)[0m  [1m[35mCOMMIT[0m
