@@ -22,7 +22,7 @@
     <div class="content content-boxed">
         <div class="row items-push text-center">
             <div class="col-6 col-md-3">
-                <div class="font-size-sm font-w600 text-muted text-uppercase">Disponível na carteira Paga3</div>
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Valor máx. a pagar á prestações</div>
                 <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @profile.purchase_amount.to_kwanza %></a>
             </div>
             <div class="col-6 col-md-3">
@@ -32,22 +32,22 @@
 
             <div class="col-6 col-md-6 text-right">
                 <% if current_user.admin? %>
+                    <% unless @profile.user.is_active %>
+                        <%= link_to 'Activar conta', active_and_inactive_profile_path(@profile.user), class: "btn btn-sm btn-success", data: { confirm: 'Tens certeza ?' } %>
+                    <% else %>
+                        <%= link_to 'Bloquear Conta', active_and_inactive_profile_path(@profile.user.id), class: "btn btn-sm btn-danger", data: { confirm: 'Tens certeza ?' } %>
+                    <% end %>
+
                     <%= link_to 'Habilitar edição', active_edit_path(@profile), class: "btn btn-sm btn-primary", data: { confirm: 'Tens certeza, esta acção vai habilitar a editação no cliente ?' } %>
 
                     <% if @profile.pending? %>
                         <%= link_to 'Validar conta', validate_profile_path(@profile), class: "btn btn-sm btn-info", data: { confirm: 'Tens certeza ?' } %>
                     <% end %>
 
-
-                    <% unless @profile.user.is_active %>
-                        <%= link_to 'Activar conta', active_and_inactive_profile_path(@profile.user), class: "btn btn-sm btn-success", data: { confirm: 'Tens certeza ?' } %>
-                    <% else %>
-                        <%= link_to 'Bloquear Conta', active_and_inactive_profile_path(@profile.user.id), class: "btn btn-sm btn-danger", data: { confirm: 'Tens certeza ?' } %>
-                    <% end %>
-                    
-                    
                 <% end %>
-    
+
+                <%= link_to 'Eliminar conta', @profile, class: "btn btn-sm btn-danger", method: :delete, data: { confirm: 'Tens certeza ?' } %>
+                
                 <a class="btn btn-sm btn-secondary dropdown" href="#" role="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-caret-down"></i>
                 </a>

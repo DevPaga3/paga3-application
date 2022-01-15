@@ -34075,3 +34075,195 @@ Processing by Users::SessionsController#new as HTML
 Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.3ms | Allocations: 14754)
 
 
+Started POST "/users/sign_in" for ::1 at 2022-01-15 10:30:57 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"KJmF3ryrI1zf4pOZwrmkigflIpfxVDJr4a0L6XEPwDpujEaDE2KkPpA7EK7NdjEzHZxlGAQNzzMfIboGIRfEDQ==", "user"=>{"login"=>"siedricks@hotmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(cell_phone) = 'siedricks@hotmail.com' OR lower(email) = 'siedricks@hotmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:140:in `find_for_database_authentication'
+Completed 401 Unauthorized in 226ms (ActiveRecord: 1.8ms | Allocations: 1567)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-15 10:30:57 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  [1m[36mConfiguration Load (0.3ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:19:in `version_app'
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 3970)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.3ms | Allocations: 12361)
+
+
+Started GET "/profiles/cristovao-florindo" for ::1 at 2022-01-15 10:33:37 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"cristovao-florindo"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."slug" = $1 LIMIT $2[0m  [["slug", "cristovao-florindo"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:109:in `set_profile'
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1397], ["record_type", "Profile"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1438], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:42
+  [1m[36mMoviment Load (0.3ms)[0m  [1m[34mSELECT "moviments".* FROM "moviments" WHERE "moviments"."profile_id" = $1[0m  [["profile_id", 1397]]
+  ↳ app/views/profiles/show.html.erb:75
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1397], ["record_type", "Profile"], ["name", "work_declaration"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:155
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1397], ["record_type", "Profile"], ["name", "banking_extrato"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:165
+  [1m[36mBank Load (0.4ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/bank_accounts/_form.html.erb:19
+  Rendered bank_accounts/_form.html.erb (Duration: 8.6ms | Allocations: 5437)
+  Rendered profiles/_refresh_plafom.html.erb (Duration: 0.4ms | Allocations: 218)
+  [1m[36mMoviment Load (0.4ms)[0m  [1m[34mSELECT "moviments".* FROM "moviments" WHERE "moviments"."profile_id" = $1 ORDER BY created_at DESC[0m  [["profile_id", 1397]]
+  ↳ app/views/profiles/_modal_history.erb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/_modal_history.erb:31
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/_modal_history.erb:31
+  Rendered profiles/_modal_history.erb (Duration: 6.9ms | Allocations: 2516)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 30.8ms | Allocations: 13722)
+  [1m[36mConfiguration Load (0.3ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.0ms | Allocations: 5)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mCACHE Admin Load (0.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 4.7ms | Allocations: 1937)
+  Rendered layouts/main/_nav.html.erb (Duration: 5.0ms | Allocations: 2062)
+  Rendered layouts/main/_header.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 63ms (Views: 54.1ms | ActiveRecord: 4.4ms | Allocations: 26718)
+
+
+Started GET "/profiles/cristovao-florindo" for ::1 at 2022-01-15 10:34:57 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"cristovao-florindo"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."slug" = $1 LIMIT $2[0m  [["slug", "cristovao-florindo"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:109:in `set_profile'
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1397], ["record_type", "Profile"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1438], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:35
+  [1m[36mMoviment Load (0.5ms)[0m  [1m[34mSELECT "moviments".* FROM "moviments" WHERE "moviments"."profile_id" = $1[0m  [["profile_id", 1397]]
+  ↳ app/views/profiles/show.html.erb:75
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1397], ["record_type", "Profile"], ["name", "work_declaration"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:155
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1397], ["record_type", "Profile"], ["name", "banking_extrato"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:165
+  [1m[36mBank Load (0.3ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/bank_accounts/_form.html.erb:19
+  Rendered bank_accounts/_form.html.erb (Duration: 7.7ms | Allocations: 5623)
+  Rendered profiles/_refresh_plafom.html.erb (Duration: 0.8ms | Allocations: 394)
+  [1m[36mMoviment Load (0.5ms)[0m  [1m[34mSELECT "moviments".* FROM "moviments" WHERE "moviments"."profile_id" = $1 ORDER BY created_at DESC[0m  [["profile_id", 1397]]
+  ↳ app/views/profiles/_modal_history.erb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/_modal_history.erb:31
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/_modal_history.erb:31
+  Rendered profiles/_modal_history.erb (Duration: 7.0ms | Allocations: 2752)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 34.3ms | Allocations: 16118)
+  [1m[36mConfiguration Load (0.3ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.2ms | Allocations: 66)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mCACHE Admin Load (0.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 3.5ms | Allocations: 2722)
+  Rendered layouts/main/_nav.html.erb (Duration: 4.5ms | Allocations: 3252)
+  Rendered layouts/main/_header.html.erb (Duration: 0.2ms | Allocations: 85)
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 178)
+Completed 200 OK in 74ms (Views: 59.9ms | ActiveRecord: 6.1ms | Allocations: 32397)
+
+
+Started GET "/profiles/cristovao-florindo" for ::1 at 2022-01-15 10:41:11 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"cristovao-florindo"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.8ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."slug" = $1 LIMIT $2[0m  [["slug", "cristovao-florindo"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:109:in `set_profile'
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1397], ["record_type", "Profile"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1438], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:35
+  [1m[36mMoviment Load (0.4ms)[0m  [1m[34mSELECT "moviments".* FROM "moviments" WHERE "moviments"."profile_id" = $1[0m  [["profile_id", 1397]]
+  ↳ app/views/profiles/show.html.erb:75
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1397], ["record_type", "Profile"], ["name", "work_declaration"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:155
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1397], ["record_type", "Profile"], ["name", "banking_extrato"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:165
+  [1m[36mBank Load (0.6ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/bank_accounts/_form.html.erb:19
+  Rendered bank_accounts/_form.html.erb (Duration: 7.2ms | Allocations: 5621)
+  Rendered profiles/_refresh_plafom.html.erb (Duration: 0.7ms | Allocations: 394)
+  [1m[36mMoviment Load (0.6ms)[0m  [1m[34mSELECT "moviments".* FROM "moviments" WHERE "moviments"."profile_id" = $1 ORDER BY created_at DESC[0m  [["profile_id", 1397]]
+  ↳ app/views/profiles/_modal_history.erb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/_modal_history.erb:31
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/_modal_history.erb:31
+  Rendered profiles/_modal_history.erb (Duration: 6.4ms | Allocations: 2756)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 34.8ms | Allocations: 16122)
+  [1m[36mConfiguration Load (0.4ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.1ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:15:in `config'
+  Rendered layouts/main/_aside.html.erb (Duration: 0.2ms | Allocations: 66)
+  [1m[36mCACHE Configuration Load (0.0ms)[0m  [1m[34mSELECT "configurations".* FROM "configurations" ORDER BY "configurations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/application_record.rb:10:in `config'
+  [1m[36mCACHE Admin Load (0.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/main/administration/_admin.html.erb:116
+  Rendered layouts/main/administration/_admin.html.erb (Duration: 5.3ms | Allocations: 2722)
+  Rendered layouts/main/_nav.html.erb (Duration: 6.2ms | Allocations: 3251)
+  Rendered layouts/main/_header.html.erb (Duration: 0.3ms | Allocations: 85)
+  Rendered layouts/_flash.html.erb (Duration: 0.4ms | Allocations: 178)
+Completed 200 OK in 73ms (Views: 60.4ms | ActiveRecord: 6.4ms | Allocations: 32572)
+
+
