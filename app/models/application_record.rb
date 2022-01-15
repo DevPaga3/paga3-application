@@ -10,5 +10,11 @@ class ApplicationRecord < ActiveRecord::Base
         Configuration.first
     end
 
+    #before_create { self.slug = generate_slug }
+
+    def generate_slug
+        SecureRandom.uuid
+    end
+
     
 end

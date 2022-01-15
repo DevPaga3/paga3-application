@@ -58,7 +58,11 @@ Rails.application.routes.draw do
     get 'profiles/details/:id',                                        to: 'profiles#details',                      as: 'profiles_details'
     get 'profiles/active_edit/:id',                                    to: 'profiles#active_edit',                  as: 'active_edit'
     put 'profiles/:id',                                                to: 'profiles#reduce',                       as: 'reduce'
+    post 'adc_subscribed',                                              to: 'profiles#adc_subscribed',               as: 'adc_subscribed'
     
+    
+
+
     get 'clientes/pendentes',                                         to: 'profiles#profiles_pending',              as: 'profiles_pending'
     get 'clientes/activos',                                           to: 'profiles#profiles_active',               as: 'profiles_active'
     get 'clientes/rejeitados',                                        to: 'profiles#profiles_rejecteds',            as: 'profiles_rejecteds'

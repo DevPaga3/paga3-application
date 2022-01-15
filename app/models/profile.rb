@@ -17,6 +17,7 @@ class Profile < ApplicationRecord
     has_one_attached    :avatar
     has_one_attached    :work_declaration
     has_one_attached    :banking_extrato
+    has_one_attached    :adc_subscribed
     attr_accessor       :inputmask
 
     enum genre:        { Masculino: 0, Femenino: 1 }

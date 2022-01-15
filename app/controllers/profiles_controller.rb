@@ -37,6 +37,12 @@ class ProfilesController < ApplicationController
         #redirect_to edit_profile_path(current_user.profile) #if current_user.profile_was_completed? if current_user.customer?
     end
 
+    def adc_subscribed 
+        profile = current_user.profile
+        profile.update(profile_params_adc)
+        redirect_to dashboard_path
+    end
+
     def show
     end
 
@@ -44,10 +50,6 @@ class ProfilesController < ApplicationController
     end
 
     def reduce
-        puts "=============================================="
-        p params[:amount_to_discount]
-        p params[:is_credit]
-        puts "=============================================="
 
         #@profile.reduce_parcels(current_user.id, params[:amount_to_discount].to_f, params[:is_credit])
         #redirect_to profile_path(@profile), notice: 'Plafom atualizado com sucesso.'
@@ -109,12 +111,19 @@ class ProfilesController < ApplicationController
             @profile = Profile.friendly.find(params[:id])
         end
 
+        def profile_params_adc
+            params.require(:profile).permit(
+                :adc_subscribed
+            )
+        end
+
         def profile_params
             params.require(:profile).permit(
                 :name, :bi, :salary, :position, :company_name, :address, :birth, :genre, :avatar,
                 :have_credit, :amount_credit, :percentage_valid, :user_id, 
                 :work_declaration, :banking_extrato, :can_edit, :iban, :amount_to_discount,
-                :account_number, :employer_address, :operating_sector, :bank_id, :occupationArea_id
+                :account_number, :employer_address, :operating_sector, :bank_id, :occupationArea_id,
+                :adc_subscribed
             )
         end
 end
