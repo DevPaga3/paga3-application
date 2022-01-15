@@ -40,4 +40,5 @@ set :disallow_pushing, true
 
 # if you prefer bzip2/unbzip2 instead of gzip
 set :compressor, :bzip2
-set :branch, ENV['BRANCH'] if ENV['BRANCH']
+
+#set :branch, ENV['BRANCH'] if ENV['BRANCH']
