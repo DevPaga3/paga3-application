@@ -11,7 +11,6 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
-
 set :passenger_restart_with_touch, true
 
 # ==========================================================================
@@ -41,3 +40,4 @@ set :disallow_pushing, true
 
 # if you prefer bzip2/unbzip2 instead of gzip
 set :compressor, :bzip2
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
