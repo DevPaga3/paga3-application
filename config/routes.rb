@@ -24,7 +24,8 @@ Rails.application.routes.draw do
     
     resources :users, only: [:index, :show, :new, :edit]
     get 'users/active_and_inactive_user/:id',                         to: 'users#active_and_inactive_user',       as: 'active_and_inactive_user'
-    get 'users/aprove_profile/:id',                                    to: 'users#aprove_profile',                  as: 'aprove_profile'
+    get 'users/active_and_inactive_profile/:id',                      to: 'users#active_and_inactive_profile',    as: 'active_and_inactive_profile'
+    get 'users/aprove_profile/:id',                                   to: 'users#aprove_profile',                  as: 'aprove_profile'
     
     
     

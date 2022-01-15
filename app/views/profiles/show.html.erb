@@ -38,7 +38,14 @@
                         <%= link_to 'Validar conta', validate_profile_path(@profile), class: "btn btn-sm btn-info", data: { confirm: 'Tens certeza ?' } %>
                     <% end %>
 
-                    <%= link_to 'Desactivar conta', @profile, class: "btn btn-sm btn-danger", method: :delete, data: { confirm: 'Tens certeza ?' } %>
+
+                    <% unless @profile.user.is_active %>
+                        <%= link_to 'Activar conta', active_and_inactive_profile_path(@profile.user), class: "btn btn-sm btn-success", data: { confirm: 'Tens certeza ?' } %>
+                    <% else %>
+                        <%= link_to 'Bloquear Conta', active_and_inactive_profile_path(@profile.user.id), class: "btn btn-sm btn-danger", data: { confirm: 'Tens certeza ?' } %>
+                    <% end %>
+                    
+                    
                 <% end %>
     
                 <a class="btn btn-sm btn-secondary dropdown" href="#" role="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
