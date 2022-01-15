@@ -69,11 +69,10 @@ class CompaniesController < ApplicationController
     def update
         respond_to do |format|
             #@company.email = @company.user.email
-            @company.create_access_user
+            #@company.create_access_user
 
             if @company.update(company_params)
-                format.html { redirect_to comapnies_details_path(@company.id), notice: 'Empresa atualizada com sucesso.' } if current_user.company?
-                format.html { redirect_to company_path(@company), notice: 'Empresa atualizada com sucesso.' } if current_user.admin?
+                format.html { redirect_to company_path(@company), notice: 'Empresa atualizada com sucesso.' }
                 format.json { render :show, status: :ok, location: @company }
             else
                 p @company.errors.messages

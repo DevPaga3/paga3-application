@@ -11,7 +11,7 @@ class Ability
 
         #============= PERMISSION COMPANY ===============
         if user.company?
-            can [:details, :update],    Company, id: user.company.id
+            can [:manage], Company,     company: { id: user.company.id }
             can [:manage], Store,       company: { id: user.company.id }
             can [:manage], Product,     company: { id: user.company.id }
             can [:manage], BankAccount
