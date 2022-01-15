@@ -2,7 +2,7 @@
 lock "~> 3.16.0"
 
 set :application, "paga3"
-set :repo_url, "git@github.com:acholis/paga3.git"
+set :repo_url, "git@github.com:DevPaga3/paga3-application.git"
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
