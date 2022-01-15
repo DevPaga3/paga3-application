@@ -12,8 +12,8 @@
                         </div>
                     </a>
                 </div>
-
             </div>
+
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <p class="mb-0">
@@ -28,6 +28,18 @@
         </div>
 
         <div class="col-md-3">
+            <% unless current_user.profile.adc_subscribed.attached? %>
+                <div class="text-right">
+                    <p>
+                        Baixar a ADC (Autorização de Débito em
+                        Conta). Assinar conforme a assinatura do bilhete, preencher a data e local. Após
+                        assinatura carregar a mesma na plataforma
+                    </p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        carregar ADC Assinada
+                    </button>
+                </div>
+            <% end %>
         
             <div class="row d-none d-lg-block">
                 <%= render 'dashboard/customer/publish' %>
@@ -35,3 +47,35 @@
 
         </div>
     </div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <%= simple_form_for(@profile, :url => adc_subscribed_path, :method => :post) do |f| %>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Carregar ADC Assinada</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <%= f.input :adc_subscribed, label: 'Selecione a ADC assinado' %>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn-sm btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <%= submit_tag "Submeter", class: "btn-sm btn btn-primary" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

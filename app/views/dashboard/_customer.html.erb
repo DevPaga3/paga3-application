@@ -1,24 +1,40 @@
 <!-- Hero -->
 <div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
-  <div class="bg-primary-dark-op">
-    <div class="content content-narrow content-full">
-      <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
-        <div class="flex-sm-fill">
-          <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Olá</h1>
-          <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250"><%= current_user.profile.name %></h2>
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Olá</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250"><%= current_user.profile.name %></h2>
+                </div>
+
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                    <% if current_user.profile.active? && false %>
+                        <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                            <a class="btn btn-p3 px-4 py-2 btn-sm" data-toggle="click-ripple" href="javascript:void(0)">
+                                <i class="fa fa-plus mr-1"></i> Fazer compras
+                            </a>
+                        </span>
+                    <% end %>
+
+                    <% if @profile.adc_subscribed.attached? %>
+                        <%= link_to rails_blob_path(@profile.adc_subscribed, disposition: 'attachment'), class: "text-white", target: :blank do %>
+                            <span class="fa fa-file-pdf "></span> Baixar ADC assinada
+                        <% end %>
+                    <% else %>
+                        <% if current_user.profile.iban.present? && current_user.profile.account_number.present? %>
+                            <%= link_to adc_details_url(current_user.profile.adc, format: "pdf"), target: "_blank", class: "btn btn-sm btn-p3 text-right" do %>
+                                <i class="fa fa-print mr-1"></i> Baixar ADC                    
+                            <% end %>
+                        <% else %>
+                            <h4 class="alert-heading text-red font-w300 my-2 text-right">Por favor adicionar a conta bancária</h4>
+                        <% end %>
+                    <% end %>
+                    
+                </div>
+            </div>
         </div>
-        <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
-          <% if current_user.profile.active? && false %>
-          <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-            <a class="btn btn-p3 px-4 py-2 btn-sm" data-toggle="click-ripple" href="javascript:void(0)">
-              <i class="fa fa-plus mr-1"></i> Fazer compras
-            </a>
-          </span>
-          <% end %>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
 <!-- END Hero -->
 

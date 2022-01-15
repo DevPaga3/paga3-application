@@ -14,6 +14,8 @@ class DashboardController < ApplicationController
             @products = Product.all
             @invoices = Factura.all
             @stores = Store.all
+
+            @profile = current_user.profile
         end
     end
 

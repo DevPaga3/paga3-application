@@ -24,7 +24,8 @@ Rails.application.routes.draw do
     
     resources :users, only: [:index, :show, :new, :edit]
     get 'users/active_and_inactive_user/:id',                         to: 'users#active_and_inactive_user',       as: 'active_and_inactive_user'
-    get 'users/aprove_profile/:id',                                    to: 'users#aprove_profile',                  as: 'aprove_profile'
+    get 'users/active_and_inactive_profile/:id',                      to: 'users#active_and_inactive_profile',    as: 'active_and_inactive_profile'
+    get 'users/aprove_profile/:id',                                   to: 'users#aprove_profile',                  as: 'aprove_profile'
     
     
     
@@ -57,7 +58,11 @@ Rails.application.routes.draw do
     get 'profiles/details/:id',                                        to: 'profiles#details',                      as: 'profiles_details'
     get 'profiles/active_edit/:id',                                    to: 'profiles#active_edit',                  as: 'active_edit'
     put 'profiles/:id',                                                to: 'profiles#reduce',                       as: 'reduce'
+    post 'adc_subscribed',                                              to: 'profiles#adc_subscribed',               as: 'adc_subscribed'
     
+    
+
+
     get 'clientes/pendentes',                                         to: 'profiles#profiles_pending',              as: 'profiles_pending'
     get 'clientes/activos',                                           to: 'profiles#profiles_active',               as: 'profiles_active'
     get 'clientes/rejeitados',                                        to: 'profiles#profiles_rejecteds',            as: 'profiles_rejecteds'
