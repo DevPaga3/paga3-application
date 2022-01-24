@@ -77,6 +77,8 @@ class User < ApplicationRecord
     def create_role
         if self.customer?
             profile = Profile.create(user_id: self.id, name: self.full_name)
+            profile.errors.messages
+            
             Adc.create(profile_id: profile.id)
         end
     end

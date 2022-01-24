@@ -9,12 +9,15 @@
                 </div>
 
                 <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
-                    <% if current_user.profile.active? && false %>
-                        <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                            <a class="btn btn-p3 px-4 py-2 btn-sm" data-toggle="click-ripple" href="javascript:void(0)">
-                                <i class="fa fa-plus mr-1"></i> Fazer compras
-                            </a>
-                        </span>
+                    <% if current_user.profile.active? && @profile.adc_subscribed.attached? %>
+                        <p>
+                            
+                            <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                                <a class="btn btn-p3 px-4 py-2 btn-sm" data-toggle="click-ripple" href="javascript:void(0)">
+                                    <i class="fa fa-plus mr-1"></i> Fazer compras
+                                </a>
+                            </span>
+                        </p>
                     <% end %>
 
                     <% if @profile.adc_subscribed.attached? %>
@@ -22,7 +25,7 @@
                             <span class="fa fa-file-pdf "></span> Baixar ADC assinada
                         <% end %>
                     <% else %>
-                        <% if current_user.profile.iban.present? && current_user.profile.account_number.present? %>
+                        <% if current_user.profile.active? && current_user.profile.iban.present? && current_user.profile.account_number.present? %>
                             <%= link_to adc_details_url(current_user.profile.adc, format: "pdf"), target: "_blank", class: "btn btn-sm btn-p3 text-right" do %>
                                 <i class="fa fa-print mr-1"></i> Baixar ADC                    
                             <% end %>
