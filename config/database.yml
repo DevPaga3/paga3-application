@@ -9,7 +9,12 @@ default: &default
 
 development:
     <<: *default
-    database: rails_paga3_development
+    #database: rails_paga3_development
+    host:      <%= ENV["HOST_PAGA3"]  %> # <%= Rails.application.credentials.database[:host] %>
+    database:  <%= ENV["DATABASE_PAGA3"]  %> # <%= Rails.application.credentials.database[:database] %>
+    port:      <%= ENV["PORT_PAGA3"]  %> # <%= Rails.application.credentials.database[:port] %>
+    username:  <%= ENV["USERNAME_PAGA3"]  %> # <%= Rails.application.credentials.database[:username] %>
+    password:  <%= ENV["PASSWORD_PAGA3"]  %> # <%= Rails.application.credentials.database[:password] %>
 
     # Warning: The database defined as "test" will be erased and
     # re-generated from your development database when you run "rake".

@@ -13,7 +13,7 @@ class User < ApplicationRecord
     has_many :facturas, dependent: :destroy
     has_many :history_of_profiles, dependent: :destroy
     
-    after_create :create_role, :welcome_notification
+    after_create :confirmation_cell_phone
 
     enum role: {
         admin: 222,
@@ -31,6 +31,23 @@ class User < ApplicationRecord
     }
 
     validates :confirmation_terms, acceptance: true
+
+
+
+
+
+
+
+
+
+
+
+
+    def confirmation_cell_phone
+
+    end
+
+
 
 
     def create_code_validation
@@ -72,12 +89,14 @@ class User < ApplicationRecord
         self.purchase_codes.where(is_active: true).last
     end
 
-    def create_role
-        if self.customer?
-            profile = Profile.create(user_id: self.id, name: self.full_name)
-            Adc.create(profile_id: profile.id)
-        end
-    end
+    #def create_role
+    #    if self.customer?
+    #        profile = Profile.create(user_id: self.id, name: self.full_name)
+    #        profile.errors.messages
+    #        
+    #        Adc.create(profile_id: profile.id)
+    #    end
+    #end
 
     def welcome_notification
         return unless self.customer?
