@@ -74,7 +74,7 @@ class User < ApplicationRecord
 
     validates :password,
     presence: {message: 'Não pode estar em branco'},
-    format: {with: PASSWORD_REGEX, message: "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caracter especial."}
+    format: {with: PASSWORD_REGEX, message: "A senha deve conter duas letras maiúscula, um caracter especial, dois digitos e três letras minúsculas."}
 
     validates :cell_phone, uniqueness: true,
         presence: {message: "Não pode estar em branco!"},
