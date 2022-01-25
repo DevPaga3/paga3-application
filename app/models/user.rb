@@ -52,19 +52,17 @@ class User < ApplicationRecord
     end
 
     validates :email,
-    presence: {message: 'não pode estar em branco'},
+    presence: {message: 'Não pode estar em branco'},
     format: {with: EMAIL_REGEX, message: "E-mail inválido"}
 
-
-    validates :full_name,
-    presence: {message: 'não pode estar em branco'}
-
-    
+    validates :password,
+    presence: {message: 'Não pode estar em branco'},
+    format: {with: PASSWORD_REGEX, message: "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caracter especial."}
 
     validates :cell_phone, uniqueness: true,
-        presence: {message: "não pode estar em branco!"},
-        :numericality => {:only_integer => true, message: "numero de telefone inválido"},
-        length: {in: 9..9, message: "número de telefone inválido. Ex: 923456699"}
+        presence: {message: "Não pode estar em branco!"},
+        :numericality => {:only_integer => true, message: "Número de telefone inválido"},
+        length: {in: 9..9, message: "Número de telefone inválido. Ex: 923456699"}
 
     def any_purchase_active?
         self.purchase_codes.where(is_active: true).exists?
