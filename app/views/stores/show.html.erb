@@ -13,7 +13,7 @@
 
                         <% if current_user.company? %>
                             <!-- delete hidden store button -->
-                            <%#= link_to @store, class: "btn btn-sm btn-danger px-4 py-2", method: :delete, data: { confirm: 'Tens certeza ? Ao eliminar a loja, vai eliminar todos os productos associado a esta loja' } do %>
+                            <%#= link_to @store, class: "btn btn-sm btn-danger px-4 py-2", method: :delete, data: { confirm: 'Tens certeza ? Ao eliminar a loja, vai eliminar todos os produtos associado a esta loja' } do %>
                                 <!-- <i class="fa fa-trash mr-1"></i> Eliminar loja -->
                             <%# end %>
 
@@ -22,7 +22,7 @@
                             </button>
 
                             <button type="button" class="btn btn-sm btn-blue px-4 py-2" data-toggle="modal" data-target="#modal-create-product">
-                                <i class="fa fa-plus mr-1"></i> Novo producto
+                                <i class="fa fa-plus mr-1"></i> Novo produto
                             </button>
                         <% end %>
 
@@ -45,7 +45,7 @@
     <div class="content content-boxed">
         <div class="row items-push text-center">
             <div class="col-6 col-md-3">
-                <div class="font-size-sm font-w600 text-muted text-uppercase">Productos</div>
+                <div class="font-size-sm font-w600 text-muted text-uppercase">Produtos</div>
                 <a class="link-fx font-size-h3" href="javascript:void(0)"><%= @store.products.count %></a>
             </div>
             <div class="col-6 col-md-9 text-right">
@@ -64,7 +64,7 @@
             <div class="block">
                 <ul class="nav nav-tabs nav-tabs-block" data-toggle="tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#btabs-animated-slideup-home">Productos disponíveis na loja</a>
+                        <a class="nav-link active" href="#btabs-animated-slideup-home">Produtos disponíveis na loja</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#btabs-animated-slideup-profile">Lista de vendas</a>

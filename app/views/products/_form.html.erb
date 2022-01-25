@@ -6,9 +6,9 @@
                 <div class="block block-themed block-transparent mb-0">
                     <div class="block-header bg-primary-dark">
                         <% if @product.id.present? %>
-                            <h3 class="block-title">Actualizar producto</h3>
+                            <h3 class="block-title">Actualizar produto</h3>
                         <% else %>
-                            <h3 class="block-title">Registo de producto</h3>
+                            <h3 class="block-title">Registo de produto</h3>
                         <% end %>
 
                         <div class="block-options">
@@ -17,12 +17,12 @@
                     </div>
 
                     <div class="block-content font-size-md">
-                        <%= f.input :name, label: "Nome do producto" %>
+                        <%= f.input :name, label: "Nome do produto" %>
                         <%= f.input :real_price, label: "Preço" %>
                         <%= f.input :render_number, label: "Parcelas à pagar" %>
-                        <%= f.input :description, :input_html => { :rows => 7, :style => 'width: 100%' }, label: "Descrição do producto" %>
+                        <%= f.input :description, :input_html => { :rows => 7, :style => 'width: 100%' }, label: "Descrição do produto" %>
                         
-                        <%= f.input :image, label: "Foto do producto" %>
+                        <%= f.input :image, label: "Foto do produto" %>
                         <%= f.association :store, as: :hidden %>
                     </div>
 
