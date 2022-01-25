@@ -18,11 +18,6 @@
 
                         <div class="py-3">
                             <div class="form-group">
-                                <%= f.input :full_name, required: true, autofocus: true, input_html: { class: "form-control form-control-lg form-control-alt" }, placeholder: "Nome completo", label: false, error: 'Nome completo obrigatório.' %>
-                            </div>
-
-
-                            <div class="form-group">
                                 <%= f.input :email, required: true, input_html: { class: "form-control form-control-lg form-control-alt" }, placeholder: "Seu Email", label: false, error: 'E-mail inválido.' %>
                             </div>
 
@@ -46,6 +41,8 @@
                             <div class="form-group">
                                 <div class="py-2">
                                     <%= f.input :confirmation_terms, label: 'Concordo com os termos e condições', error: 'Os termos de confirmação devem ser aceitos' %>
+                                    <p style="margin-bottom: 0; font-size: 15px;"><a href="/docs/termos_e_condicoes.pdf" target="_blank" ><em>Ler os termos e condições</em></a></p>
+
                                 </div>
                             </div>
 

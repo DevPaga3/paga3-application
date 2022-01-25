@@ -3,7 +3,11 @@
 <% end %>
 
 <% if current_user.customer? %>
-    <%= render "dashboard/customer" %>
+    <% unless current_user.confirmation_cell_phone %>
+        <%= render "dashboard/customer/confirmation_cell_phone" %>
+    <% else %>
+        <%= render "dashboard/customer" %>
+    <% end %>
 <% end %>
 
 <% if current_user.company? %>

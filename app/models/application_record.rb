@@ -4,7 +4,6 @@ class ApplicationRecord < ActiveRecord::Base
 
     EMAIL_REGEX     = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
     TELEMOVEL_REGEX = /\A[0-9]+\z/
-    NOME_REGEX      = /\A[a-zA-Z0-90\W\w\s\-]*$\z/i
 
     def config
         Configuration.first
@@ -14,6 +13,11 @@ class ApplicationRecord < ActiveRecord::Base
 
     def generate_slug
         SecureRandom.uuid
+    end
+
+    def self.validate_id_number(identity_number)
+        nif = Nif.new(identity_number).call
+        return nif['success']
     end
 
     

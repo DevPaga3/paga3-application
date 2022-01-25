@@ -52,7 +52,12 @@ Rails.application.routes.draw do
     get '/stores/:id/details_of_current_order/:pre_order_id',         to: 'stores#details_of_current_order',      as: 'details_of_current_order'
     
     get '/dashboard',                                                 to: 'dashboard#index',                      as: 'dashboard'
+    get '/search_identity_number',                                    to: 'dashboard#search_identity_number',     as: 'search_identity_number'
     
+
+    
+
+
     get 'profiles/validate_profile/:id',                                to: 'profiles#validate_profile',              as: 'validate_profile'
     get 'profiles/rejected_profile/:id',                                to: 'profiles#rejected_profile',              as: 'rejected_profile'
     get 'profiles/details/:id',                                        to: 'profiles#details',                      as: 'profiles_details'

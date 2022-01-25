@@ -1,0 +1,42 @@
+<!-- Hero -->
+<div class="bg-image overflow-hidden" style="background-image: url('/home.svg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-narrow content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
+                <div class="flex-sm-fill">
+                    <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Olá</h1>
+                    <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250"><%= current_user.email %></h2>
+                </div>
+
+                <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<div class="content content-narrow">
+    <div class="row justify-content-md-center">
+        <div class="col-4">
+            <%= form_tag(search_identity_number_path, :method => "get", id: "search-form") do %>
+                <div class="form-row">
+                    <div class="col-md-8">
+                        <%= text_field_tag :search_identity_number, params[:search_identity_number], placeholder: "Digite o nº de BI válido", class: "form-control mr-2" %>
+                    </div>
+
+                    <div class="col-md-2 text-left">
+                        <%= submit_tag "Buscar", class: "btn btn-primary" %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+
+        <div class="col-3">
+            <div class="text-left">
+                <p> <%= @search_identity_text %> </p>
+            </div>
+        </div>
+    </div>
+
+</div>
