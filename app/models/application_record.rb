@@ -4,6 +4,7 @@ class ApplicationRecord < ActiveRecord::Base
 
     EMAIL_REGEX     = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
     TELEMOVEL_REGEX = /\A[0-9]+\z/
+    PASSWORD_REGEX  = /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}\z/
 
     def config
         Configuration.first

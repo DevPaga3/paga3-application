@@ -301,7 +301,7 @@ ActiveRecord::Schema.define(version: 2022_01_24_183832) do
     t.bigint "user_id"
     t.integer "code"
     t.boolean "is_active", default: true, null: false
-    t.datetime "expiration_at", default: "2021-03-27 18:46:47", null: false
+    t.datetime "expiration_at", default: "2021-10-09 10:32:03", null: false
     t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
