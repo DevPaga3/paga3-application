@@ -18,34 +18,40 @@
 
                         <div class="py-3">
                             <div class="form-group">
-                                <%= f.input :full_name, required: true, autofocus: true, input_html: { class: "form-control form-control-lg form-control-alt" }, placeholder: "Nome completo", label: false, error: 'Nome completo obrigatório.' %>
-                            </div>
-
-
-                            <div class="form-group">
-                                <%= f.input :email, required: true, input_html: { class: "form-control form-control-lg form-control-alt" }, placeholder: "Seu Email", label: false, error: 'E-mail inválido.' %>
+                                <%= f.input :identity_number, required: true, input_html: { class: "form-control form-control-lg form-control-alt" }, placeholder: "000045000LA033", label: "Nº Bilhete Identidade" %>
                             </div>
 
                             <div class="form-group">
-                                <%= f.input :cell_phone, required: true, input_html: { class: "form-control form-control-lg form-control-alt" }, placeholder: "Nº de telefone", label: false %>
+                                <%= f.input :email, required: true, input_html: { class: "form-control form-control-lg form-control-alt" }, placeholder: "Seu Email", label: "Email", error: 'E-mail inválido.' %>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <%= f.input :password, required: true, input_html: { class: "form-control form-control-lg form-control-alt", id: "inputPass" }, placeholder: "Senha", label: false %>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <%= f.input :password_confirmation, required: true, input_html: { class: "form-control form-control-lg form-control-alt", id: "inputPass" }, placeholder: "Confirmação da senha", label: false %>
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <%= f.input :cell_phone, required: true, input_html: { class: "form-control form-control-lg form-control-alt" }, placeholder: "Nº de telefone", label: "Telefone" %>
                             </div>
+
+                            
+                            <div class="form-group">
+                                <%= f.input :password, required: true, input_html: { class: "form-control form-control-lg form-control-alt", id: "inputPass" }, placeholder: "Ex: AA#45aaa", label: "Senha" %>
+                                <span class="eye-section" onclick="openEye()">
+                                    <i class="fas fa-eye" id="eyeOpen"></i>
+                                    <i class="fas fa-eye-slash" id="eyeClose"></i>
+                                </span>
+                            </div>
+                                
 
                             <div class="form-group">
                                 <div class="py-2">
                                     <%= f.input :confirmation_terms, label: 'Concordo com os termos e condições', error: 'Os termos de confirmação devem ser aceitos' %>
+                                    <p style="margin-bottom: 0; font-size: 15px;"><a href="/docs/termos_e_condicoes.pdf" target="_blank" ><em>Ler os termos e condições</em></a></p>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row justify-content-center mb-0">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-block btn-p3" id="btn_register" data-toggle="tooltip" title="Concordar com os termos e condições">
+                                        Criar conta
+                                    </button>
                                 </div>
                             </div>
 
@@ -58,13 +64,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row justify-content-center mb-0">
-                            <div class="col">
-                                <button type="submit" class="btn btn-block btn-p3" id="btn_register" data-toggle="tooltip" title="Concordar com os termos e condições">
-                                    Criar conta
-                                </button>
-                            </div>
-                        </div>
+
                     <% end %>
                 </div>
             </div>

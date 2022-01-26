@@ -1,12 +1,24 @@
-.eye-holder {
+.eye-holder, .eye-section {
   position: absolute;
   top: 0;
   right: 0;
   color: #636e72;
   top: 58%;
-  right: 20px;
-  transform: translate(0%, -50%);
+  right: 26px;
+  transform: translate(0%, 50%);
   cursor: pointer;
+
+  #eyeClose {
+    display: none;
+  }
+}
+
+.eye-section {
+  transform: translate(0%, 20%);
+
+  #eyeClose {
+    display: none;
+  }
 }
 
 .box {
@@ -15,10 +27,6 @@
 
 .box-1 {
   top: 60%;
-}
-
-.eye-holder #eyeClose {
-  display: none;
 }
 
 .btn-submit {

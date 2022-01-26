@@ -3,6 +3,8 @@ class User < ApplicationRecord
     #extend FriendlyId
     #friendly_id :email, use: :slugged
 
+    attr_accessor :identity_number
+
     devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :authentication_keys => [:login]
     
     has_one :company, dependent: :destroy
@@ -13,7 +15,8 @@ class User < ApplicationRecord
     has_many :facturas, dependent: :destroy
     has_many :history_of_profiles, dependent: :destroy
     
-    after_create :create_role, :welcome_notification
+    after_create :send_code_validation
+    after_create :create_customer
 
     enum role: {
         admin: 222,
@@ -30,7 +33,93 @@ class User < ApplicationRecord
         inactive: 0
     }
 
+    validates :email,
+    presence: {message: 'Não pode estar em branco'},
+    format: {with: EMAIL_REGEX, message: "E-mail inválido"}
+
+    validates :password,
+    presence: {message: 'Não pode estar em branco'}
+    #,format: {with: PASSWORD_REGEX, message: "A senha deve conter duas letras maiúscula, um caracter especial, dois digitos e três letras minúsculas."}
+
+    validates :cell_phone, uniqueness: true,
+        presence: {message: "Não pode estar em branco!"},
+        :numericality => {:only_integer => true, message: "Número de telefone inválido"},
+        length: {in: 9..9, message: "Número de telefone inválido. Ex: 923456699"}
+
+
     validates :confirmation_terms, acceptance: true
+
+    validates :identity_number, presence: true
+    validate :validate_identity_number, on: :create
+
+    def send_code_validation
+        code = generate_sms_code
+
+        msg = "PAGA3\nOlá caro cliente,\nSeu código de validação de conta PAGA3 é\n\n#{code}"
+        SendSMS.new( msg, self.cell_phone).call
+
+        ValidationCode.create(
+            code: code,
+            cell_phone: self.cell_phone,
+            user_id: self.id
+        )
+    end
+
+    def generate_sms_code
+        loop do
+            code = srand.to_s.last(4) # rand.to_s[2..5].to_i
+            break code unless ValidationCode.where(code: code).exists?
+        end
+    end
+
+
+    def validate_id_number?
+        nif = Nif.new(self.identity_number).call
+        return nif['success']
+    end
+
+    def validate_identity_number
+        if self.customer?
+            if Profile.find_by(bi: self.identity_number)
+                errors.add(:identity_number, 'BI já registado')
+            end
+
+            unless validate_id_number?
+                errors.add(:identity_number, 'BI já registado')
+            end
+        end
+    end
+
+    def update_confirmation_cell_phone
+        self.update_columns(confirmation_cell_phone: true)
+    end
+
+    def create_customer
+        if self.customer?
+            response = Nif.new(self.identity_number).call
+            data = response['data']
+
+            profile = Profile.create(
+                user_id:   self.id, 
+                bi:        data['ID_NUMBER'],
+                name:      data['FIRST_NAME'],
+                last_name: data['LAST_NAME'],
+                genre:     data['GENDER_NAME'] == 'MASCULINO' ? 0 : 1 ,
+                birth:     data['BIRTH_DATE'],
+                address:   data['RESIDENCE_NEIGHBOR'],
+                province:  data['RESIDENCE_PROVINCE_NAME'],
+                residence: data['RESIDENCE_ADDRESS']
+            )
+            
+            Adc.create(profile_id: profile.id)
+        end
+    end
+
+    def cell_phone_is_valide
+
+    end
+
+
 
 
     def create_code_validation
@@ -51,34 +140,12 @@ class User < ApplicationRecord
         super and self.is_active?
     end
 
-    validates :email,
-    presence: {message: 'não pode estar em branco'},
-    format: {with: EMAIL_REGEX, message: "E-mail inválido"}
-
-
-    validates :full_name,
-    presence: {message: 'não pode estar em branco'}
-
-    
-
-    validates :cell_phone, uniqueness: true,
-        presence: {message: "não pode estar em branco!"},
-        :numericality => {:only_integer => true, message: "numero de telefone inválido"},
-        length: {in: 9..9, message: "número de telefone inválido. Ex: 923456699"}
-
     def any_purchase_active?
         self.purchase_codes.where(is_active: true).exists?
     end
 
     def last_purchase_code
         self.purchase_codes.where(is_active: true).last
-    end
-
-    def create_role
-        if self.customer?
-            profile = Profile.create(user_id: self.id, name: self.full_name)
-            Adc.create(profile_id: profile.id)
-        end
     end
 
     def welcome_notification

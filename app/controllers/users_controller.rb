@@ -9,6 +9,8 @@ class UsersController < ApplicationController
         :aprove_profile
     ]
 
+    load_and_authorize_resource only: [:index]
+
 
     def index
         @pagy, @users = pagy(User.where(role: [222, 10, 12, 15, 20]), items: 10)

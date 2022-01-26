@@ -99,7 +99,7 @@ class StoresController < ApplicationController
     if product.present?
       if (@pre_order.profile.purchase_amount >= product.first_parcel) # && (@pre_order.total_to_pay + product.price_with_commission) <= @pre_order.profile.purchase_amount)
           ItemOrder.create(product_id: product.id, pre_order_id: @pre_order.id)
-          redirect_to details_of_current_order_path(pre_order_id: @pre_order.id), notice: 'Producto adicionado com sucesso'
+          redirect_to details_of_current_order_path(pre_order_id: @pre_order.id), notice: 'Produto adicionado com sucesso'
       else
         redirect_to details_of_current_order_path(pre_order_id: @pre_order.id), alert: 'Valor do cliente não é suficiente para completar a compra'
       end

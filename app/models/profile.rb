@@ -110,7 +110,7 @@ class Profile < ApplicationRecord
 
 
     #============================= GENERATE SLUG =================================
-    validates :bi, uniqueness: { message: "já existe registado, deve ser unico no sistema" }
+    #validates :bi, uniqueness: { message: "já existe registado, deve ser unico no sistema" }
 
 
 

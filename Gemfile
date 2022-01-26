@@ -31,6 +31,7 @@ gem 'prawn-table'
 gem 'pundit'
 gem 'cancancan'
 gem 'sendgrid-ruby'
+gem 'httparty'
 
 gem 'capistrano', '~> 3.11'
 gem 'capistrano-rails', '~> 1.4'

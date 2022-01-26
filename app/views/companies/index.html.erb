@@ -98,7 +98,7 @@
                                     <div class="btn-group">
                                         <% if current_user.admin? && false %>
                                             <%= link_to company, class: "btn btn-sm btn-danger js-tooltip-enabled", "data-toggle": "tooltip", "title": "Eliminar", "data-original-title": "Eliminar",
-                                                method: :delete, data: { confirm: 'Tens certeza ? Ao eliminar a empresa vai eliminar todas as suas dependencias, lojas, productos e usuários' } do %>
+                                                method: :delete, data: { confirm: 'Tens certeza ? Ao eliminar a empresa vai eliminar todas as suas dependencias, lojas, produtos e usuários' } do %>
                                                 <i class="fa fa-fw fa-trash"></i>
                                             <% end %>
                                         <% end %>
