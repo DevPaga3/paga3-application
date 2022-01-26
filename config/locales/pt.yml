@@ -2,6 +2,12 @@ pt:
   activerecord:
     attributes:
       user:
+        identity_number: 'Nº de identidade'
+        cell_phone: 'Número de telefone'
+        is_active: 'Esta activo'
+        confirmation_terms: 'Confirmação do termos'
+        full_name: 'Nome completo'
+        confirmation_cell_phone: 'Conformação do Nº telefone'
         confirmation_sent_at: Confirmação enviada em
         confirmation_token: Token de confirmação
         confirmed_at: Confirmado em
@@ -29,6 +35,23 @@ pt:
       user:
         one: Usuário
         other: Usuários
+      profile:
+        one: Perfil
+        other: Perfis
+    #================= errors ===========
+    errors:
+      models:
+        user:
+          attributes:
+            identity_number:
+              blank: 'Não pode estar em branco'
+            password:
+              blank: 'Não pode estar em branco'
+
+              
+      messages:
+        record_invalid: 'A validação falhou: %{errors}'
+
   devise:
     confirmations:
       confirmed: A sua conta foi confirmada com sucesso.

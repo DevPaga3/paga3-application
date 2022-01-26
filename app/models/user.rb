@@ -33,23 +33,20 @@ class User < ApplicationRecord
         inactive: 0
     }
 
-    validates :email,
-    presence: {message: 'Não pode estar em branco'},
-    format: {with: EMAIL_REGEX, message: "E-mail inválido"}
+    validates :email, presence: {message: 'Não pode estar em branco'}, format: {with: EMAIL_REGEX, message: "E-mail inválido"}
 
-    validates :password,
-    presence: {message: 'Não pode estar em branco'}
-    #,format: {with: PASSWORD_REGEX, message: "A senha deve conter duas letras maiúscula, um caracter especial, dois digitos e três letras minúsculas."}
+    validates :password, 
+    presence: {message: 'Não pode estar em branco'},
+    format: {with: PASSWORD_REGEX, message: "A senha deve conter duas letras maiúscula, um caracter especial, dois digitos e três letras minúsculas."}
 
     validates :cell_phone, uniqueness: true,
         presence: {message: "Não pode estar em branco!"},
-        :numericality => {:only_integer => true, message: "Número de telefone inválido"},
-        length: {in: 9..9, message: "Número de telefone inválido. Ex: 923456699"}
+        :numericality => {:only_integer => true, message: "Número de telefone inválido"}
 
 
     validates :confirmation_terms, acceptance: true
 
-    validates :identity_number, presence: true
+    validates :identity_number, presence: {message: "Não pode estar em branco!"}
     validate :validate_identity_number, on: :create
 
     def send_code_validation
@@ -81,11 +78,11 @@ class User < ApplicationRecord
     def validate_identity_number
         if self.customer?
             if Profile.find_by(bi: self.identity_number)
-                errors.add(:identity_number, 'BI já registado')
+                errors.add(:identity_number, 'Indisponível')
             end
 
             unless validate_id_number?
-                errors.add(:identity_number, 'BI já registado')
+                errors.add(:identity_number, 'Inválido')
             end
         end
     end
