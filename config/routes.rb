@@ -52,7 +52,7 @@ Rails.application.routes.draw do
     get '/stores/:id/details_of_current_order/:pre_order_id',         to: 'stores#details_of_current_order',      as: 'details_of_current_order'
     
     get '/dashboard',                                                 to: 'dashboard#index',                      as: 'dashboard'
-    get '/search_identity_number',                                    to: 'dashboard#search_identity_number',     as: 'search_identity_number'
+    get '/validate_cell_phone_number',                                to: 'dashboard#validate_cell_phone_number', as: 'validate_cell_phone_number'
     
 
     

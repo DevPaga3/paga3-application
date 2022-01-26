@@ -11,12 +11,7 @@ class DashboardController < ApplicationController
         end
 
         if current_user.customer?
-            @search_identity_text = "Por favor inserir o seu número de bilhete de identidade válido"
-
-            #unless current_user.confirmation_cell_phone
-            #    redirect_to confirmation_cell_phone_path
-            #end
-
+            @validate_cell_phone_number_text = "Por favor inserir o código de confirmação, enviado por SMS"
             @products = Product.all
             @invoices = Factura.all
             @stores = Store.all
@@ -25,8 +20,17 @@ class DashboardController < ApplicationController
         end
     end
 
-    def search_identity_number
-
+    def validate_cell_phone_number
+        if params[:sms_code].length == 4
+            if ValidationCode.validation(current_user, params[:sms_code])
+                current_user.update_confirmation_cell_phone
+                redirect_to root_path, notice: 'Conta validada com sucesso.'
+            else
+                @validate_cell_phone_number_text = "Código invalido"
+            end
+        else
+            @validate_cell_phone_number_text = "Código invalido"
+        end
     end
 
 

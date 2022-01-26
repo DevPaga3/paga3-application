@@ -19,14 +19,18 @@
 <div class="content content-narrow">
     <div class="row justify-content-md-center">
         <div class="col-4">
-            <%= form_tag(search_identity_number_path, :method => "get", id: "search-form") do %>
+            <%= form_tag(validate_cell_phone_number_path, :method => "get", id: "search-form") do %>
                 <div class="form-row">
                     <div class="col-md-8">
-                        <%= text_field_tag :search_identity_number, params[:search_identity_number], placeholder: "Digite o nº de BI válido", class: "form-control mr-2" %>
+                        <%= text_field_tag :sms_code, 
+                            params[:sms_code], 
+                            placeholder: "Digite o código de válidação", 
+                            class: "form-control mr-2" 
+                        %>
                     </div>
 
                     <div class="col-md-2 text-left">
-                        <%= submit_tag "Buscar", class: "btn btn-primary" %>
+                        <%= submit_tag "Validar", class: "btn btn-primary" %>
                     </div>
                 </div>
             <% end %>
@@ -34,9 +38,8 @@
 
         <div class="col-3">
             <div class="text-left">
-                <p> <%= @search_identity_text %> </p>
+                <p> <%= @validate_cell_phone_number_text %> </p>
             </div>
         </div>
     </div>
-
 </div>

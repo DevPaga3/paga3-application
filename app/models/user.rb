@@ -15,7 +15,7 @@ class User < ApplicationRecord
     has_many :facturas, dependent: :destroy
     has_many :history_of_profiles, dependent: :destroy
     
-    after_create :confirmation_cell_phone
+    after_create :send_code_validation
     after_create :create_customer
 
     enum role: {
@@ -52,6 +52,27 @@ class User < ApplicationRecord
     validates :identity_number, presence: true
     validate :validate_identity_number, on: :create
 
+    def send_code_validation
+        code = generate_sms_code
+
+        msg = "PAGA3\nOlá caro cliente,\nSeu código de validação de conta PAGA3 é\n\n#{code}"
+        SendSMS.new( msg, self.cell_phone).call
+
+        ValidationCode.create(
+            code: code,
+            cell_phone: self.cell_phone,
+            user_id: self.id
+        )
+    end
+
+    def generate_sms_code
+        loop do
+            code = srand.to_s.last(4) # rand.to_s[2..5].to_i
+            break code unless ValidationCode.where(code: code).exists?
+        end
+    end
+
+
     def validate_id_number?
         nif = Nif.new(self.identity_number).call
         return nif['success']
@@ -66,9 +87,11 @@ class User < ApplicationRecord
             unless validate_id_number?
                 errors.add(:identity_number, 'BI já registado')
             end
-
-
         end
+    end
+
+    def update_confirmation_cell_phone
+        self.update_columns(confirmation_cell_phone: true)
     end
 
     def create_customer
@@ -92,16 +115,7 @@ class User < ApplicationRecord
         end
     end
 
-
-
-
-
-
-
-
-
-
-    def confirmation_cell_phone
+    def cell_phone_is_valide
 
     end
 
