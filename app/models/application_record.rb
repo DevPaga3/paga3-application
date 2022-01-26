@@ -16,10 +16,7 @@ class ApplicationRecord < ActiveRecord::Base
         SecureRandom.uuid
     end
 
-    def self.validate_id_number(identity_number)
-        nif = Nif.new(identity_number).call
-        return nif['success']
-    end
+
 
     
 end

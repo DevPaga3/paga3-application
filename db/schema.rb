@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_24_183832) do
+ActiveRecord::Schema.define(version: 2022_01_26_151042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -259,6 +259,13 @@ ActiveRecord::Schema.define(version: 2022_01_24_183832) do
     t.index ["store_id"], name: "index_products_on_store_id"
   end
 
+  create_table "produtos", id: :serial, force: :cascade do |t|
+    t.string "nome"
+    t.string "descricao"
+    t.decimal "preco"
+    t.integer "quantidade"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "name"
     t.string "bi"
@@ -285,6 +292,9 @@ ActiveRecord::Schema.define(version: 2022_01_24_183832) do
     t.integer "operating_sector", default: 0, null: false
     t.bigint "occupationArea_id"
     t.decimal "amount_to_discount"
+    t.string "last_name"
+    t.string "province"
+    t.string "residence"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -301,7 +311,7 @@ ActiveRecord::Schema.define(version: 2022_01_24_183832) do
     t.bigint "user_id"
     t.integer "code"
     t.boolean "is_active", default: true, null: false
-    t.datetime "expiration_at", default: "2021-10-09 10:32:03", null: false
+    t.datetime "expiration_at", default: "2021-03-27 18:46:47", null: false
     t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

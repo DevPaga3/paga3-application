@@ -3,6 +3,8 @@ class User < ApplicationRecord
     #extend FriendlyId
     #friendly_id :email, use: :slugged
 
+    attr_accessor :identity_number
+
     devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :authentication_keys => [:login]
     
     has_one :company, dependent: :destroy
@@ -14,6 +16,7 @@ class User < ApplicationRecord
     has_many :history_of_profiles, dependent: :destroy
     
     after_create :confirmation_cell_phone
+    after_create :create_customer
 
     enum role: {
         admin: 222,
@@ -30,9 +33,64 @@ class User < ApplicationRecord
         inactive: 0
     }
 
+    validates :email,
+    presence: {message: 'Não pode estar em branco'},
+    format: {with: EMAIL_REGEX, message: "E-mail inválido"}
+
+    validates :password,
+    presence: {message: 'Não pode estar em branco'}
+    #,format: {with: PASSWORD_REGEX, message: "A senha deve conter duas letras maiúscula, um caracter especial, dois digitos e três letras minúsculas."}
+
+    validates :cell_phone, uniqueness: true,
+        presence: {message: "Não pode estar em branco!"},
+        :numericality => {:only_integer => true, message: "Número de telefone inválido"},
+        length: {in: 9..9, message: "Número de telefone inválido. Ex: 923456699"}
+
+
     validates :confirmation_terms, acceptance: true
 
+    validates :identity_number, presence: true
+    validate :validate_identity_number, on: :create
 
+    def validate_id_number?
+        nif = Nif.new(self.identity_number).call
+        return nif['success']
+    end
+
+    def validate_identity_number
+        if self.customer?
+            if Profile.find_by(bi: self.identity_number)
+                errors.add(:identity_number, 'BI já registado')
+            end
+
+            unless validate_id_number?
+                errors.add(:identity_number, 'BI já registado')
+            end
+
+
+        end
+    end
+
+    def create_customer
+        if self.customer?
+            response = Nif.new(self.identity_number).call
+            data = response['data']
+
+            profile = Profile.create(
+                user_id:   self.id, 
+                bi:        data['ID_NUMBER'],
+                name:      data['FIRST_NAME'],
+                last_name: data['LAST_NAME'],
+                genre:     data['GENDER_NAME'] == 'MASCULINO' ? 0 : 1 ,
+                birth:     data['BIRTH_DATE'],
+                address:   data['RESIDENCE_NEIGHBOR'],
+                province:  data['RESIDENCE_PROVINCE_NAME'],
+                residence: data['RESIDENCE_ADDRESS']
+            )
+            
+            Adc.create(profile_id: profile.id)
+        end
+    end
 
 
 
@@ -68,19 +126,6 @@ class User < ApplicationRecord
         super and self.is_active?
     end
 
-    validates :email,
-    presence: {message: 'Não pode estar em branco'},
-    format: {with: EMAIL_REGEX, message: "E-mail inválido"}
-
-    validates :password,
-    presence: {message: 'Não pode estar em branco'},
-    format: {with: PASSWORD_REGEX, message: "A senha deve conter duas letras maiúscula, um caracter especial, dois digitos e três letras minúsculas."}
-
-    validates :cell_phone, uniqueness: true,
-        presence: {message: "Não pode estar em branco!"},
-        :numericality => {:only_integer => true, message: "Número de telefone inválido"},
-        length: {in: 9..9, message: "Número de telefone inválido. Ex: 923456699"}
-
     def any_purchase_active?
         self.purchase_codes.where(is_active: true).exists?
     end
@@ -88,15 +133,6 @@ class User < ApplicationRecord
     def last_purchase_code
         self.purchase_codes.where(is_active: true).last
     end
-
-    #def create_role
-    #    if self.customer?
-    #        profile = Profile.create(user_id: self.id, name: self.full_name)
-    #        profile.errors.messages
-    #        
-    #        Adc.create(profile_id: profile.id)
-    #    end
-    #end
 
     def welcome_notification
         return unless self.customer?
