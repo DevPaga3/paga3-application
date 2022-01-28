@@ -28,5 +28,9 @@ Admin.create(
     role: 222
 )
 
-p user
+#host: <%= ENV.fetch("HOST_PAGA3") %>
+#database: <%= ENV.fetch("DATABASE_PAGA3") %>
+#port: <%= ENV.fetch("PORT_PAGA3") %>
+#username: <%= ENV.fetch("USERNAME_PAGA3") %>
+#password: <%= ENV.fetch("PASSWORD_PAGA3") %>
 
