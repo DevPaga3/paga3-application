@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_24_183832) do
+ActiveRecord::Schema.define(version: 2022_01_26_160417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -285,6 +285,9 @@ ActiveRecord::Schema.define(version: 2022_01_24_183832) do
     t.integer "operating_sector", default: 0, null: false
     t.bigint "occupationArea_id"
     t.decimal "amount_to_discount"
+    t.string "last_name"
+    t.string "province"
+    t.string "residence"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -380,6 +383,16 @@ ActiveRecord::Schema.define(version: 2022_01_24_183832) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "validation_codes", force: :cascade do |t|
+    t.string "code"
+    t.boolean "status", default: false, null: false
+    t.string "cell_phone"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_validation_codes_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "adcs", "profiles"
   add_foreign_key "admins", "users"
@@ -405,4 +418,5 @@ ActiveRecord::Schema.define(version: 2022_01_24_183832) do
   add_foreign_key "requests", "profiles"
   add_foreign_key "stores", "categories"
   add_foreign_key "stores", "companies"
+  add_foreign_key "validation_codes", "users"
 end
