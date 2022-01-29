@@ -37,11 +37,7 @@ class User < ApplicationRecord
 
     validates :password, 
     presence: {message: 'Não pode estar em branco'}
-<<<<<<< HEAD
-    #format: {with: PASSWORD_REGEX, message: "A senha deve conter duas letras maiúscula, um caracter especial, dois digitos e três letras minúsculas."}
-=======
 #    format: {with: PASSWORD_REGEX, message: "A senha deve ter pelo menos 8 à 10 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caracter especial"}
->>>>>>> develop
 
     validates :cell_phone, uniqueness: true,
         presence: {message: "Não pode estar em branco!"},
@@ -50,11 +46,7 @@ class User < ApplicationRecord
 
     validates :confirmation_terms, acceptance: true
 
-<<<<<<< HEAD
-    validates :identity_number, presence: {message: "Não pode estar em branco!"}
-=======
     validates :identity_number, presence: true, on: :create
->>>>>>> develop
     validate :validate_identity_number, on: :create
 
     def send_code_validation
