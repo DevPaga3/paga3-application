@@ -28,6 +28,11 @@ class Profile < ApplicationRecord
     after_create :valid_percentage
     after_update :valid_percentage, :add_purchase_amount
 
+
+    def full_name
+        "#{self.name} #{self.last_name}"
+    end
+    
     def solicitation_pending
         !self.requests.where(status: 0).any?
     end

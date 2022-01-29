@@ -38,8 +38,8 @@ class User < ApplicationRecord
     format: {with: EMAIL_REGEX, message: "E-mail inválido"}
 
     validates :password,
-    presence: {message: 'Não pode estar em branco'},
-    format: {with: PASSWORD_REGEX, message: "A senha deve ter pelo menos 8 à 10 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caracter especial"}
+    presence: {message: 'Não pode estar em branco'}
+#    format: {with: PASSWORD_REGEX, message: "A senha deve ter pelo menos 8 à 10 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caracter especial"}
 
     validates :cell_phone, uniqueness: true,
         presence: {message: "Não pode estar em branco!"},
@@ -49,7 +49,7 @@ class User < ApplicationRecord
 
     validates :confirmation_terms, acceptance: true
 
-    validates :identity_number, presence: true
+    validates :identity_number, presence: true, on: :create
     validate :validate_identity_number, on: :create
 
     def send_code_validation
