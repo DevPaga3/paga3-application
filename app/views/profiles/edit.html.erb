@@ -20,25 +20,18 @@
 <div class="container-check py-0">
     <div class="progress-bar-check">
         <div class="step">
-            <p class="small">Dados Pessoas</p>
+            <p class="small">Endereço & Dados Bancários</p>
             <div class="bullet">
                 <span>1</span>
             </div>
             <div class="check fas fa-check">
             </div>
         </div>
-        <div class="step">
-            <p class="small">Dados Bancários</p>
-            <div class="bullet">
-                <span>2</span>
-            </div>
-            <div class="check fas fa-check">
-            </div>
-        </div>
+
         <div class="step">
             <p class="small">Anexar Documentos</p>
             <div class="bullet">
-                <span>3</span>
+                <span>2</span>
             </div>
             <div class="check fas fa-check">
             </div>
@@ -66,51 +59,35 @@
                                     <div class="page slide-page">
                                         <div class="row mb-4">
                                             <div class="col-md-6 justify-content-center">
-                                                <%= f.input :bi, label: 'Bilhete de identidade', onkeyup: "myFunction()" %>
-                                                <p class="work_declaration" id="error_buscador"></p>
-                                                <%= f.input :name, label: 'Nome completo'%>
-                                                <%= f.input :genre, :as => :select, :collection => Profile.genres.map { |key, value| [key, key] }, label: 'Genero' %>
-                                                <%= f.input :employer_address, label: "Endereço da entidade empregadora" %>
-                                            </div>
-                                            <div class="col-md-6 justify-content-center">
-                                                <%= f.input :address, label: 'Meu endereço' %>
-                                                <%= f.input :birth,  as: :date, start_year: Date.today.year - 51, end_year: Date.today.year - 18, order: [:day, :month, :year], label: 'Data de nascimento', input_html: { class: "" } %>
+                                                <%= f.input :address, label: 'Endereço actual' %>
+
                                                 <%= f.input :operating_sector, :as => :select, :collection => Profile.operating_sectors.map { |key, value| [key, key] }, label: "Sector de atuação" %>
                                                 <%= f.association :occupationArea, :collection => OccupationArea.all.map { |element| [element.occupation, element.id] }, include_blank: false, label: "Selecione a área de atuação" %>
+
+                                                <%= f.input :company_name, label: 'Nome da empresa' %>
+                                                <%= f.input :employer_address, label: "Endereço da entidade empregadora" %>
+                                                <%= f.input :position, label: 'Função ou posição' %>
+                                            </div>
+                                            <div class="col-md-6 justify-content-center">
+                                                <%= f.association :bank, label: "Selecione o seu banco", include_blank: false %>
+                                                <%= f.input :iban, label: "Digite o seu IBAN" %>
+                                                <%= f.input :account_number, label: "Número da conta bancária / NIB" %>
+                                                <%= f.input :salary, label: 'Salário' %>
+
+                                                <br>
+                                                <%= f.input :have_credit, label: 'Tem crédito bancário ?' %>
+                                                <span id="text_not_credit" class="have-credit">Não tenho crédito</span>
+                                                <div id="box_amount_credit">
+                                                    <%= f.input :amount_credit, label: 'Prestação mensal, se tem crédito bancário ?' %>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="btn-position text-right">
                                             <button  type="button" id="firstNext" class="next btn btn-p3 btn-sm px-4">Seguinte</button>
                                         </div>
                                     </div>
-                                    <div class="page">
-                                        <div class="row mb-5">
 
-                                            <div class="col-md-6">
-                                                <%= f.input :salary, label: 'Salário' %>
-                                                <div id="box_amount_credit">
-                                                    <%= f.input :amount_credit, label: 'Prestação mensal, se tem crédito bancário ?' %>
-                                                </div>
-                                                <%= f.input :account_number, label: "Número da conta bancária" %>
-                                                <br>
-                                                <%= f.input :have_credit, label: 'Tem crédito bancário ?' %>
-                                                <span id="text_not_credit" class="have-credit">Não tenho crédito</span>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <%= f.input :company_name, label: 'Nome da empresa' %>
-                                                <%= f.input :position, label: 'Função ou posição' %>
-                                                <%= f.association :bank, label: "Selecione o seu banco", include_blank: false %>
-                                                <%= f.input :iban, label: "Digite o seu IBAN" %>
-                                            </div>
-                                        </div>
-
-                                        <div class="btn-position text-right">
-                                            <button type="button" id="prev-1" class="prev btn btn-p3 btn-sm px-4">Anterior</button>
-                                            <button type="button" id="next-1" class="next btn btn-p3 btn-sm px-4">Seguinte</button>
-                                        </div>
-
-                                    </div>
+                                 
                                     <div class="page">
                                         <div class="row">
 
@@ -163,7 +140,7 @@
 
                                         </div>
                                         <div class="btn-position">
-                                            <button type="button" id="prev-2" class="prev btn btn-p3 btn-sm px-4">Anterior</button>
+                                            <button type="button" id="prev-1" class="prev btn btn-p3 btn-sm px-4">Anterior</button>
                                             <%= f.button :submit, "Actualizar", class: "submit btn btn-p3 btn-sm px-4" %>
                                         </div>
                                     </div>
