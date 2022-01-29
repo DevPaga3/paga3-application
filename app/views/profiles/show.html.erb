@@ -10,7 +10,7 @@
                     <img class="img-avatar img-avatar-thumb" src="/templete/assets/media/avatars/avatar13.jpg" alt="">
                 <% end %>
             </div>
-            <h1 class="h2 text-white mb-0"><%= @profile.name %></h1>
+            <h1 class="h2 text-white mb-0"><%= @profile.full_name %></h1>
             <span class="text-white-75"><%= @profile.bi %></span>
         </div>
     </div>
@@ -85,111 +85,95 @@
 </div>
 
 <!-- Page Content -->
-<div class="content content-boxed">
+<div class="m-4">
     <div class="row">
-        <div class="col-md-12">
-            <!-- Updates -->
-            <ul class="timeline timeline-alt py-0">
-                <li class="timeline-event">
-                    <div class="timeline-event-icon bg-p3">
-                        <i class="fa fa-briefcase"></i>
-                    </div>
-                    <div class="timeline-event-block block invisible" data-toggle="appear">
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="block-header">
-                                    <h3 class="block-title">Meu Perfil</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-6 text-right">
-                                <div class="block-header">
-                                    <% if @profile.iban.present? && @profile.account_number.present? %>
-                                        <%= link_to adc_details_url(@profile.adc, format: "pdf"), target: "_blank", class: "btn btn-sm btn-p3 text-right" do %>
-                                            <i class="fa fa-print mr-1"></i> Imprimir ADC                    
-                                        <% end %>
-                                    <% else %>
-                                        <h4 class="alert-heading text-red font-w300 my-2 text-right">Por favor adicionar a conta bancária</h4>
-                                    <% end %>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <hr>
-                        
-                        <div class="block-content">
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><span class="font-w600 mb-2">Nome: </span><span class="font-size-sm"><%= @profile.name %></span></p>
-                                    <p><span class="font-w600 mb-2">Data de nascimento: </span><span class="font-size-sm"><%= @profile.birth&.strftime("%d/%m/%Y") %></span></p>
-                                    <p><span class="font-w600 mb-2">Idade: </span><span class="font-size-sm"><%= calc_age(@profile.birth) %></span></p>
-                                    <p><span class="font-w600 mb-2">Genero: </span><span class="font-size-sm"><%= @profile.genre %></span></p>
-                                    <p><span class="font-w600 mb-2">Bilhete de identidade: </span><span class="font-size-sm"><%= @profile.bi %></span></p>
-                                    <p><span class="font-w600 mb-2">Endereço: </span><span class="font-size-sm"><%= @profile.address %></span></p>
-
-                                    <p><span class="font-w600 mb-2">E-mail: </span><span class="font-size-sm"><%= @profile.user.email %></span></p>
-                                    <p><span class="font-w600 mb-2">Nº telefone: </span><span class="font-size-sm"><%= @profile.user.cell_phone %></span></p>
-                                    
-                                </div>
-
-                                <div class="col-md-4">
-                                    <p><span class="font-w600 mb-2">Salário: </span><span class="font-size-sm"><%= @profile.salary.to_kwanza %></span></p>
-                                    <p><span class="font-w600 mb-2">Função: </span><span class="font-size-sm"><%= @profile.position %></span></p>
-                                    <p><span class="font-w600 mb-2">Empresa ou sector: </span><span class="font-size-sm"><%= @profile.company_name %></span></p>
-
-                                    <hr>
-
-                                    <p>
-                                        <span class="font-w600 mb-2">Tem crédito bancário ? </span>
-                                        <button type="button" class="btn btn-sm btn-<%= @profile.have_credit ? 'warning' : 'success' %> push">
-                                            <i class="fa fa-<%= @profile.have_credit ? 'frown' : 'grin' %> mr-1"></i> <%= @profile.have_credit ? 'Sim tenho crédito' : 'Não tenho crédito' %>
-                                        </button>
-                                    </p>
-
-                                    <% if @profile.have_credit %>
-                                        <p><span class="font-w600 mb-2">Valor do crédito: </span><span class="font-size-sm"><%= @profile.amount_credit.to_kwanza %></span></p>
-                                    <% end %>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <% if @profile.work_declaration.attached? %>
-                                        <h4 class="mb-0" >Declaração do serviço</h4>
-                                        <%= link_to rails_blob_path(@profile.work_declaration, disposition: 'attachment'), target: :blank do %>
-                                            <span class="fa fa-file-pdf"></span> <%= @profile.work_declaration.filename  %>
-                                        <% end %>
-                                    <% end %>
-
-                                    <br>
-                                    <br>
-                                    
-                                    <% if @profile.banking_extrato.attached? %>
-                                        <h4 class="mb-0" >Extrato bancário</h4>
-                                        <%= link_to rails_blob_path(@profile.banking_extrato, disposition: 'attachment'), target: :blank do %>
-                                            <span class="fa fa-file-pdf"></span> <%= @profile.banking_extrato.filename  %>
-                                        <% end %>
-                                    <% end %>
-
-                                    <br>
-                                    <br>
-
-                                    <div class="alert alert-info alert-dismissable p-2" role="alert">
-                                        <h4 class="alert-heading font-w300 my-2"><%= @profile.account_number %></h4>
-                                        <p class="mb-0"><%= @profile.iban %></p>
-                                    </div>
-                                    <%#s render 'bank_accounts/bank_accounts', accountble: @profile %>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
-            <!-- END Updates -->
+        <div class="col box-card">
+            <div class="box-header">
+                Informações Pessoais
+            </div>
+            <p class="mb-3"><span class="font-w600">Nome: </span><span class="font-size-sm"><%= @profile.name %></span></p>
+            <p class="mb-3"><span class="font-w600">Apelido: </span><span class="font-size-sm"><%= @profile.last_name %></span></p>
+            <p class="mb-3"><span class="font-w600">Bilhete de identidade: </span><span class="font-size-sm"><%= @profile.bi %></span></p>
+            <p class="mb-3"><span class="font-w600">Data de nascimento: </span><span class="font-size-sm"><%= @profile.birth&.strftime("%d/%m/%Y") %></span></p>
+            <p class="mb-3"><span class="font-w600">Idade: </span><span class="font-size-sm"><%= calc_age(@profile.birth) %></span></p>
+            <p class="mb-3"><span class="font-w600">Genero: </span><span class="font-size-sm"><%= @profile.genre %></span></p>
         </div>
-    </div>
+
+        <div class="col box-card">
+            <div class="box-header">
+                Contactos e Endereço
+            </div>
+            <p class="mb-3"><span class="font-w600">Endereço: </span><span class="font-size-sm"><%= @profile.address %></span></p>
+            <p class="mb-3"><span class="font-w600">Residência: </span><span class="font-size-sm"><%= @profile.residence %></span></p>
+            <p class="mb-3"><span class="font-w600">Província: </span><span class="font-size-sm"><%= @profile.province %></span></p>
+            <hr>
+            <p class="mb-3"><span class="font-w600">E-mail: </span><span class="font-size-sm"><%= @profile.user.email %></span></p>
+            <p class="mb-3"><span class="font-w600">Nº telefone: </span><span class="font-size-sm"><%= @profile.user.cell_phone %></span></p>
+            
+        </div>
+
+        <div class="col box-card">
+            <div class="box-header">
+                Emprego
+            </div>
+            <p class="mb-3"><span class="font-w600">Salário: </span><span class="font-size-sm"><%= @profile.salary.to_kwanza %></span></p>
+            <p class="mb-3"><span class="font-w600">Função: </span><span class="font-size-sm"><%= @profile.position %></span></p>
+            <p class="mb-3"><span class="font-w600">Empresa ou sector: </span><span class="font-size-sm"><%= @profile.company_name %></span></p>            
+        </div>
+
+        <div class="col box-card">
+            <div class="box-header">
+                Finanças
+            </div>
+
+            <% if @profile.iban.present? && @profile.account_number.present? %>
+                <%= link_to adc_details_url(@profile.adc, format: "pdf"), target: "_blank", class: "btn btn-sm btn-p3 text-right" do %>
+                    <i class="fa fa-print mr-1"></i> Imprimir ADC                    
+                <% end %>
+            <% else %>
+                <h4 class="alert-heading text-red font-w300 my-2 text-right">Por favor adicionar a conta bancária</h4>
+            <% end %>
+
+            <br>
+            <br>
+            
+            <p>
+                <button type="button" class="btn btn-sm btn-<%= @profile.have_credit ? 'warning' : 'success' %> push">
+                    <i class="fa fa-<%= @profile.have_credit ? 'frown' : 'grin' %> mr-1"></i> <%= @profile.have_credit ? 'Sim tenho crédito' : 'Não tenho crédito' %>
+                </button>
+            </p>
+            <% if @profile.have_credit %>
+                <p><span class="font-w600 mb-2">Valor do crédito: </span><span class="font-size-sm"><%= @profile.amount_credit.to_kwanza %></span></p>
+            <% end %>
+            <hr>
+            <% if @profile.work_declaration.attached? %>
+                <h4 class="mb-0" >Declaração do serviço</h4>
+                <%= link_to rails_blob_path(@profile.work_declaration, disposition: 'attachment'), target: :blank do %>
+                    <span class="fa fa-file-pdf"></span> <%= @profile.work_declaration.filename  %>
+                <% end %>
+            <% end %>
+
+            <br>
+            <br>
+            
+            <% if @profile.banking_extrato.attached? %>
+                <h4 class="mb-0" >Extrato bancário</h4>
+                <%= link_to rails_blob_path(@profile.banking_extrato, disposition: 'attachment'), target: :blank do %>
+                    <span class="fa fa-file-pdf"></span> <%= @profile.banking_extrato.filename  %>
+                <% end %>
+            <% end %>
+
+            <br>
+            <br>
+
+            <div class="alert alert-info alert-dismissable p-2" role="alert">
+                <h4 class="alert-heading font-w300 my-2"><%= @profile.account_number %></h4>
+                <p class="mb-0"><%= @profile.iban %></p>
+            </div>
+            
+        </div>
+
+    </div>    
 </div>
 
 <%= render 'bank_accounts/form', accountble: @profile %>
