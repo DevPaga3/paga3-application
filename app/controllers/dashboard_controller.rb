@@ -26,10 +26,10 @@ class DashboardController < ApplicationController
                 current_user.update_confirmation_cell_phone
                 redirect_to root_path, notice: 'Conta validada com sucesso.'
             else
-                @validate_cell_phone_number_text = "Código invalido"
+                @validate_cell_phone_number_text = "Código inválido"
             end
         else
-            @validate_cell_phone_number_text = "Código invalido"
+            @validate_cell_phone_number_text = "Código inválido"
         end
     end
 

@@ -43,7 +43,7 @@ class MovimentsController < ApplicationController
   def update
     respond_to do |format|
       if @moviment.update(moviment_params)
-        format.html { redirect_to @moviment, notice: "Moviment was successfully updated." }
+        format.html { redirect_to @moviment, notice: "Movimento atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @moviment }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class MovimentsController < ApplicationController
   def destroy
     @moviment.destroy
     respond_to do |format|
-      format.html { redirect_to moviments_url, notice: "Moviment was successfully destroyed." }
+      format.html { redirect_to moviments_url, notice: "Movimento apagado com sucesso" }
       format.json { head :no_content }
     end
   end
@@ -76,4 +76,3 @@ class MovimentsController < ApplicationController
       params.require(:moviment).permit(:is_credit, :amount, :profile_id, :user_id)
     end
 end
-

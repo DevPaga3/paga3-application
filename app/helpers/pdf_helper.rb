@@ -17,7 +17,7 @@ module PdfHelper
 
             stroke_horizontal_rule
             font("Courier") do
-                text "imposto de selo pago por guia -dec.Lei nº18/92 DR 1ª série12/92 de 16/5/1992", size: 9, :valign => :bottom, :align => :center
+                text "Imposto de selo pago por guia -dec.Lei nº18/92 DR 1ª série12/92 de 16/5/1992", size: 9, :valign => :bottom, :align => :center
             end
         }
     end
@@ -44,4 +44,3 @@ module PdfHelper
 
 
 end
-

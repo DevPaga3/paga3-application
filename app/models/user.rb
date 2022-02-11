@@ -55,7 +55,7 @@ class User < ApplicationRecord
     def send_code_validation
         code = generate_sms_code
 
-        msg = "PAGA3\nOlá caro cliente,\nSeu código de validação de conta PAGA3 é\n\n#{code}"
+        msg = "PAGA3\nOlá, caro cliente,\nSeu código de validação de conta PAGA3 é\n\n#{code}"
         SendSMS.new( msg, self.cell_phone).call
 
         ValidationCode.create(
@@ -131,7 +131,7 @@ class User < ApplicationRecord
         )
 
         if purchase.present?
-            msg = "Olá caro cliente,\nSeu código de validação de compra é #{purchase.code}." 
+            msg = "Olá, caro cliente,\nSeu código de validação de compra é #{purchase.code}." 
             SendSMS.new( msg, self.cell_phone ).call
         end
     end
@@ -150,15 +150,15 @@ class User < ApplicationRecord
 
     def welcome_notification
         return unless self.customer?
-        msg = "Olá caro cliente,\nSeja bemvindo a Paga3, porfavor termine de preencher o seu perfil em nossa plataforma e desfrute das vantagens." 
+        msg = "Olá, caro cliente,\nSeja bem-vindo a Paga3, por favor termine de preencher o seu perfil em nossa plataforma e desfrute das vantagens." 
         SendSMS.new( msg, self.cell_phone ).call
     end
 
     def notification_new_user(pw)
-        msg = "Olá caro Utilizador,\seu user: #{self.email}\nSua senha: #{pw}" 
+        msg = "Olá, caro Utilizador,\seu user: #{self.email}\nSua senha: #{pw}" 
         SendSMS.new( msg, self.cell_phone ).call
 
-        content = "<h1>Seja bem vindo à Paga3</h1><p><strong>Utilizador</strong>: #{self.email}</p><p><strong>senha</strong>: #{pw}</p>"
+        content = "<h1>Seja bem-vindo à Paga3</h1><p><strong>Utilizador</strong>: #{self.email}</p><p><strong>senha</strong>: #{pw}</p>"
         SendMailer.new(self.email, "BEM VINDO", content ).call
     end
 

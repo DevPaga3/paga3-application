@@ -13,19 +13,19 @@ class Company < ApplicationRecord
 
     has_one_attached    :avatar
 
-    validates :name, presence: {message: 'não pode estar em branco'}
-    validates :nif, presence: {message: 'não pode estar em branco'}
-    validates :address, presence: {message: 'não pode estar em branco'}
+    validates :name, presence: {message: 'Não pode estar em branco'}
+    validates :nif, presence: {message: 'Não pode estar em branco'}
+    validates :address, presence: {message: 'Não pode estar em branco'}
     validates :email, presence: true, length: { maximum: 250 }, uniqueness: { case_sensitive: false, scope: :user_id }
-    validates :accountNumber, presence: {message: "não pode estar em branco!"}, uniqueness: { case_sensitive: false, scope: :user_id }
-    validates :iban, presence: {message: "não pode estar em branco!"}, uniqueness: { case_sensitive: false, scope: :user_id }
+    validates :accountNumber, presence: {message: "Não pode estar em branco!"}, uniqueness: { case_sensitive: false, scope: :user_id }
+    validates :iban, presence: {message: "Não pode estar em branco!"}, uniqueness: { case_sensitive: false, scope: :user_id }
 
     validates :cell_phone, 
-        presence: {message: "não pode estar em branco!"},
+        presence: {message: "Não pode estar em branco!"},
         length: { maximum: 250 }, 
         uniqueness: { case_sensitive: false, scope: :user_id },
-        :numericality => {:only_integer => true, message: "numero de telefone inválido"},
-        length: {in: 9..9, message: "número de telefone inválido. Ex: 923456699"}
+        :numericality => {:only_integer => true, message: "Número de telefone inválido"},
+        length: {in: 9..9, message: "Número de telefone inválido. Ex: 923456699"}
 
     #validate :validar_cell_phone, :validar_email, on: :create
 
@@ -43,7 +43,7 @@ class Company < ApplicationRecord
 
     def validar_email
         if User.find_by(email: self.email)
-            errors.add(:email, 'E-mail não indisponível')
+            errors.add(:email, 'E-mail indisponível')
         end
     end
 
@@ -87,7 +87,7 @@ class Company < ApplicationRecord
             )
     
             self.update_columns(user_id: user.id)
-            content = "<h4>Seja bem vindo à Paga3</h4><p><strong>Utilizador</strong>: #{user.email}</p><p><strong>senha</strong>: #{pw}</p>"
+            content = "<h4>Seja bem-vindo à Paga3</h4><p><strong>Utilizador</strong>: #{user.email}</p><p><strong>senha</strong>: #{pw}</p>"
             SendMailer.new(user.email, "BEM VINDO", content ).call
             user.notification_new_user(pw)
             welcome_notification(user)
@@ -115,7 +115,7 @@ class Company < ApplicationRecord
     end
 
     def welcome_notification(user)
-        msg = "Olá #{self.name},\nSeja bemvindo a Paga3, porfavor registe as suas lojas e produtos para estar visivel em nossa plataforma." 
+        msg = "Olá #{self.name},\nSeja bem-vindo à Paga3, por favor registe as suas lojas e produtos para estar visível em nossa plataforma." 
         SendSMS.new( msg, user.cell_phone ).call
     end
 

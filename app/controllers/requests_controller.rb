@@ -80,7 +80,7 @@ class RequestsController < ApplicationController
   def destroy
     @request.destroy
     respond_to do |format|
-      format.html { redirect_to requests_url, notice: "Request was successfully destroyed." }
+      format.html { redirect_to requests_url, notice: "Solicitação apagada com sucesso" }
       format.json { head :no_content }
     end
   end

@@ -2,7 +2,7 @@ class Publicity < ApplicationRecord
 
     has_one_attached    :avatar
 
-    validates :description, presence: { message: 'não pode estar em branco' }
+    validates :description, presence: { message: 'Não pode estar em branco' }
 
     validates :start_date, :end_date, presence: true, if: :validate_date
 

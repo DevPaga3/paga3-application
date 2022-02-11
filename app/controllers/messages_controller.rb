@@ -45,7 +45,7 @@ class MessagesController < ApplicationController
   def update
     respond_to do |format|
       if @message.update(message_params)
-        format.html { redirect_to @message, notice: "Message was successfully updated." }
+        format.html { redirect_to @message, notice: "Mensagem atualizada com sucesso." }
         format.json { render :show, status: :ok, location: @message }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,7 +58,7 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to messages_url, notice: "Message was successfully destroyed." }
+      format.html { redirect_to messages_url, notice: "Mensagem apagada com sucesso." }
       format.json { head :no_content }
     end
   end

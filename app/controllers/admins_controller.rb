@@ -47,7 +47,7 @@ class AdminsController < ApplicationController
 
                 @admin.user.update_columns(email: @admin.email, cell_phone: @admin.cell_phone, role: @admin.role.to_i)
 
-                format.html { redirect_to admin_path(@admin.id), notice: 'Administrador atualizado com sucess.' }
+                format.html { redirect_to admin_path(@admin.id), notice: 'Administrador atualizado com sucesso.' }
                 format.json { render :show, status: :ok, location: @admin }
             else
                 format.html { render :edit }

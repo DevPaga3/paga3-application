@@ -64,7 +64,7 @@ class Profile < ApplicationRecord
 
     def reject
         self.update_columns(status: 3)
-        msg = "Caro cliente #{name}\nLamentamos mas a sua conta Paga3 foi rejeitada.\nPara mais informações contacta-nos em #{self.config.cell_phone} ou #{self.config.email}" 
+        msg = "Caro cliente #{name}\nLamentamos, mas a sua conta Paga3 foi rejeitada.\nPara mais informações contacta-nos em #{self.config.cell_phone} ou #{self.config.email}" 
         SendSMS.new( msg, self.user.cell_phone ).call
     end
 
