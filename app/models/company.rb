@@ -81,7 +81,8 @@ class Company < ApplicationRecord
                 email: self.email, 
                 cell_phone: self.cell_phone, 
                 confirmation_terms: true, 
-                role: 1, 
+                role: 1,
+                identity_number: self.nif,
                 password: pw, 
                 password_confirmation: pw
             )
