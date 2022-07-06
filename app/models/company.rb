@@ -66,8 +66,8 @@ class Company < ApplicationRecord
     end
 
 
-    def create_access_user
-        return
+    def create_access_user 
+        
         old_user = nil
         pw = rand(2**256).to_s(36).ljust(8, 'a')[0..10]
 
