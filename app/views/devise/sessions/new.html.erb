@@ -1,3 +1,5 @@
+<%= render 'layouts/flash' %>
+
 <!-- Page Content -->
 <div class="hero-static d-flex align-items-center"
     style="background: #62c6cb; background: linear-gradient(90deg, #62c6cb 0%, #98bb43) !important;">
@@ -18,36 +20,38 @@
                     </div>
 
                     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: "js-validation-signin") do |f| %>
-                    <div class="py-3">
-                        <div class="form-group">
-                            <%= f.input :login, required: false, autofocus: true, input_html: { autocomplete: "email", class: "form-control form-control-lg form-control-alt" }, placeholder: "seu e-mail", label: "Email" %>
-                        </div>
 
-                        <div class="form-group">
-                            <%= f.input :password, required: false, input_html: { autocomplete: "current-password", class: "form-control form-control-lg form-control-alt", id: "inputPass" }, placeholder: "Ex: Qwerty#11", label: "Senha" %>
-                            <span class="eye-holder" onclick="openEye()">
-                                <i class="fas fa-eye" id="eyeOpen"></i>
-                                <i class="fas fa-eye-slash" id="eyeClose"></i>
-                            </span>
-                        </div>
-                        <div class="form-group">
-                            <div class="d-md-flex align-items-md-center justify-content-md-between">
-                                <div class="py-2">
-                                    <%= link_to "Nova conta", "/users/sign_up", class: "font-size-sm", class: "pass" %>
-                                </div>
-                                <div class="py-2">
-                                    <%= link_to "Esqueceu senha?", new_password_path(resource_name), class: "font-size-sm", class: "pass" %>
+                        <div class="py-3">
+                            <div class="form-group">
+                                <%= f.input :login, required: false, autofocus: true, input_html: { autocomplete: "email", class: "form-control form-control-lg form-control-alt" }, placeholder: "seu e-mail", label: "Email" %>
+                            </div>
+
+                            <div class="form-group">
+                                <%= f.input :password, required: false, input_html: { autocomplete: "current-password", class: "form-control form-control-lg form-control-alt", id: "inputPass" }, placeholder: "Ex: Qwerty#11", label: "Senha" %>
+                                <span class="eye-holder" onclick="openEye()">
+                                    <i class="fas fa-eye" id="eyeOpen"></i>
+                                    <i class="fas fa-eye-slash" id="eyeClose"></i>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <div class="d-md-flex align-items-md-center justify-content-md-between">
+                                    <div class="py-2">
+                                        <%= link_to "Nova conta", "/users/sign_up", class: "font-size-sm", class: "pass" %>
+                                    </div>
+                                    <div class="py-2">
+                                        <%= link_to "Esqueceu senha?", new_password_path(resource_name), class: "font-size-sm", class: "pass" %>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group row justify-content-center mb-0">
-                        <div class="col">
-                            <button type="submit" class="btn-submit">
-                                Entrar
-                            </button>
+                        <div class="form-group row justify-content-center mb-0">
+                            <div class="col">
+                                <button type="submit" class="btn-submit">
+                                    Entrar
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                        
                     <% end %>
                 </div>
             </div>
@@ -59,14 +63,10 @@
             <div class="container">
                 <ul class="nav justify-content-center">
                     <li class="nav-item"><a class="text-footer-login text-white nav-link active" href="/">Home</a></li>
-                    <li class="nav-item"><a class="text-footer-login text-white nav-link"
-                            href="/docs/termos_e_condicoes.pdf" target="_blank">Termos e condições</a></li>
-                    <li class="nav-item"><a class="text-footer-login text-white nav-link"
-                            href="/docs/politicas_de_privacidade.pdf" target="_blank">Politicas de privacidades</a></li>
-                    <li class="nav-item"><a class="text-footer-login text-white nav-link"
-                            href="/docs/contrato_de_adesao.pdf" target="_blank">Contrato de adesão</a></li>
-                    <li class="nav-item"><a class="text-footer-login text-white nav-link"
-                            href="#"><b><%= version_app %></b> &copy; <span data-toggle="year-copy"></span></a></li>
+                    <li class="nav-item"><a class="text-footer-login text-white nav-link" href="/docs/termos_e_condicoes.pdf" target="_blank">Termos e condições</a></li>
+                    <li class="nav-item"><a class="text-footer-login text-white nav-link" href="/docs/politicas_de_privacidade.pdf" target="_blank">Politicas de privacidades</a></li>
+                    <li class="nav-item"><a class="text-footer-login text-white nav-link" href="/docs/contrato_de_adesao.pdf" target="_blank">Contrato de adesão</a></li>
+                    <li class="nav-item"><a class="text-footer-login text-white nav-link" href="#"><b><%= version_app %></b> &copy; <span data-toggle="year-copy"></span></a></li>
                 </ul>
 
             </div>
