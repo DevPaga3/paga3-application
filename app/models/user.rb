@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
     attr_accessor :identity_number
 
-    devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :authentication_keys => [:login]
+    devise :database_authenticatable, :registerable, :recoverable, :lockable, :rememberable, :validatable, :authentication_keys => [:login]
     
     has_one :company, dependent: :destroy
     has_one :profile, dependent: :destroy
