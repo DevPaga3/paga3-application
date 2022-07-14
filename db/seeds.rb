@@ -15,8 +15,9 @@ user = User.create(
     email: "manucabanga@gmail.com", 
     cell_phone: "913747200", 
     role: 222,
-    password: "q1w2e3r4",
-    password_confirmation: "q1w2e3r4",
+    password: "21Cabnaga21.",
+    password_confirmation: "21Cabnaga21.",
+    identity_number: "004907800KS044",
     confirmation_terms: true
 )
 
@@ -28,5 +29,9 @@ Admin.create(
     role: 222
 )
 
-p user
+#host: <%= ENV.fetch("HOST_PAGA3") %>
+#database: <%= ENV.fetch("DATABASE_PAGA3") %>
+#port: <%= ENV.fetch("PORT_PAGA3") %>
+#username: <%= ENV.fetch("USERNAME_PAGA3") %>
+#password: <%= ENV.fetch("PASSWORD_PAGA3") %>
 
