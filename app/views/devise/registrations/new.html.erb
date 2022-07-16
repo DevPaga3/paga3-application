@@ -95,8 +95,6 @@
     var eyeOpen = document.getElementById("eyeOpen");
     var eyeClose = document.getElementById("eyeClose");
 
-
-
     if (inputPass.type === "password") {
         inputPass.type = "text";
         eyeOpen.style.display = "inline";
@@ -109,3 +107,13 @@
     }
 }
 </script>
+
+<style> 
+    span > #eyeClose {
+        display: inline;
+    }
+
+    span > #eyeOpen {
+        display: none;
+    }
+</style> 

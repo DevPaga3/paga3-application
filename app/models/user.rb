@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-    # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
     #extend FriendlyId
     #friendly_id :email, use: :slugged
 
