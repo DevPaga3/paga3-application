@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
     before_action :set_profile, only: [
         :details, :edit, :update, :show, 
         :validate_profile, :rejected_profile, 
-        :destroy, :active_edit
+        :destroy, :active_edit, :unlock_account
     ]
 
     load_and_authorize_resource
@@ -31,6 +31,10 @@ class ProfilesController < ApplicationController
 
     def profiles_rejecteds
         @pagy, @profiles_rejecteds =   pagy(Profile.where(status: 3), items: 10)
+    end
+
+    def profiles_blockeds
+        @pagy, @profiles_blockeds =   pagy(Profile.profiles_blockeds, items: 10)
     end
 
     def details
@@ -67,6 +71,13 @@ class ProfilesController < ApplicationController
 
     def rejected_profile
         @profile.reject
+        redirect_to profile_path(@profile)
+    end
+
+    def unlock_account
+        @profile.user.unlock_account
+
+        flash[:notice] = 'Instruções de desbloqueo de conta enviado com sucesso'
         redirect_to profile_path(@profile)
     end
 

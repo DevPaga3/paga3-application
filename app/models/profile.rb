@@ -113,13 +113,13 @@ class Profile < ApplicationRecord
         end
     end
 
+    def self.profiles_blockeds
+        Profile.joins(:user).where(users: { failed_attempts: 3 })
+    end
+
 
     #============================= GENERATE SLUG =================================
     #validates :bi, uniqueness: { message: "já existe registado, deve ser unico no sistema" }
-
-
-
-
 
 
 
@@ -147,24 +147,7 @@ class Profile < ApplicationRecord
     #validates :name,
     #    presence: {message: 'não pode estar em branco'}, 
     #    on: :update
-#
-    #validates :salary, 
-    #presence: {message: 'não pode estar em branco'}, 
-    #on: :update
-#
-    #validates :bi, 
-    #presence: {message: 'não pode estar em branco'}, 
-    #on: :update
-#
-    #validates :position, 
-    #presence: {message: 'não pode estar em branco'}, 
-    #on: :update
-#
-    #validates :company_name, 
-    #presence: {message: 'não pode estar em branco'}, 
-    #on: :update
-#
-#
+
     #validates :address, 
     #presence: {message: 'não pode estar em branco'}, 
     #on: :update

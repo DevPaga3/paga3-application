@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     
     
     
+    
     get '/pagamentos',                                                to: 'invoices#index',                       as: 'invoices'
     get '/vendas',                                                    to: 'invoices#sales',                       as: 'sales'
     get '/minhas_compras',                                            to: 'invoices#purchases',                   as: 'purchases'
@@ -39,7 +40,7 @@ Rails.application.routes.draw do
     
     
     get '/stores/:id/validate_cart/:pre_order_id',                    to: 'stores#validate_cart',                 as: 'validate_cart'
-    post '/stores/:id/validate_code_and_finish/:pre_order_id',         to: 'stores#validate_code_and_finish',       as: 'validate_code_and_finish'
+    post '/stores/:id/validate_code_and_finish/:pre_order_id',        to: 'stores#validate_code_and_finish',       as: 'validate_code_and_finish'
     get '/stores/:id/invoice_details/:factura_id',                    to: 'stores#invoice_details',               as: 'invoice_details'
     
     get '/detalhes_da_venda/:factura_id',                             to: 'invoices#details',                     as: 'details'
@@ -55,22 +56,19 @@ Rails.application.routes.draw do
     get '/validate_cell_phone_number',                                to: 'dashboard#validate_cell_phone_number', as: 'validate_cell_phone_number'
     
 
-    
-
-
-    get 'profiles/validate_profile/:id',                                to: 'profiles#validate_profile',              as: 'validate_profile'
-    get 'profiles/rejected_profile/:id',                                to: 'profiles#rejected_profile',              as: 'rejected_profile'
+    get 'profiles/validate_profile/:id',                               to: 'profiles#validate_profile',             as: 'validate_profile'
+    get 'profiles/rejected_profile/:id',                               to: 'profiles#rejected_profile',             as: 'rejected_profile'
     get 'profiles/details/:id',                                        to: 'profiles#details',                      as: 'profiles_details'
     get 'profiles/active_edit/:id',                                    to: 'profiles#active_edit',                  as: 'active_edit'
+    get 'profiles/unlock_account/:id',                                 to: 'profiles#unlock_account',               as: 'unlock_account'
     put 'profiles/:id',                                                to: 'profiles#reduce',                       as: 'reduce'
-    post 'adc_subscribed',                                              to: 'profiles#adc_subscribed',               as: 'adc_subscribed'
+    post 'adc_subscribed',                                             to: 'profiles#adc_subscribed',               as: 'adc_subscribed'
     
-    
-
 
     get 'clientes/pendentes',                                         to: 'profiles#profiles_pending',              as: 'profiles_pending'
     get 'clientes/activos',                                           to: 'profiles#profiles_active',               as: 'profiles_active'
     get 'clientes/rejeitados',                                        to: 'profiles#profiles_rejecteds',            as: 'profiles_rejecteds'
+    get 'clientes/bloqueados',                                        to: 'profiles#profiles_blockeds',             as: 'profiles_blockeds'
     
     
     get 'companies/details/:id',                                      to: 'companies#details',                    as: 'comapnies_details'

@@ -224,5 +224,15 @@ class User < ApplicationRecord
         SendSMS.new( msg, self.cell_phone ).call
     end
 
+    def unlock_account
+        resend = self.resend_unlock_instructions
+
+        unless resend
+            self.send_unlock_instructions
+        end
+
+        msg = "Caro cliente\nFoi enviado o link para o desbloqueo da sua conta conta Paga3.\nPor favor validar o seu e-mail #{self.email}." 
+        SendSMS.new( msg, self.cell_phone ).call
+    end
 
 end

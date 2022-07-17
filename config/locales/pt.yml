@@ -95,7 +95,7 @@ pt:
         action: Desbloquear minha conta
         greeting: Olá %{recipient}!
         instruction: 'Clique no link abaixo para desbloquear sua conta:'
-        message: Sua conta foi bloqueada devido ao excessivo número de tentativas acesso inválidas.
+        message: Sua conta foi bloqueada devido ao excessivo número de tentativas acesso inválidas, volte a tentar depois de 5 minutos.
         subject: Instruções de desbloqueio
     omniauth_callbacks:
       failure: Não foi possível autorizar de uma conta de %{kind} porque "%{reason}".
