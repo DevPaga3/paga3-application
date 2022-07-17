@@ -2,8 +2,11 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("./animate")
+//require("./animate")
 require("jquery")
+
+global.toastr = require("toastr")
+
 
 document.addEventListener("turbolinks:load", function(event) {
 
