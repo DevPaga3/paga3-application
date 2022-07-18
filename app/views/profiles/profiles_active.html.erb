@@ -69,7 +69,7 @@
                         <% @profiles_active.each do |profile| %>
                             <tr>
                                 <td class="text-center"><img class="img-table img-avatar48" src="/templete/assets/media/avatars/avatar7.jpg" alt=""></td>
-                                <td class="font-w600 font-size-sm"><a href="<%= profile_path(profile) %>"><%= profile.name %></a></td>
+                                <td class="font-w600 font-size-sm"><a href="<%= profile_path(profile) %>"><%= profile.full_name %></a></td>
                                 <td class="font-size-sm"><em class="text-muted"><%= profile.user.cell_phone %></em></td>
                                 <td class="font-size-sm"><em class="text-muted"><%= profile.user.email %></em></td>
                                 <td><span class="badge badge-success">Activa</span></td>
