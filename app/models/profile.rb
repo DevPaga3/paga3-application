@@ -114,7 +114,9 @@ class Profile < ApplicationRecord
     end
 
     def self.profiles_blockeds
-        Profile.joins(:user).where(users: { failed_attempts: 3 })
+        Profile.joins(:user)
+        .where(users: { is_active: false })
+        #.where(users: { failed_attempts: 3 })
     end
 
 

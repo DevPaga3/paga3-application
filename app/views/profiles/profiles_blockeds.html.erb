@@ -66,7 +66,7 @@
                                 <td class="font-size-sm"><em class="text-muted"><%= profile.user.cell_phone %></em></td>
                                 <td class="font-size-sm"><em class="text-muted"><%= profile.user.email %></em></td>
                                 <td><span class="badge badge-danger">Bloqueado</span></td>
-                                <td class="font-size-sm"><em class="text-muted"><%= profile.user.locked_at.strftime("%d/%m/%Y - %H:%M:%S") %></em></td>
+                                <td class="font-size-sm"><em class="text-muted"><%= profile.user.updated_at.strftime("%d/%m/%Y - %H:%M:%S") %></em></td>
                                 <td class="text-center">
                                     <div class="btn-group">
                                         <%= link_to profile_path(profile), class: "btn btn-sm btn-p3 js-tooltip-enabled", "data-toggle": "tooltip", "title": "Ver detalhes", "data-original-title": "Ver detalhes" do %>

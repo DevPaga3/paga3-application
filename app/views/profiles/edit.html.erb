@@ -72,7 +72,12 @@
                                                 <%= f.association :bank, label: "Selecione o seu banco", include_blank: false %>
                                                 <%= f.input :iban, label: "Digite o seu IBAN" %>
                                                 <%= f.input :account_number, label: "Número da conta bancária / NIB" %>
-                                                <%= f.input :salary, label: 'Salário' %>
+
+                                                <% if current_user.admin? %>
+                                                    <%= f.input :salary, label: 'Salário' %>
+                                                <% else %>
+                                                    <%= f.input :salary, label: 'Salário' unless @profile.salary.present? %>
+                                                <% end %>
 
                                                 <br>
                                                 <%= f.input :have_credit, label: 'Tem crédito bancário ?' %>
