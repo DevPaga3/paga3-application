@@ -35,3 +35,15 @@ Admin.create(
 #username: <%= ENV.fetch("USERNAME_PAGA3") %>
 #password: <%= ENV.fetch("PASSWORD_PAGA3") %>
 
+
+#Eliminar conta Cliente
+#
+#Fazer compras Online - Logista
+#
+#Sepração de  Digitos - Salário
+#
+#Sepração de  Digitos - IBAN
+#
+#Bloquear o Salário depois de validar a conta
+#
+#Ajustar o olho ao adicionar a Senha
