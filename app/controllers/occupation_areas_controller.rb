@@ -43,7 +43,7 @@ class OccupationAreasController < ApplicationController
   def update
     respond_to do |format|
       if @occupation_area.update(occupation_area_params)
-        format.html { redirect_to @occupation_area, notice: 'Área de atuação atualizada com sucesso.' }
+        format.html { redirect_to occupation_areas_path, notice: 'Área de atuação atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @occupation_area }
       else
         format.html { render :edit }

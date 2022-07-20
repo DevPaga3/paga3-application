@@ -1,0 +1,32 @@
+<!-- Hero -->
+<div class="bg-image" style="background-image: url('/home.svg');">
+    <div class="bg-black-50">
+        <div class="content content-full text-center">
+            <div class="my-3">
+            </div>
+            <h1 class="h2 text-white mb-0">ACTUALIZAR AREA DE ATUAÇÃO - <%= @occupation_area.occupation %></h1>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<%= simple_form_for(@occupation_area) do |f| %>
+    <div class="content content-boxed">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <div class="block-content font-size-md">
+                    <%= f.input :occupation, label: "Área de atuação" %>
+                    <%= f.input :description, label: "Descrição" %>
+                </div>
+
+                <div class="form-actions text-right">
+                    <%= f.button :submit, "Actualizar", class: "btn btn-p3 btn-sm mr-2" %>
+                    <%= link_to 'Cancelar', occupation_areas_path, class: 'btn btn-sm btn-danger' %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<% end %>

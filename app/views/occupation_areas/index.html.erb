@@ -46,8 +46,8 @@
                 <div class="block js-appear-enabled animated fadeIn" data-toggle="appear" data-offset="-400">
                     <div class="block-content block-content-full">
                         <div class="media d-flex align-items-center push">
-                            <%= link_to occupation_area_path(occupation_area), method: :delete, data: { confirm: 'Tens certeza?' }, "data-toggle": "tooltip", title: "Eliminar", class: "remove-bank" do %>
-                                <span class="fa fa-times-circle fa-2x"></span>
+                            <%= link_to edit_occupation_area_path(occupation_area), "data-toggle": "tooltip", title: "Atualizar", class: "plus-bank" do %>
+                                <span class="fa fa-edit fa-2x"></span>
                             <% end %>
 
                             <div class="mr-3">
