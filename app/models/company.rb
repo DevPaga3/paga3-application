@@ -1,7 +1,6 @@
 class Company < ApplicationRecord
     extend FriendlyId
     friendly_id :name, use: :slugged
-
     
     belongs_to                      :user, optional: true
     belongs_to                      :category
@@ -16,16 +15,47 @@ class Company < ApplicationRecord
     validates :name, presence: {message: 'Não pode estar em branco'}
     validates :nif, presence: {message: 'Não pode estar em branco'}
     validates :address, presence: {message: 'Não pode estar em branco'}
-    validates :email, presence: true, length: { maximum: 250 }, uniqueness: { case_sensitive: false, scope: :user_id }
-    validates :accountNumber, presence: {message: "Não pode estar em branco!"}, uniqueness: { case_sensitive: false, scope: :user_id }
-    validates :iban, presence: {message: "Não pode estar em branco!"}, uniqueness: { case_sensitive: false, scope: :user_id }
+    validates :email, 
+        presence: true, 
+        length: { maximum: 250 }, 
+        uniqueness: {
+            case_sensitive: false, 
+            scope: :user_id
+        },
+        #format: { with: URI::MailTo::EMAIL_REGEXP } 
+        format: {
+            with: VALID_EMAIL_REGEX,
+            multiline: true, 
+            message: "caracteres inválidos. Ex: utilizador@email.co"
+        }
+
+    validates :accountNumber, 
+        :numericality => {
+            :only_integer => true, 
+            message: "Número de conta inválido"
+        },
+        presence: true, 
+        uniqueness: { case_sensitive: false, scope: :user_id }
+
+    validates :iban, 
+        presence: {message: "Não pode estar em branco!"}, 
+        uniqueness: { case_sensitive: false, scope: :user_id }
 
     validates :cell_phone, 
         presence: {message: "Não pode estar em branco!"},
         length: { maximum: 250 }, 
-        uniqueness: { case_sensitive: false, scope: :user_id },
-        :numericality => {:only_integer => true, message: "Número de telefone inválido"},
-        length: {in: 9..9, message: "Número de telefone inválido. Ex: 923456699"}
+        uniqueness: { 
+            case_sensitive: false, 
+            scope: :user_id 
+        },
+        :numericality => {
+            :only_integer => true, 
+            message: "Número de telefone inválido"
+        },
+        length: {
+            in: 9..9, 
+            message: "Número de telefone inválido. Ex: 923456699"
+        }
 
     #validate :validar_cell_phone, :validar_email, on: :create
 

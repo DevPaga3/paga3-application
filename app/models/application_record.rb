@@ -3,9 +3,12 @@ class ApplicationRecord < ActiveRecord::Base
     require 'send_sms'
 
     EMAIL_REGEX     = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
-    TELEMOVEL_REGEX = /\A[0-9]+\z/
+    CELLPHONE_REGEX = /\A[0-9]+\z/
     PASSWORD_REGEX  = /\A^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$\z/
 
+    VALID_EMAIL_REGEX= /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i
+
+    
     def config
         Configuration.first
     end
