@@ -1,19 +1,7 @@
 # frozen_string_literal: true
 
-# Assuming you have not yet modified this file, each configuration option below
-# is set to its default value. Note that some are commented out while others
-# are not: uncommented lines are intended to protect your configuration from
-# breaking changes in upgrades (i.e., in the event that future versions of
-# Devise change the default values for those options).
-#
-# Use this hook to configure devise mailer, warden hooks and so forth.
-# Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  # The secret key used by Devise. Devise uses this key to generate
-  # random tokens. Changing this key will render invalid all existing
-  # confirmation, reset password and unlock tokens in the database.
-  # Devise will use the `secret_key_base` as its `secret_key`
-  # by default. You can change it below and use your own secret key.
+
   # config.secret_key = 'd9d327fdf5783f1784fbf1ed46a43d4afada8f5637a5783f332e398cadfeb601350a00a989f837ade7966a1b33a549ff682aad54cb3a4186660b6013601aeda5'
 
   # ==> Controller configuration
@@ -218,7 +206,6 @@ Devise.setup do |config|
   config.last_attempt_warning = true
 
   # ==> Configuration for :recoverable
-  #
   # Defines which key will be used when recovering the password for an account
   # config.reset_password_keys = [:email]
 
