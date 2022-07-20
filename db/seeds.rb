@@ -29,21 +29,39 @@ Admin.create(
     role: 222
 )
 
-#host: <%= ENV.fetch("HOST_PAGA3") %>
-#database: <%= ENV.fetch("DATABASE_PAGA3") %>
-#port: <%= ENV.fetch("PORT_PAGA3") %>
-#username: <%= ENV.fetch("USERNAME_PAGA3") %>
-#password: <%= ENV.fetch("PASSWORD_PAGA3") %>
 
 
-#Eliminar conta Cliente
+
+#NAO FEITO
+#===========================================================================
+#Os campos precisam ser validados ao adicionar utilizador ou qualquer uma outra coisa
+#Atualizar os dados não estão a ser feitos. Quando o utilizador edita um campo, o mesmo campo não esta a ser atualizado
+#Não me permite fazer um update(atualização) da palavra passe. Para uma Palavra passe que o usuário se sinta mais confortável ou que seja mais fácil de lembrar
+#Imagens não estão bem centralizadas isso faz com que a pagina não seja visível
+#Imagens não estão a ser bem Ajustadas
+#Alguns botões de eliminar nos levam em uma pagina de erro
 #
-#Fazer compras Online - Logista
+#===========================================================================
+#===========================================================================
 #
-#Sepração de  Digitos - Salário
+#PROGRESSO
+#===========================================================================
+#Adicionar botão para Editar área de atuação. Ou permite deletar
+#Botão eliminar não esta a funcionar em algumas páginas
 #
-#Sepração de  Digitos - IBAN
+#===========================================================================
+#===========================================================================
 #
-#Bloquear o Salário depois de validar a conta
+#HOJE
+#O botão resetar palavra passe e associar clientes tem a mesma função
+#Botão limpar, deve ter o mesmo formato que limpar e estar bem enquadrado
+#===========================================================================
 #
-#Ajustar o olho ao adicionar a Senha
+#FEITO
+#===========================================================================
+#Mostrar mensagem de erro quando o utilizador coloca password errada
+#O botão de informação que notifica quando o user faz o login com sucesso ou qualquer uma outra coisa com sucesso não esta a ser removido automaticamente e nem permite a sua remoção ao menos que o utilizador mude de página ou faça o refresh(atualização) da pagina
+#Adicionar uma pagina onde ficara os users bloqueados e adicionar um botão de rejeitar
+#O olho que permite o utilizador ver se adicionou devidamente a palavra passe, no inicio aparece habilitado mas não permite o utilizador ver a palavra passe, só depois de vários cliques
+#Quando criamos uma empresa não nos permite fazer login com as credenciais
+#
