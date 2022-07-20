@@ -57,7 +57,7 @@
                         <% end %>
 
                         <div class="dropdown-divider"></div>
-                        <%= link_to 'Resetar Senha', reset_password_company_user_path(@company), class: "dropdown-item", style: "background-color: #70b9eb; color: #fff; margin-bottom: 5px;", data: { confirm: "Esta acção enviará uma nova senha ao utilizador ?\nUtilizador: #{@company.name}" } %>
+                        <%# link_to 'Resetar Senha', reset_password_company_user_path(@company), class: "dropdown-item", style: "background-color: #70b9eb; color: #fff; margin-bottom: 5px;", data: { confirm: "Esta acção enviará uma nova senha ao utilizador ?\nUtilizador: #{@company.name}" } %>
                         <%= link_to 'Eliminar empresa', company_path(@company), class: "dropdown-item", data: { confirm: 'Tens certeza ?', :method => :delete }, style: "background-color: #ff5722; color: #fff;" %>
                     </div>
                 </div>

@@ -34,11 +34,11 @@
             <div class="col-6 col-md-6 text-right">
                 <% if @pre_order.item_orders.count > 0 %>                  
 
-                    <%= link_to validate_cart_path, class: "btn btn-p3" do %>
+                    <%= link_to validate_cart_path, class: "btn btn-p3 btn-sm" do %>
                         <i class="fa fa-fw fa-check"></i> Validar venda
                     <% end %>
 
-                    <%= link_to @store, class: "btn btn-danger" do %>
+                    <%= link_to @store, class: "btn btn-danger btn-sm" do %>
                         <i class="fa fa-fw fa-trash"></i> Cancelar venda
                     <% end %>
                 <% end %>
