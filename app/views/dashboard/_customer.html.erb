@@ -11,9 +11,8 @@
                 <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                     <% if current_user.profile.active? && @profile.adc_subscribed.attached? %>
                         <p>
-                            
                             <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                <a class="btn btn-p3 px-4 py-2 btn-sm" data-toggle="click-ripple" href="javascript:void(0)">
+                                <a class="btn btn-p3 px-4 py-2 btn-sm" data-toggle="click-ripple" href="<%= new_request_path %>">
                                     <i class="fa fa-plus mr-1"></i> Fazer compras
                                 </a>
                             </span>
