@@ -76,7 +76,7 @@
                                                 <% if current_user.admin? %>
                                                     <%= f.input :salary, label: 'Salário' %>
                                                 <% else %>
-                                                    <%= f.input :salary, label: 'Salário' unless @profile.salary.present? %>
+                                                    <%= f.input :salary, label: 'Salário', readonly: @profile.salary > 0 ? true : false %>
                                                 <% end %>
 
                                                 <br>
