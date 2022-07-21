@@ -21,13 +21,12 @@ class Company < ApplicationRecord
         uniqueness: {
             case_sensitive: false, 
             scope: :user_id
-        },
-        #format: { with: URI::MailTo::EMAIL_REGEXP } 
-        format: {
-            with: VALID_EMAIL_REGEX,
-            multiline: true, 
-            message: "caracteres inválidos. Ex: utilizador@email.co"
         }
+        #format: { with: URI::MailTo::EMAIL_REGEXP } 
+        #format: {
+        #    with: EMAIL_REGEX,
+        #    message: "caracteres inválidos. Ex: utilizador@email.co"
+        #}
 
     validates :accountNumber, 
         :numericality => {

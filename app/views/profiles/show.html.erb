@@ -55,7 +55,7 @@
                 <% end %>
 
                 <% unless @profile.user.access_locked? %>
-                    <%= link_to 'Eliminar conta', @profile, class: "btn btn-sm btn-danger", method: :delete, data: { confirm: 'Tens certeza ?' } %>
+                    <%# link_to 'Eliminar conta', @profile, class: "btn btn-sm btn-danger", method: :delete, data: { confirm: 'Tens certeza ?' } %>
                     
                     <a class="btn btn-sm btn-secondary dropdown" href="#" role="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-caret-down"></i>
