@@ -13,6 +13,7 @@ class User < ApplicationRecord
     has_many :purchase_codes, dependent: :destroy
     has_many :facturas, dependent: :destroy
     has_many :history_of_profiles, dependent: :destroy
+    has_many :validation_codes, dependent: :destroy
     
     after_create :send_code_validation
     after_create :create_customer

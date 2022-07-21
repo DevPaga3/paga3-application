@@ -5,12 +5,20 @@ class DashboardController < ApplicationController
     def index
         @publicities = Publicity.all.where(status: true)
 
+        puts "=================="
+        #p current_user.sign_in_count
+        puts "=================="
+
+        #redirect_to edit_user_password_path if current_user.sign_in_count == 0
+
+
         if current_user.admin?
             @companies = Company.all
             @profiles = Profile.all
         end
 
         if current_user.customer?
+            
             @validate_cell_phone_number_text = "Por favor inserir o código de confirmação, enviado por SMS"
             @products = Product.all
             @invoices = Factura.all

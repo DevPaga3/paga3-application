@@ -34,27 +34,32 @@ Admin.create(
 
 #NAO FEITO
 #===========================================================================
-#Os campos precisam ser validados ao adicionar utilizador ou qualquer uma outra coisa
+
 #Atualizar os dados não estão a ser feitos. Quando o utilizador edita um campo, o mesmo campo não esta a ser atualizado
 #Não me permite fazer um update(atualização) da palavra passe. Para uma Palavra passe que o usuário se sinta mais confortável ou que seja mais fácil de lembrar
 #Imagens não estão bem centralizadas isso faz com que a pagina não seja visível
 #Imagens não estão a ser bem Ajustadas
-#Alguns botões de eliminar nos levam em uma pagina de erro
-#
+
 #===========================================================================
 #===========================================================================
 #
 #PROGRESSO
 #===========================================================================
-#Adicionar botão para Editar área de atuação. Ou permite deletar
 #Botão eliminar não esta a funcionar em algumas páginas
 #
 #===========================================================================
 #===========================================================================
-#
-#HOJE
-#O botão resetar palavra passe e associar clientes tem a mesma função
-#Botão limpar, deve ter o mesmo formato que limpar e estar bem enquadrado
+
+# HOJE
+# O botão resetar palavra passe e associar clientes tem a mesma função
+# Botão limpar, deve ter o mesmo formato que limpar e estar bem enquadrado
+# Adicionar botão para Editar área de atuação. Ou permite deletar
+# Alguns botões de eliminar nos levam em uma pagina de erro
+# Os campos precisam ser validados ao adicionar utilizador ou qualquer uma outra coisa
+    # Validação do E-mail
+    # Validação do Numero de conta (Only Number)
+    # Validação do Numero de telefone
+
 #===========================================================================
 #
 #FEITO

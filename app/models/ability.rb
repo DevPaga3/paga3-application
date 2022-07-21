@@ -8,10 +8,12 @@ class Ability
         user ||= User.new
 
         can :manage, :all if user.admin?
-
+        
         #============= PERMISSION COMPANY ===============
+
         if user.company?
-            can [:manage], Company,     company: { id: user.company.id }
+
+            can [:manage], Company #,     company: { id: user.company.id }
             can [:manage], Store,       company: { id: user.company.id }
             can [:manage], Product,     company: { id: user.company.id }
             can [:manage], BankAccount
