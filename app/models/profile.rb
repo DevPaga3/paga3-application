@@ -108,7 +108,7 @@ class Profile < ApplicationRecord
         total_credit = self.moviments.where(is_credit: true).sum(:amount)
         amount = total_credit - total_debit
 
-        if self.update_columns(purchase_amount: amount)
+        if self.update_columns(percentage_valid: amount)
             #Send notification SMS
         end
     end
