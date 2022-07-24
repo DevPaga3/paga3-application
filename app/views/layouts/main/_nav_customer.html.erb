@@ -1,4 +1,4 @@
-<% if current_user.confirmation_cell_phone %>
+<% if current_user.confirmation_cell_phone && current_user.profile.active? %>
 
     <li class="nav-main-item">
         <%= link_to my_requests_path, class: "nav-main-link" do %>
